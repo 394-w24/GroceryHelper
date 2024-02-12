@@ -1,12 +1,50 @@
-import React from 'react'
+
+import React, { useEffect, useState } from "react";
 import FoodList from '../Components/FoodList'
-// import Header from '../Components/Header'
+import Header from '../Components/Header'
+import Footer from '../Components/Footer'
+import Kitchen from '../Components/Kitchen'
+import { Container, Box, Button, Typography, useTheme, Tabs, Tab } from "@mui/material";
+
+function a11yProps(index) {
+  return {
+    id: `full-width-tab-${index}`,
+    'aria-controls': `full-width-tabpanel-${index}`,
+  };
+}
 
 const HomePage = () => {
+  const Theme = useTheme(); 
+  const [tab, setTab] = useState(0)
+
+
+  const handleChange = (event, newValue) => {
+    setTab(newValue);
+  };
+
+  
+  const tabsValue = ["All", "Fridge", "Freezer", "Pantry"]
+
   return (
     <div>
-        HomePage
-        {/* <FoodList/> */}
+
+        <Kitchen/>
+        <Tabs
+          value={tab}
+          onChange={handleChange}
+          indicatorColor="secondary"
+          textColor="inherit"
+          variant="fullWidth"
+          aria-label="full width tabs example"
+          sx = {{padding: '5%'}}
+        >
+          {tabsValue.map((location, i) => (
+            <Tab sx = {{margin: '1px'}} label={location} {...a11yProps(i)} />
+          ))}
+          
+        </Tabs>
+        <FoodList/>
+        <Footer/>
     </div>
   )
 }
