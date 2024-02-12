@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./Pages/HomePage"
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./Theme";
+
 
 
 import logo from './logo.svg';
@@ -29,7 +32,9 @@ const privateRoutes = [
 
 const App = () => {
   return (
+    <ThemeProvider theme={theme}>
      <HomePage/>
+     </ThemeProvider>
   );
 };
 

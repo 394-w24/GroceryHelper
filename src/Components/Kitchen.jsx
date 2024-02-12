@@ -17,8 +17,8 @@ const Kitchen = () => {
 
     return (
 
-        <Box sx ={{display: "flex", flexDirection:"column"}} >
-        <Typography variant="h4" sx={{margin: 2, marginTop: 3, textAlign: "center"}}>
+        <Box sx ={{display: "flex", flexDirection:"column", backgroundColor: theme.palette.primary['main'], color: theme.palette.primary[3]}} >
+        <Typography variant="h1" sx={{padding: 3, textAlign: "center", fontSize: "50px"}}>
             My Kitchen 
         </Typography>
         <Divider></Divider>

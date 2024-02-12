@@ -13,11 +13,11 @@ export const theme = createTheme({
     primary: {
       main: "#003E1F",
       1: "#73BA9B",
-      2: "#73BA9B",
+      2: "#01110A",
       3: "#D5F2E3",
       4: "#BA2D0B",
-      5: "#01110A",
-      claim: "#FEBF46"
+      5: "#FEBF46",
+      claim: "#73BA9B"
     },
   },
   breakpoints: {
@@ -65,7 +65,7 @@ export const theme = createTheme({
       fontWeight: 400,
       fontSize: "0.9rem",
       textTransform: "none",
-      color: "#D5F2E3"
+
     },
   },
 });

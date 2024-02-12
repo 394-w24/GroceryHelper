@@ -36,10 +36,10 @@ const HomePage = () => {
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"
-          sx = {{padding: '5%'}}
+          sx = {{pt: '3%'}}
         >
           {tabsValue.map((location, i) => (
-            <Tab sx = {{margin: '1px'}} label={location} {...a11yProps(i)} />
+            <Tab sx = {{margin: '1px', fontSize: "20px"}} label={location} {...a11yProps(i)} />
           ))}
           
         </Tabs>
