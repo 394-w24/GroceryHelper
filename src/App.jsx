@@ -1,44 +1,93 @@
-import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./Theme";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import "./App.css";
+import { checkIfLoggedIn, getUserData } from "./Firebase";
+import LoginPage from "./pages/LoginPage";
+import { Box } from "@mui/material";
+import LoadingContainer from "./components/LoadingContainer";
+
+const privateRoutes = [
+  {
+    path: "/",
+    component: () => <HomePage />,
+  },
+  {
+    path: "*",
+    component: () => <HomePage />,
+  }
+];
+
+const publicRoutes = [
+  {
+    path: "/login",
+    component: () => <LoginPage />,
+  },
+];
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const isSignedIn = checkIfLoggedIn();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const checkIfUidMatches = async () => {
+      if (isSignedIn) {
+        const user = await getUserData();
+        if (!user || user.uid !== localStorage.getItem("uid")) {
+          alert("Please Sign In Again!");
+          localStorage.removeItem("isSignedIn");
+          localStorage.removeItem("name");
+          localStorage.removeItem("photoUrl");
+          localStorage.removeItem("uid");
+          window.location.reload();
+        }
+        setIsLoading(false);
+      }
+      setIsLoading(false);
+    };
+
+    checkIfUidMatches();
+  }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount(count => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test hot module replacement (HMR).
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+    <LoadingContainer isLoading={isLoading}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+              width: "100%",
+            }}
           >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+            <Routes>
+              {privateRoutes.map((route) => (
+                <Route
+                  path={route.path}
+                  key={route.path}
+                  element={
+                    isSignedIn ? <route.component /> : <Navigate to="/login" />
+                  }
+                />
+              ))}
+              {publicRoutes.map((route) => (
+                <Route
+                  path={route.path}
+                  key={route.path}
+                  element={
+                    isSignedIn ? <Navigate to="/" /> : <route.component />
+                  }
+                />
+              ))}
+            </Routes>
+          </Box>
+        </BrowserRouter>
+      </ThemeProvider>
+    </LoadingContainer>
   );
 };
 
