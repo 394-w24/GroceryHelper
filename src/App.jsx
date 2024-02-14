@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./Theme";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./Pages/HomePage";
 import "./App.css";
 import { checkIfLoggedIn, getUserData } from "./Firebase";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./Pages/LoginPage";
 import { Box } from "@mui/material";
-import LoadingContainer from "./components/LoadingContainer";
+import LoadingContainer from "./Components/LoadingContainer";
 
 const privateRoutes = [
   {
