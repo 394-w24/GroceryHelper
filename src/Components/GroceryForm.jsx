@@ -15,11 +15,11 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-export default function GroceryForm({ open, onClose }) {
+export default function GroceryForm({ open, onClose, onAddFoodItem }) {
   const [groceryItem, setGroceryItem] = useState("");
-  const [quantity, setQuantity] = useState(0);
-  const [expirationDate, setExpirationDate] = useState("");
+  const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState(0);
+  const [daysUntilExpiration, setDaysUntilExpiration] = useState("");
 
   const handleCategoryChange = (event, newValue) => {
     setCategory(newValue);
@@ -36,7 +36,12 @@ export default function GroceryForm({ open, onClose }) {
   const handleSubmit = () => {
     const categoryLabels = ["Pantry", "Fridge", "Freezer"];
     const selectedCategory = categoryLabels[category];
-    console.log({ groceryItem, quantity, expirationDate, selectedCategory });
+    onAddFoodItem({
+      name: groceryItem,
+      quantity,
+      category: selectedCategory,
+      daysUntilExpiration,
+    });
     onClose();
   };
 
@@ -90,14 +95,13 @@ export default function GroceryForm({ open, onClose }) {
           />
           <TextField
             margin="dense"
-            id="expirationDate"
-            label="Expiration Date"
-            type="date"
+            id="daysUntilExpiration"
+            label="Days Until Expiration"
+            type="number"
             fullWidth
             variant="outlined"
-            InputLabelProps={{ shrink: true }}
-            value={expirationDate}
-            onChange={(e) => setExpirationDate(e.target.value)}
+            value={daysUntilExpiration}
+            onChange={(e) => setDaysUntilExpiration(e.target.value)}
           />
           <Tabs
             value={category}

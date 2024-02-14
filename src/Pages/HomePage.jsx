@@ -27,6 +27,11 @@ const HomePage = () => {
   const [tab, setTab] = useState(0);
   const [groceries, setGroceries] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [foodItems, setFoodItems] = useState([]);
+
+  const handleAddFoodItem = (newItem) => {
+    setFoodItems([...foodItems, newItem]);
+  };
 
   const toggleDialog = () => {
     setIsDialogOpen(!isDialogOpen);
@@ -64,7 +69,12 @@ const HomePage = () => {
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <GroceryForm open={isDialogOpen} onClose={toggleDialog} />
+      <GroceryForm
+        open={isDialogOpen}
+        onClose={toggleDialog}
+        onAddFoodItem={handleAddFoodItem}
+      />
+      <FoodList foodItems={foodItems} />
       <Footer onAddFoodClick={toggleDialog} />
     </div>
   );
