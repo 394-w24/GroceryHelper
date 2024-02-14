@@ -29,7 +29,7 @@ const LoginPage = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
-        background: "linear-gradient(to bottom, #422a8a, #2d1c4b)",
+        background: "linear-gradient(to bottom, rgba(66, 42, 138, 1), rgba(45, 28, 75, 0.8))",
       }}
     >
       <Box
