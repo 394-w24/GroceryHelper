@@ -18,7 +18,15 @@ import {
   deleteField,
 } from "firebase/firestore";
 
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+  signOut,
+  fetchSignInMethodsForEmail,
+  deleteUser,
+} from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -47,7 +55,7 @@ provider.setCustomParameters({ prompt: "select_account" });
 
 const signInWithGoogle = async (user, navigate) => {
   const { displayName, photoURL, uid } = user;
-  localStorage.setItem("isSignedIn", true);
+  localStorage.setItem("lastSignIn", new Date().toISOString());
   localStorage.setItem("name", displayName);
   localStorage.setItem("photoUrl", photoURL);
   localStorage.setItem("uid", uid);
@@ -84,10 +92,28 @@ const signUpWithGoogle = async (navigate) => {
       console.error(error);
     });
 };
-const checkIfLoggedIn = () => {
-  const isSignedIn = localStorage.getItem("isSignedIn");
-  return isSignedIn;
+
+const handleLogOut = () => {
+  signOut(auth);
+  localStorage.removeItem("isSignedIn");
+  localStorage.removeItem("name");
+  localStorage.removeItem("photoUrl");
+  localStorage.removeItem("uid");
+  localStorage.clear();
+  window.location.reload();
 };
+
+const checkIfLoggedIn = () => {
+  const lastSignIn = localStorage.getItem("lastSignIn");
+  if (lastSignIn) {
+    const lastSignInTime = new Date(lastSignIn).getTime();
+    const currentTime = new Date().getTime();
+    // Check if the last sign-in was within the last 24 hours
+    return currentTime - lastSignInTime <= 86400000; // 86400000 ms = 24 hours
+  }
+  return false;
+};
+
 const getUserData = async () => {
   const uid = localStorage.getItem("uid");
   const userRef = doc(db, "users", uid);

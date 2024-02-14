@@ -37,7 +37,7 @@ const App = () => {
         const user = await getUserData();
         if (!user || user.uid !== localStorage.getItem("uid")) {
           alert("Please Sign In Again!");
-          localStorage.removeItem("isSignedIn");
+          localStorage.removeItem("lastSignIn");
           localStorage.removeItem("name");
           localStorage.removeItem("photoUrl");
           localStorage.removeItem("uid");
