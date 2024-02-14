@@ -27,7 +27,7 @@ const Footer = ({ onAddFoodClick }) => {
         variant="contained"
         sx={{
           backgroundColor: theme.palette.primary[3],
-          color: theme.palette.primary["main"],
+          color: theme.palette.primary["green"],
           margin: 3,
           "&:hover": {
             backgroundColor: theme.palette.primary[5],

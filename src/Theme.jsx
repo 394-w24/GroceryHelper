@@ -17,6 +17,7 @@ export const theme = createTheme({
       3: "#E4E0EE",
       4: "#D9D9D9",
       5: "#919191",
+      green: "#003E1F",
       claim: "#FEBF46"
     },
   },

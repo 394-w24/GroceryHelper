@@ -20,7 +20,7 @@ const Kitchen = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        backgroundColor: theme.palette.primary["main"],
+        backgroundColor: theme.palette.primary["green"],
         color: theme.palette.primary[3],
       }}
     >
