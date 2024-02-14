@@ -11,13 +11,13 @@ const breakpoints = {
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#003E1F",
-      1: "#73BA9B",
-      2: "#01110A",
-      3: "#D5F2E3",
-      4: "#BA2D0B",
-      5: "#FEBF46",
-      claim: "#73BA9B"
+      main: "#4E2A84",
+      1: "#836EAA",
+      2: "#836EAA",
+      3: "#E4E0EE",
+      4: "#D9D9D9",
+      5: "#919191",
+      claim: "#FEBF46"
     },
   },
   breakpoints: {
@@ -65,7 +65,6 @@ export const theme = createTheme({
       fontWeight: 400,
       fontSize: "0.9rem",
       textTransform: "none",
-
     },
   },
 });
