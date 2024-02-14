@@ -19,7 +19,7 @@ export const theme = createTheme({
       5: "#919191",
       green: "#003E1F",
       claim: "#FEBF46",
-      lightGreen: "#7dcea0"
+      lightGreen: "#86dd69"
     },
   },
   breakpoints: {

@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Button, Typography, styled, useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { signUpWithGoogle } from "../Firebase";
+import logo from "../assets/logo/logo.jpg";
 
 const StyledButton = styled(Button)({
   backgroundColor: "#196f3d ",
@@ -42,14 +43,21 @@ const LoginPage = () => {
           justifyContent: "center",
         }}
       >
-        <Typography sx={{ color: "white", fontSize: "55px" }}>
-          Stay Fresh
-        </Typography>
+        <img
+          src={logo}
+          alt="Stay Fresh Logo"
+          style={{
+            maxWidth: "100%",
+            maxHeight: "130%",
+            height: "auto",
+            width: "auto",
+          }}
+        />
       </Box>
       <Box
         sx={{
           width: "100%",
-          height: "70%",
+          height: "50%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
