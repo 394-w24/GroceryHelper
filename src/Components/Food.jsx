@@ -2,12 +2,10 @@ import React from "react";
 import { Box, Typography, useTheme, Chip } from "@mui/material";
 
 const Food = ({ fooditem }) => {
-	const { name, id, quantity, status, note, days_until_expired } = fooditem;
-	const isExpired = status === "expired";
+	const { name, quantity, daysUntilExpiration, category } = fooditem;
 
 	return (
 		<Box
-			key={id}
 			sx={{
 				marginInline: "10px",
 				width: "100%",
@@ -24,7 +22,7 @@ const Food = ({ fooditem }) => {
 			<Box>
 				<Typography
 					variant='h6'
-					sx={{ mb: 1, fontWeight: "bold", userSelect: "none" }}
+					sx={{ fontWeight: "bold", userSelect: "none" }}
 				>
 					{name}
 				</Typography>
@@ -37,18 +35,13 @@ const Food = ({ fooditem }) => {
 				}}
 			>
 				<Typography variant='body2' sx={{ userSelect: "none" }}>
-					{quantity} pcs
+					Quantity: {quantity}
 				</Typography>
-
-				{isExpired ? (
-					<Chip label='Expired!' color='error' sx={{ userSelect: "none" }} />
-				) : (
-					<Chip
-						label={`Expires in ${days_until_expired} days`}
-						color='warning'
-						sx={{ userSelect: "none" }}
-					/>
-				)}
+        <Chip
+          label={`${daysUntilExpiration} days until expiration`}
+          color='warning'
+          sx={{ userSelect: "none" }}
+        />
 			</Box>
 		</Box>
 	);

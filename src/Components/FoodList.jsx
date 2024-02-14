@@ -3,54 +3,47 @@ import { Box, Typography, useTheme } from "@mui/material";
 import Food from "./Food";
 import SwipeOptions from "./SwipeOptions";
 
-const FoodList = () => {
-	const theme = useTheme();
+const defaultFoodItems = [
+  {
+    name: "Avocado",
+    id: 1,
+    quantity: 2,
+    daysUntilExpiration: 0, // Assuming expired items have 0 days left
+    category: "Pantry", // Example category, adjust as needed
+  },
+  {
+    name: "Banana",
+    id: 2,
+    quantity: 2,
+    daysUntilExpiration: 3,
+    category: "Pantry",
+  },
+  {
+    name: "Cherry",
+    id: 3,
+    quantity: 2,
+    daysUntilExpiration: 3,
+    category: "Pantry",
+  },
+  {
+    name: "Avocado",
+    id: 4,
+    quantity: 2,
+    daysUntilExpiration: 3,
+    category: "Pantry",
+  },
+];
 
-	const defaultfood = {
-		kitchen: {
-			categories: ["all", "fridge", "freezer", "pantry"],
-			items: [
-				{
-					name: "Avocado",
-					id: 1,
-					quantity: 2,
-					status: "expired",
-					note: "eat it",
-				},
-				{
-					name: "Banana",
-					id: 2,
-					quantity: 2,
-					status: "expires soon",
-					days_until_expired: 3,
-				},
-				{
-					name: "Cherry",
-					id: 3,
-					quantity: 2,
-					status: "expires soon",
-					days_until_expired: 3,
-				},
-				{
-					name: "Avocado",
-					id: 4,
-					quantity: 2,
-					status: "expires soon",
-					days_until_expired: 3,
-				},
-			],
-		},
-	};
-
-	const [allFood, setAllFood] = useState(defaultfood.kitchen.items);
+const FoodList = ({foodItems}) => {
+	const [itemsToDisplay, setItemsToDisplay] = useState(foodItems ? foodItems : defaultFoodItems);
 
 	const deleteFood = (foodId) => {
-		setAllFood((prev) => prev.filter((food) => food.id != foodId));
+		setItemsToDisplay((prev) => prev.filter((food) => food.id != foodId));
 	};
 
-	return allFood.length !== 0 ? (
+	return (
 		<Box sx={{ padding: "5%" }}>
-			{allFood.map((fooditem, i) => (
+			{itemsToDisplay.map((fooditem, i) => (
 				// <Food key={i} fooditem={fooditem} />
 				<SwipeOptions
 					key={fooditem.id}
@@ -61,7 +54,7 @@ const FoodList = () => {
 				</SwipeOptions>
 			))}
 		</Box>
-	) : null;
+	);
 };
 
 export default FoodList;
