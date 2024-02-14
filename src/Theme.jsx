@@ -18,7 +18,8 @@ export const theme = createTheme({
       4: "#D9D9D9",
       5: "#919191",
       green: "#003E1F",
-      claim: "#FEBF46"
+      claim: "#FEBF46",
+      lightGreen: "#7dcea0"
     },
   },
   breakpoints: {
