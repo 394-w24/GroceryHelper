@@ -18,7 +18,8 @@
     "mui": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.0",
+    "react-swipeable": "^7.0.1"
   },
   "devDependencies": {
     "@testing-library/react": "^14.1.2",
@@ -27,7 +28,7 @@
     "@vitest/ui": "^1.0.4",
     "c8": "^8.0.1",
     "jsdom": "^23.0.1",
-    "vite": "^5.0.8",
+    "vite": "^5.1.1",
     "vitest": "^1.0.4"
   }
 }
