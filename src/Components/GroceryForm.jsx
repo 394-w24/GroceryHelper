@@ -15,11 +15,27 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
+import ImageDropBox from './ImageDropBox';
+import FoodRecognition from './FoodRecognition';
+
 export default function GroceryForm({ open, onClose, onAddFoodItem }) {
+  const [imageFile, setImageFile] = useState(null);
+  const handleImageUpload = (file) => {
+    setImageFile(file);
+  };
+  
   const [groceryItem, setGroceryItem] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState(0);
   const [daysUntilExpiration, setDaysUntilExpiration] = useState("");
+
+  const handleFoodDetected = (detectedItems) => {
+    if (detectedItems.length > 0) {
+      setGroceryItem(detectedItems[0]);
+    } else {
+      console.log("No food items detected");
+    }
+  };
 
   const handleCategoryChange = (event, newValue) => {
     setCategory(newValue);
@@ -47,9 +63,13 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
 
   return (
     <Box>
-      <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
-        <DialogTitle>Add Grocery Item</DialogTitle>
-        <DialogContent>
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
+      <DialogTitle>Add Grocery Item</DialogTitle>
+      <DialogContent>
+        <ImageDropBox onImageUpload={handleImageUpload} />
+        {imageFile && <FoodRecognition imageFile={imageFile} onFoodDetected={handleFoodDetected} />}
+
+
           <TextField
             autoFocus
             margin="dense"
