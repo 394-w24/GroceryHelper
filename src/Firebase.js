@@ -127,4 +127,4 @@ const getUserData = async () => {
   return null;
 };
 
-export { db, auth, storage, signUpWithGoogle, checkIfLoggedIn, getUserData };
+export { db, auth, storage, signUpWithGoogle, checkIfLoggedIn, getUserData, handleLogOut };

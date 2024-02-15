@@ -1,13 +1,14 @@
 import React from "react";
-import { Box, Button, Typography, styled } from "@mui/material";
+import { Box, Button, Typography, styled, useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { signUpWithGoogle } from "../Firebase";
+import logo from "../assets/logo/logo.jpg";
 
 const StyledButton = styled(Button)({
-  backgroundColor: "#4E2A84",
+  backgroundColor: "#196f3d ",
   color: "white",
   "&:hover": {
-    backgroundColor: "#3e316b",
+    backgroundColor:"#003E1F",
   },
   width: "80%",
   height: "50px",
@@ -16,10 +17,11 @@ const StyledButton = styled(Button)({
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
   const handleSignIn = () => {
     signUpWithGoogle(navigate);
   };
-
+  
   return (
     <Box
       sx={{
@@ -29,21 +31,28 @@ const LoginPage = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
-        background: "linear-gradient(to bottom, rgba(66, 42, 138, 1), rgba(45, 28, 75, 0.8))",
+        backgroundColor: theme.palette.primary["lightGreen"]
       }}
     >
       <Box
         sx={{
           width: "100%",
-          height: "50%",
+          height: "80%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <Typography sx={{ color: "white", fontSize: "55px" }}>
-          Grocery Helper
-        </Typography>
+        <img
+          src={logo}
+          alt="Stay Fresh Logo"
+          style={{
+            maxWidth: "100%",
+            maxHeight: "130%",
+            height: "auto",
+            width: "auto",
+          }}
+        />
       </Box>
       <Box
         sx={{
@@ -52,6 +61,7 @@ const LoginPage = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          
         }}
       >
         <StyledButton onClick={handleSignIn}>Login With Google</StyledButton>
