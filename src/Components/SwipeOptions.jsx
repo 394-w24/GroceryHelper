@@ -1,15 +1,16 @@
 import React, { useState, ReactNode, CSSProperties, useId } from "react";
 import { useSwipeable } from "react-swipeable";
 import { Box, Button } from "@mui/material";
-import "./SwipeOptions.css";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import Food from "./Food";
 import DeleteConfirmationModal from "./DeleteConfimationModal";
 import EditModal from "./EditModal";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../Firebase";
 
-const SwipeOptions = ({ fooditem, height = "100px", deleteFood }) => {
+const SwipeOptions = ({ fooditem, height = "100px", handleDeleteFood }) => {
 	const [isScrolling, setIsScrolling] = useState(false);
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [foodInfo, setfoodInfo] = useState(fooditem);
@@ -53,13 +54,17 @@ const SwipeOptions = ({ fooditem, height = "100px", deleteFood }) => {
 			}));
 			setEditModalOpen(false);
 			setIsExpanded(false);
+			const docRef = doc(db, "userGroceries", foodInfo.id);
+			updateDoc(docRef, {
+				quantity: newValue,
+			});
 		}
 	};
 
 	const handleDeleteConfirm = () => {
 		setDeleteModalOpen(false);
 		setIsExpanded(false);
-		deleteFood(foodInfo.id);
+		handleDeleteFood(foodInfo.id);
 	};
 
 	return (

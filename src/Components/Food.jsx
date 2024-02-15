@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography, useTheme, Chip } from "@mui/material";
+import {
+	getDocs,
+	getDoc,
+	collection,
+	query,
+	where,
+	doc,
+} from "firebase/firestore";
+import { db } from "../Firebase";
 
 const Food = ({ fooditem }) => {
-	const { name, quantity, daysUntilExpiration, category } = fooditem;
+	const {
+		createdAt,
+		expiredAt,
+		imageURL,
+		productId,
+		quantity,
+		storageType,
+		userId,
+		id,
+	} = fooditem;
+	const [productName, setProductName] = useState("name loading");
+	const expirationDate = expiredAt.toDate();
+	const today = new Date();
+	const difference = expirationDate - today;
+	const millisecondsInADay = 1000 * 60 * 60 * 24;
+	const daysUntilExpiration = Math.floor(difference / millisecondsInADay);
+
+	useEffect(() => {
+		const fetchProductName = async () => {
+			const productRef = doc(db, "products", productId);
+			const snapshot = await getDoc(productRef);
+			setProductName(snapshot.data().name);
+		};
+		fetchProductName();
+	}, [productId]);
 
 	return (
 		<Box
@@ -24,7 +57,7 @@ const Food = ({ fooditem }) => {
 					variant='h6'
 					sx={{ fontWeight: "bold", userSelect: "none" }}
 				>
-					{name}
+					{productName}
 				</Typography>
 			</Box>
 			<Box
@@ -37,11 +70,11 @@ const Food = ({ fooditem }) => {
 				<Typography variant='body2' sx={{ userSelect: "none" }}>
 					Quantity: {quantity}
 				</Typography>
-        <Chip
-          label={`${daysUntilExpiration} days until expiration`}
-          color='warning'
-          sx={{ userSelect: "none" }}
-        />
+				<Chip
+					label={`${daysUntilExpiration} days until expiration`}
+					color='warning'
+					sx={{ userSelect: "none" }}
+				/>
 			</Box>
 		</Box>
 	);
