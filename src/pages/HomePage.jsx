@@ -48,6 +48,7 @@ const HomePage = () => {
 
 	const handleChange = (event, newValue) => {
 		setTab(newValue);
+		console.log(newValue);
 	};
 
 	const handleDeleteFood = (foodId) => {
@@ -66,7 +67,7 @@ const HomePage = () => {
 			snapshot.forEach((doc) => {
 				groceries.push({ ...doc.data(), id: doc.id });
 			});
-			console.log(groceries);
+			// console.log(groceries);
 			setFoodItems(groceries);
 		};
 		getUserGroceries();
