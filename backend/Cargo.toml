@@ -1,0 +1,19 @@
+[package]
+name = "sci394-backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+firestore-db-and-auth = "*"
+serde_json = "*"
+serde = { version = "*", features = ["derive"] }
+tokio = { version = "*", features = ["full"] }
+futures-util = "*"
+chrono = { version = "*", features = ["serde"] }
+lettre = { version = "*", features = ["tokio1-native-tls"] }
+mime = "*"
+reqwest = "*"
+actix-web = { version = "*", features = ["openssl"] }
+base64 = { version = "*", features = [] }
