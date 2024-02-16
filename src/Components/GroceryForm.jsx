@@ -1,155 +1,281 @@
 import React, { useState, useEffect } from "react";
 import {
-	Box,
-	Button,
-	Dialog,
-	DialogActions,
-	DialogContent,
-	DialogTitle,
-	TextField,
-	Tabs,
-	Tab,
-	InputAdornment,
-	IconButton,
-	Autocomplete,
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+  Tabs,
+  Tab,
+  InputAdornment,
+  IconButton,
+  Autocomplete,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import {
-	getDocs,
-	getDoc,
-	collection,
-	query,
-	where,
-	Timestamp,
+  getDocs,
+  getDoc,
+  collection,
+  query,
+  where,
+  Timestamp,
+  addDoc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
+import foodItems from "../assets/data.json";
+import categoryData from "../assets/category.json";
+import GroceryAutocomplete from "./GroceryAutocomplete";
 
 export default function GroceryForm({ open, onClose, onAddFoodItem }) {
-	const [groceryItem, setGroceryItem] = useState("");
-	const [quantity, setQuantity] = useState(1);
-	const [category, setCategory] = useState(0);
-	const [daysUntilExpiration, setDaysUntilExpiration] = useState("");
-	const [allGroceryTypes, setAllGroceryTypes] = useState({});
+  const [groceryItem, setGroceryItem] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [category, setCategory] = useState(0);
+  const [daysUntilExpiration, setDaysUntilExpiration] = useState(1);
+  const [allGroceryTypes, setAllGroceryTypes] = useState({});
+  const [allData, setAllData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [options, setOptions] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [allCategories, setAllCategories] = useState([]);
+  const [chosenProductId, setChosenProductId] = useState(null);
+  const [chosenProduct, setChosenProduct] = useState(null);
 
-	const handleCategoryChange = (event, newValue) => {
-		setCategory(newValue);
-	};
+  const handleCategoryChange = (event, newValue) => {
+    setCategory(newValue);
+  };
 
-	const incrementQuantity = () => {
-		setQuantity((prev) => prev + 1);
-	};
+  const incrementQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
 
-	const decrementQuantity = () => {
-		setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
-	};
+  const decrementQuantity = () => {
+    setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
+  };
 
-	const handleSubmit = () => {
-		const categoryLabels = ["Pantry", "Fridge", "Freezer"];
-		const selectedCategory = categoryLabels[category];
-		onAddFoodItem({
-			name: groceryItem,
-			quantity,
-			category: selectedCategory,
-			daysUntilExpiration,
-		});
-		onClose();
-	};
+  const GetExpirationDate = (date, daystoAdd) => {
+    if (daystoAdd === -1) {
+      return "No data yet";
+    }
+    const milliesecondsPerDay = 1000 * 60 * 60 * 24;
+    const newDate = new Date(date.getTime() + daystoAdd * milliesecondsPerDay);
+    return newDate;
+  };
 
-	useEffect(() => {
-		const getAllFoodType = async () => {
-			const productsRef = collection(db, "products");
-			const docs = await getDocs(productsRef);
-			let allFoodTypes = {};
-			docs.forEach((product) => {
-				// console.log(product.data());
-				const data = product.data();
-				allFoodTypes[data.name] = data;
-			});
-			setAllGroceryTypes(allFoodTypes);
-			console.log(allFoodTypes);
-			console.log(Object.keys(allFoodTypes));
-		};
-		// WARNING: MIGHT CAUSE OVERUSE OF FIREBASE READ!!
-		// getAllFoodType();
-	}, []);
+  const handleSubmit = async () => {
+    const categoryLabels = ["Pantry", "Fridge", "Freezer"];
+    const selectedCategory = categoryLabels[category];
+    const currDate = new Date();
 
-	return (
-		<Box>
-			<Dialog open={open} onClose={onClose} fullWidth maxWidth='md'>
-				<DialogTitle>Add Grocery Item</DialogTitle>
-				<DialogContent>
-					<TextField
-						autoFocus
-						margin='dense'
-						id='groceryItem'
-						label='Grocery Item'
-						type='text'
-						fullWidth
-						variant='outlined'
-						value={groceryItem}
-						onChange={(e) => setGroceryItem(e.target.value)}
-					/>
-					<TextField
-						margin='dense'
-						id='quantity'
-						label='Quantity'
-						type='number'
-						fullWidth
-						variant='outlined'
-						value={quantity}
-						onChange={(e) => setQuantity(Number(e.target.value))}
-						InputProps={{
-							startAdornment: (
-								<InputAdornment position='start'>
-									<IconButton
-										onClick={decrementQuantity}
-										aria-label='decrease quantity'
-									>
-										<RemoveIcon />
-									</IconButton>
-								</InputAdornment>
-							),
-							endAdornment: (
-								<InputAdornment position='end'>
-									<IconButton
-										onClick={incrementQuantity}
-										aria-label='increase quantity'
-									>
-										<AddIcon />
-									</IconButton>
-								</InputAdornment>
-							),
-						}}
-					/>
-					<TextField
-						margin='dense'
-						id='daysUntilExpiration'
-						label='Days Until Expiration'
-						type='number'
-						fullWidth
-						variant='outlined'
-						value={daysUntilExpiration}
-						onChange={(e) => setDaysUntilExpiration(e.target.value)}
-					/>
-					<Tabs
-						value={category}
-						onChange={handleCategoryChange}
-						indicatorColor='primary'
-						textColor='primary'
-						variant='fullWidth'
-						sx={{ marginTop: 2 }}
-					>
-						<Tab label='Pantry' />
-						<Tab label='Fridge' />
-						<Tab label='Freezer' />
-					</Tabs>
-				</DialogContent>
-				<DialogActions>
-					<Button onClick={onClose}>Cancel</Button>
-					<Button onClick={handleSubmit}>Add Item</Button>
-				</DialogActions>
-			</Dialog>
-		</Box>
-	);
+    onAddFoodItem({
+      createdAt: currDate,
+      expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+      imageURL: "",
+      productId: chosenProductId,
+      quantity: quantity,
+      storageType: selectedCategory,
+      userId: localStorage.getItem("uid"),
+    });
+
+    try {
+      await addDoc(collection(db, "userGroceries"), {
+        createdAt: currDate,
+        expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+        imageURL: "",
+        productId: chosenProductId,
+        quantity: quantity,
+        storageType: selectedCategory,
+        userId: localStorage.getItem("uid"),
+      });
+
+      onClose();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    const init = () => {
+      const filtered = foodItems.map((curr) => {
+        const categoryLabels = ["pantry", "Fridge", "freezer"];
+        const currCategory = categoryLabels[category];
+
+        if (!curr[currCategory]) {
+          return null;
+        }
+
+        return curr;
+      });
+
+      setAllData(filtered);
+    };
+
+    init();
+  }, []);
+
+  const handleSelect = async (event, value) => {
+    const categoryLabels = ["pantry", "refrigerate", "freeze"];
+    const currCategory = categoryLabels[category];
+
+    if (value) {
+      const { name, description, categoryId } = value;
+      const docRef = collection(db, "products");
+      const q = query(
+        docRef,
+        where("categoryId", "==", categoryId),
+        where("name", "==", name),
+        where("description", "==", description)
+      );
+
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        setChosenProductId(doc.id);
+        setDaysUntilExpiration(doc.data()[currCategory]);
+        setChosenProduct(doc.data());
+      });
+
+      setSearchResults([value]);
+    }
+  };
+
+  useEffect(() => {
+    const updateOptions = () => {
+      const lowercased = searchTerm.toLowerCase();
+      const filtered = allData.filter((item) => {
+        const { name } = item || "";
+        return name.toLowerCase().includes(lowercased) || "";
+      });
+
+      setOptions(filtered);
+    };
+
+    if (searchResults !== "") {
+      updateOptions();
+    }
+  }, [searchTerm]);
+
+  useEffect(() => {
+    const handleAllCategories = () => {
+      const temp = [];
+      Object.values(categoryData).forEach((curr) => {
+        temp.push(curr);
+      });
+      setAllCategories(temp);
+    };
+
+    handleAllCategories();
+  }, []);
+
+  useEffect(() => {
+    const updateExpirationData = () => {
+      const categoryLabels = ["pantry", "refrigerate", "freeze"];
+      const currCategory = categoryLabels[category];
+      if (!chosenProduct) {
+        setDaysUntilExpiration(-1);
+        return;
+      }
+      const currExpirationDate = chosenProduct[currCategory];
+      setDaysUntilExpiration(currExpirationDate);
+    };
+
+    updateExpirationData();
+  }, [category]);
+
+  return (
+    <Box>
+      <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
+        <DialogTitle>Add Grocery Item</DialogTitle>
+        <DialogContent>
+          <Autocomplete
+            id="user-search-autocomplete"
+            options={options}
+            inputValue={searchTerm}
+            getOptionLabel={(option) => {
+              const { name, description, categoryId } = option;
+
+              const result = `${name}${description ? "/" + description : ""}/${
+                categoryData[categoryId].categoryName
+              }`;
+              return result;
+            }}
+            style={{ width: 300, marginLeft: 10, height: 40 }}
+            onInputChange={(event, newInputValue) => {
+              setSearchTerm(newInputValue);
+            }}
+            onChange={handleSelect}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Grocery Item"
+                variant="outlined"
+                fullWidth
+              />
+            )}
+          />
+          <TextField
+            margin="dense"
+            id="quantity"
+            label="Quantity"
+            type="number"
+            fullWidth
+            variant="outlined"
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <IconButton
+                    onClick={decrementQuantity}
+                    aria-label="decrease quantity"
+                  >
+                    <RemoveIcon />
+                  </IconButton>
+                </InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={incrementQuantity}
+                    aria-label="increase quantity"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+          <TextField
+            margin="dense"
+            id="daysUntilExpiration"
+            label="Days Until Expiration"
+            type="number"
+            fullWidth
+            variant="outlined"
+            value={daysUntilExpiration}
+            onChange={(e) => setDaysUntilExpiration(e.target.value)}
+          />
+          <Tabs
+            value={category}
+            onChange={handleCategoryChange}
+            indicatorColor="primary"
+            textColor="primary"
+            variant="fullWidth"
+            sx={{ marginTop: 2 }}
+          >
+            <Tab label="Pantry" />
+            <Tab label="Fridge" />
+            <Tab label="Freezer" />
+          </Tabs>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={onClose}>Cancel</Button>
+          <Button onClick={handleSubmit} disabled={daysUntilExpiration < 1}>
+            Add Item
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Box>
+  );
 }

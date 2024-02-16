@@ -1,0 +1,99 @@
+{
+  "1": { "categoryName": "Baby Food", "subCategoryName": null },
+  "2": {
+    "categoryName": "Baked Goods",
+    "subCategoryName": "Bakery"
+  },
+  "3": {
+    "categoryName": "Baked Goods",
+    "subCategoryName": "Baking and Cooking"
+  },
+  "4": {
+    "categoryName": "Baked Goods",
+    "subCategoryName": "Refrigerated Dough"
+  },
+  "5": {
+    "categoryName": "Beverages",
+    "subCategoryName": null
+  },
+  "6": {
+    "categoryName": "Condiments, Sauces & Canned Goods",
+    "subCategoryName": null
+  },
+  "7": {
+    "categoryName": "Dairy Products & Eggs",
+    "subCategoryName": null
+  },
+  "8": {
+    "categoryName": "Food Purchased Frozen",
+    "subCategoryName": null
+  },
+  "9": {
+    "categoyName": "Grains, Beans & Pasta",
+    "subCategoryName": null
+  },
+  "10": {
+    "categoryName": "Meat",
+    "subCategoryName": "Fresh"
+  },
+  "11": {
+    "categoryName": "Meat",
+    "subCategoryName": "Shelf Stable Foods"
+  },
+  "12": {
+    "categoryName": "Meat",
+    "subCategoryName": "Smoked or Processed"
+  },
+  "13": {
+    "categoryName": "Meat",
+    "subCategoryName": "Stuffed or Assembled"
+  },
+  "14": {
+    "categoryName": "Poultry",
+    "subCategoryName": "Cooked or Procssed"
+  },
+  "15": {
+    "categoryName": "Poultry",
+    "subCategoryName": "Fresh"
+  },
+  "16": {
+    "categoryName": "Poultry",
+    "subCategoryName": "Shelf Stable Foods"
+  },
+  "17": {
+    "categoryName": "Poultry",
+    "subCategoryName": "Stuffed or Assembled"
+  },
+  "18": {
+    "categoryName": "Produce",
+    "subCategoryName": "Fresh Fruits"
+  },
+  "19": {
+    "categoryName": "Produce",
+    "subCategoryName": "Fresh Vegetables"
+  },
+  "20": {
+    "categoryName": "Seafood",
+    "subCategoryName": "Fresh"
+  },
+  "21": {
+    "categoryName": "Seafood",
+    "subCategoryName": "Shellfish"
+  },
+  "22": {
+    "categoryName": "Seafood",
+    "subCategoryName": "Smoked"
+  },
+  "23": {
+    "categoryName": "Subcategory_Name",
+    "subCategoryName": null
+  },
+  "24": {
+    "categoryName": "Vegetarian Proteins",
+    "subCategoryName": null
+  },
+  "25": {
+    "categoryName": "Deli & Prepared Foods",
+    "subCategoryName": null
+  }
+}
