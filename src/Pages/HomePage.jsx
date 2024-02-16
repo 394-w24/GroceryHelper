@@ -15,13 +15,14 @@ import {
 	Tab,
 } from "@mui/material";
 import {
-	doc,
 	getDocs,
 	getDoc,
 	deleteDoc,
 	collection,
 	query,
 	where,
+	orderBy,
+	doc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
 
@@ -38,9 +39,11 @@ const HomePage = () => {
 	const [tab, setTab] = useState(0);
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [foodItems, setFoodItems] = useState([]);
+	const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
+	const [rerender, setRerender] = useState(false);
 
 	const handleAddFoodItem = (newItem) => {
-		setFoodItems([...foodItems, newItem]);
+		setFoodItems([...foodItems, newItem]); //update local frontend
 	};
 
 	const toggleDialog = () => {
@@ -59,6 +62,8 @@ const HomePage = () => {
 		deleteDoc(docRef);
 	};
 
+	const handleEdit = (foodId, quantity) => {};
+
 	useEffect(() => {
 		const getUserGroceries = async () => {
 			const userGroceryRef = collection(db, "userGroceries");
@@ -66,15 +71,36 @@ const HomePage = () => {
 			const snapshot = await getDocs(q);
 			let groceries = [];
 			snapshot.forEach((doc) => {
-				groceries.push({ ...doc.data(), id: doc.id });
+				let currData = doc.data();
+				currData["expiredAt"] = currData["expiredAt"].toDate();
+				groceries.push({
+					...currData,
+					id: doc.id,
+				});
 			});
-			// console.log(groceries);
+
+			//   groceries.sort((x, y) => x.expiredAt - y.expiredAt);
 			setFoodItems(groceries);
 		};
 		getUserGroceries();
 	}, []);
 
 	const tabsValue = ["All", "Fridge", "Freezer", "Pantry"];
+	//   let storingMethod = tabsValue[tab];
+
+	useEffect(() => {
+		const storingMethod = tabsValue[tab];
+		foodItems.sort((x, y) => x.expiredAt - y.expiredAt);
+		if (storingMethod === "All") {
+			setDisplayedFoodItems(foodItems);
+		} else {
+			const temp = foodItems.filter(
+				(foodItem) => foodItem.storageType === storingMethod
+			);
+			setDisplayedFoodItems(temp);
+		}
+		setRerender(!rerender);
+	}, [foodItems, tab]);
 
 	return (
 		<div>
@@ -97,7 +123,11 @@ const HomePage = () => {
 					/>
 				))}
 			</Tabs>
-			<FoodList foodItems={foodItems} handleDeleteFood={handleDeleteFood} />
+			<FoodList
+				foodItems={displayedFoodItems}
+				handleDeleteFood={handleDeleteFood}
+				rerender={rerender}
+			/>
 			<GroceryForm
 				open={isDialogOpen}
 				onClose={toggleDialog}
