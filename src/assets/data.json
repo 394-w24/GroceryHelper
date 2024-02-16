@@ -1,0 +1,5290 @@
+[
+  {
+    "categoryId": 7,
+    "name": "Butter",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 60,
+    "freeze": 270
+  },
+  {
+    "categoryId": 7,
+    "name": "Buttermilk",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 90
+  },
+  {
+    "categoryId": 7,
+    "name": "Cheese",
+    "description": "hard such as cheddar, swiss, block parmesan",
+    "pantry": -1,
+    "refrigerate": 180,
+    "freeze": 180
+  },
+  {
+    "categoryId": 7,
+    "name": "Cheese",
+    "description": "parmesan; shredded or grated",
+    "pantry": -1,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cheese",
+    "description": "shredded; cheddar, mozzarella, etc.",
+    "pantry": -1,
+    "refrigerate": 30,
+    "freeze": 120
+  },
+  {
+    "categoryId": 7,
+    "name": "Cheese",
+    "description": "processed slices",
+    "pantry": -1,
+    "refrigerate": 28,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cheese",
+    "description": "soft such as brie, bel paese, goat",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 180
+  },
+  {
+    "categoryId": 7,
+    "name": "Coffee creamer",
+    "description": "liquid refrigerated",
+    "pantry": -1,
+    "refrigerate": 21,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cottage cheese",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cream cheese",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cream",
+    "description": "whipping, ultrapasteurized",
+    "pantry": -1,
+    "refrigerate": 30,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cream",
+    "description": "whipped, sweetened",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cream",
+    "description": "half and half",
+    "pantry": -1,
+    "refrigerate": 4,
+    "freeze": 120
+  },
+  {
+    "categoryId": 7,
+    "name": "Cream",
+    "description": "heavy",
+    "pantry": -1,
+    "refrigerate": 10,
+    "freeze": 120
+  },
+  {
+    "categoryId": 7,
+    "name": "Cream",
+    "description": "light",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 120
+  },
+  {
+    "categoryId": 7,
+    "name": "Dips",
+    "description": "sour cream based",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Egg substitutes",
+    "description": "liquid",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Eggnog",
+    "description": "commercial",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 180
+  },
+  {
+    "categoryId": 7,
+    "name": "Eggs",
+    "description": "in shell",
+    "pantry": -1,
+    "refrigerate": 35,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Eggs",
+    "description": "raw whites, yolks",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Eggs",
+    "description": "hard boiled cooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Egg dishes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Kefir",
+    "description": "fermented milk",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Margarine",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 180,
+    "freeze": 360
+  },
+  {
+    "categoryId": 7,
+    "name": "Milk",
+    "description": "plain or flavored",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 90
+  },
+  {
+    "categoryId": 7,
+    "name": "Pudding",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Sour cream",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Whipped cream",
+    "description": "aerosol can",
+    "pantry": -1,
+    "refrigerate": 28,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Whipped topping",
+    "description": "aerosol can",
+    "pantry": -1,
+    "refrigerate": 90,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Whipped topping",
+    "description": "tub",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Yogurt",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "rib roast, bone-in",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "rib roast; boneless, rolled",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "round or rump roast",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "tenderloin, whole",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "tenderloin, half",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "chuck roast, brisket",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "steaks",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "stew, cubes",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "short ribs",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Beef",
+    "description": "ground",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "leg, bone-in - small",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "leg, bone-in - large",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "leg; boneless, rolled",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "crown roast",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "shoulder roast or shank leg half",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "cubes for kabobs",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "ground",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "chops, ribs, or loin",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "leg steaks",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "stew meat, pieces",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "shanks",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Lamb",
+    "description": "breast, rolled",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Veal",
+    "description": "shoulder roast, boneless",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Veal",
+    "description": "leg rump or round roast, boneless",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Veal",
+    "description": "loin roast, bone-in",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Veal",
+    "description": "ground",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "loin roast, bone-in",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "loin roast, boneless",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "loin chops, bone-in",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "loin chops, boneless",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "crown roast - small",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "crown roast - large",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "tenderloin",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "tenderloin medallions or loin cubes",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Goat",
+    "description": "tender whole cuts (legs, ribs, shoulder, loin)",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Goat",
+    "description": "less tender whole cuts (stew meat, riblets, shanks)",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "ribs",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "ground",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "shoulder",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Pork",
+    "description": "loin, cubes",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Venison",
+    "description": "round, rump, loin, or rib roast",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 10,
+    "name": "Variety meats",
+    "description": "liver, tongue, chitterlings, etc.",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 10,
+    "name": "Goat",
+    "description": "ground",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 12,
+    "name": "Bacon",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 30
+  },
+  {
+    "categoryId": 12,
+    "name": "Corned beef",
+    "description": "in pouch with pickling juices",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 30
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "canned (\u201ckeep refrigerated\u201d label)",
+    "pantry": -1,
+    "refrigerate": 270,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fully cooked, bone-in, whole",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fully cooked, bone-in, half",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fully cooked, slices, half, or spiral cut",
+    "pantry": -1,
+    "refrigerate": 4,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fully cooked, arm picnic shoulder, boneless",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fully cooked, canned, boneless (refrigerated)",
+    "pantry": -1,
+    "refrigerate": 270,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fully cooked, vacuum packed, boneless",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, cook-before-eating, bone-in, whole",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, cook-before-eating, bone-in, half",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, cook-before-eating, shank or butt portion, bone-in",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, cook-before-eating, arm picnic shoulder, boneless",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, cook-before-eating, shoulder roll (butt), boneless",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, uncooked, whole leg, bone-in",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, uncooked, whole leg, boneless",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "fresh, uncooked, half leg, bone-in",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham",
+    "description": "country ham (whole or half)",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Hot dogs",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Sausage",
+    "description": "raw bulk type or patties",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Sausage",
+    "description": "fully cooked smoked links, kielbasa",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 60
+  },
+  {
+    "categoryId": 12,
+    "name": "Sausage",
+    "description": "hard, dry (pepperoni), sliced",
+    "pantry": -1,
+    "refrigerate": 21,
+    "freeze": 60
+  },
+  {
+    "categoryId": 13,
+    "name": "Stuffed, raw pork chops",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 270
+  },
+  {
+    "categoryId": 13,
+    "name": "Raw kabobs with vegetables",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 11,
+    "name": "Bacon",
+    "description": "fully cooked",
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 11,
+    "name": "Ham",
+    "description": "shelf-stable cans",
+    "pantry": 270,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 11,
+    "name": "Jerky",
+    "description": "commercially dried",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 11,
+    "name": "Jerky",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 11,
+    "name": "Meat products",
+    "description": "canned",
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 11,
+    "name": "Retort pouches or boxes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 15,
+    "name": "Chicken",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 360
+  },
+  {
+    "categoryId": 15,
+    "name": "Turkey",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 360
+  },
+  {
+    "categoryId": 15,
+    "name": "Ground turkey or chicken",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 15,
+    "name": "Chicken parts",
+    "description": "breast halves, bone-in",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 270
+  },
+  {
+    "categoryId": 15,
+    "name": "Chicken parts",
+    "description": "breast halves, boneless",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 270
+  },
+  {
+    "categoryId": 15,
+    "name": "Chicken parts",
+    "description": "legs or thighs",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 270
+  },
+  {
+    "categoryId": 15,
+    "name": "Turkey parts",
+    "description": "breast halves, bone-in",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 270
+  },
+  {
+    "categoryId": 15,
+    "name": "Turkey parts",
+    "description": "breast halves, boneless",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 270
+  },
+  {
+    "categoryId": 15,
+    "name": "Turkey parts",
+    "description": "legs or thighs",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 270
+  },
+  {
+    "categoryId": 15,
+    "name": "Duckling",
+    "description": "domestic or wild, whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 180
+  },
+  {
+    "categoryId": 15,
+    "name": "Goose",
+    "description": "domestic or wild, whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 180
+  },
+  {
+    "categoryId": 15,
+    "name": "Pheasant",
+    "description": "young, whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 180
+  },
+  {
+    "categoryId": 15,
+    "name": "Quail",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 180
+  },
+  {
+    "categoryId": 15,
+    "name": "Capon",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 360
+  },
+  {
+    "categoryId": 15,
+    "name": "Cornish Hens",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 360
+  },
+  {
+    "categoryId": 15,
+    "name": "Giblets",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 120
+  },
+  {
+    "categoryId": 17,
+    "name": "Stuffed, raw chicken breasts",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 17,
+    "name": "Raw kabobs with vegetables",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 17,
+    "name": "Turducken",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 270
+  },
+  {
+    "categoryId": 14,
+    "name": "Chicken nuggets, patties",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 90
+  },
+  {
+    "categoryId": 14,
+    "name": "Cooked poultry dishes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 14,
+    "name": "Fried chicken",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Poultry pieces",
+    "description": "covered with gravy or broth",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 14,
+    "name": "Rotisserie chicken",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 4,
+    "freeze": 120
+  },
+  {
+    "categoryId": 16,
+    "name": "Canned chicken",
+    "description": null,
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 16,
+    "name": "Retort pouches or boxes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 20,
+    "name": "Lean fish",
+    "description": "cod, flounder, haddock, halibut, sole, etc.",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 240
+  },
+  {
+    "categoryId": 20,
+    "name": "Lean fish",
+    "description": "pollock, ocean perch, rockfish, sea trout.",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 240
+  },
+  {
+    "categoryId": 20,
+    "name": "Fatty fish",
+    "description": "bluefish, catfish, mackerel, mullet, salmon, tuna, etc.",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 90
+  },
+  {
+    "categoryId": 20,
+    "name": "Caviar",
+    "description": "fresh, in jar",
+    "pantry": -1,
+    "refrigerate": 28,
+    "freeze": -1
+  },
+  {
+    "categoryId": 20,
+    "name": "Cooked fish",
+    "description": "all",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 20,
+    "name": "Surimi seafood",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 270
+  },
+  {
+    "categoryId": 21,
+    "name": "Scallops",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": 540
+  },
+  {
+    "categoryId": 21,
+    "name": "Shrimp, crayfish",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": 540
+  },
+  {
+    "categoryId": 21,
+    "name": "Squid",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": 540
+  },
+  {
+    "categoryId": 21,
+    "name": "Shucked clams, mussels, and oysters",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 10,
+    "freeze": 120
+  },
+  {
+    "categoryId": 21,
+    "name": "Crab meat",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 21,
+    "name": "Crab meat",
+    "description": "pasteurized",
+    "pantry": -1,
+    "refrigerate": 360,
+    "freeze": 300
+  },
+  {
+    "categoryId": 21,
+    "name": "Crab legs",
+    "description": "king, dungeness, snow",
+    "pantry": -1,
+    "refrigerate": 4,
+    "freeze": 360
+  },
+  {
+    "categoryId": 21,
+    "name": "Live clams, mussels, crab, and oysters",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 90
+  },
+  {
+    "categoryId": 21,
+    "name": "Fresh whole lobster",
+    "description": "live",
+    "pantry": -1,
+    "refrigerate": 1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 21,
+    "name": "Fresh lobster tails",
+    "description": "cooked",
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": 28
+  },
+  {
+    "categoryId": 21,
+    "name": "Fresh clams, mussels, oysters",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 10,
+    "freeze": -1
+  },
+  {
+    "categoryId": 21,
+    "name": "Fresh whole lobster",
+    "description": "frozen",
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 28
+  },
+  {
+    "categoryId": 21,
+    "name": "Cooked shellfish",
+    "description": "all",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 90
+  },
+  {
+    "categoryId": 22,
+    "name": "Herring",
+    "description": "glass packed, in wine sauce",
+    "pantry": -1,
+    "refrigerate": 180,
+    "freeze": -1
+  },
+  {
+    "categoryId": 22,
+    "name": "Fish",
+    "description": "hot smoked, air pack",
+    "pantry": -1,
+    "refrigerate": 45,
+    "freeze": 360
+  },
+  {
+    "categoryId": 22,
+    "name": "Fish",
+    "description": "hot smoked, vacuum pack",
+    "pantry": -1,
+    "refrigerate": 45,
+    "freeze": 360
+  },
+  {
+    "categoryId": 22,
+    "name": "Fish",
+    "description": "cold smoked, air pack",
+    "pantry": -1,
+    "refrigerate": 30,
+    "freeze": 360
+  },
+  {
+    "categoryId": 22,
+    "name": "Fish",
+    "description": "cold smoked, vacuum pack",
+    "pantry": -1,
+    "refrigerate": 30,
+    "freeze": 360
+  },
+  {
+    "categoryId": 24,
+    "name": "Tofu",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 150
+  },
+  {
+    "categoryId": 24,
+    "name": "Miso",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 365,
+    "freeze": -1
+  },
+  {
+    "categoryId": 24,
+    "name": "Soy flour",
+    "description": "full-fat",
+    "pantry": 60,
+    "refrigerate": 180,
+    "freeze": -1
+  },
+  {
+    "categoryId": 24,
+    "name": "Textured soy protein",
+    "description": "(TSP)",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 24,
+    "name": "Re-hydrated textured soy protein",
+    "description": "(TSP)",
+    "pantry": 120,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Leftovers",
+    "description": "with meat, fish, poultry, or egg",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Leftovers",
+    "description": "without meat, fish, poultry, or egg (such as cooked vegitables, rice, or potatoes)",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Leftovers",
+    "description": "pizza",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Commercial brand vacuum-packed dinners",
+    "description": "with USDA seal",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Cooked pasta",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Cooked rice",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Fruit, cut",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Guacamole",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Hummus",
+    "description": "commercial (pasteurized, with preservatives)",
+    "pantry": -1,
+    "refrigerate": 90,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Hummus",
+    "description": "traditional (no preservatives, not pasteurized)",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Luncheon meat or poultry",
+    "description": "store-sliced",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Main dishes or meals",
+    "description": "hot or refrigerated",
+    "pantry": -1,
+    "refrigerate": 4,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Meats",
+    "description": "covered with gravy or broth",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Olives",
+    "description": "from olive bar",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Pate",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Luncheon meat or poultry",
+    "description": "pre-packaged",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 60
+  },
+  {
+    "categoryId": 25,
+    "name": "Soup, stews",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Casseroles",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Commercial bread products",
+    "description": "including pan breads, flat breads, rolls, and buns",
+    "pantry": 18,
+    "refrigerate": -1,
+    "freeze": 150
+  },
+  {
+    "categoryId": 9,
+    "name": "Tortillas",
+    "description": "flour",
+    "pantry": 90,
+    "refrigerate": -1,
+    "freeze": 180
+  },
+  {
+    "categoryId": 2,
+    "name": "Commercial cakes and muffins",
+    "description": null,
+    "pantry": 7,
+    "refrigerate": -1,
+    "freeze": 180
+  },
+  {
+    "categoryId": 2,
+    "name": "Cheesecake",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 180
+  },
+  {
+    "categoryId": 2,
+    "name": "Cookies",
+    "description": "soft",
+    "pantry": 90,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 2,
+    "name": "Cookies",
+    "description": "crispy",
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 2,
+    "name": "Dairy filled eclairs",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 90
+  },
+  {
+    "categoryId": 2,
+    "name": "Doughnuts",
+    "description": null,
+    "pantry": 2,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Fruit cake",
+    "description": null,
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 2,
+    "name": "Pastries, danish",
+    "description": null,
+    "pantry": 10,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Cream pies",
+    "description": "banana cream, coconut cream, butterscotch",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Chiffon pies",
+    "description": "chocolate, lemon",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Fruit pies",
+    "description": "apple, peach, blueberry, apricot, cherry, blackberry",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Pies",
+    "description": "mincemeat",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Pies",
+    "description": "pecan",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Pies",
+    "description": "pumpkin",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Quiche",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Baking powder",
+    "description": null,
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Baking soda",
+    "description": null,
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Biscuit or pancake mix",
+    "description": null,
+    "pantry": 270,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Cake, brownie, bread mixes",
+    "description": null,
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Chocolate",
+    "description": "unsweetened and semi-sweet, solid",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Cocoa and cocoa mixes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Cornmeal",
+    "description": "regular, degerminated",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Cornmeal",
+    "description": "stone ground or blue",
+    "pantry": 30,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Cornstarch",
+    "description": null,
+    "pantry": 720,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Flour",
+    "description": "white",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Flour",
+    "description": "whole wheat",
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Frosting or icing",
+    "description": null,
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Gelatin",
+    "description": "flavored",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Gelatin",
+    "description": "unflavored",
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Oils",
+    "description": "olive or vegetable",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Nut oils",
+    "description": null,
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Vegetable oil sprays",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Shortening",
+    "description": "solid",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Tamarind paste",
+    "description": null,
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Chili powder",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Seasoning blends",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Flavored or herb mixes",
+    "description": null,
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Garlic",
+    "description": "chopped, commercial jars",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Herbs",
+    "description": "dried",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Spice/spices",
+    "description": "whole",
+    "pantry": 1460,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Spice/spices",
+    "description": "ground",
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Sugar",
+    "description": "brown",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Sugar",
+    "description": "granulated",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Sugar",
+    "description": "confectioners",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Sugar substitutes",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Tapiocas",
+    "description": null,
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 4,
+    "name": "Tube cans",
+    "description": "of biscuits, rolls, pizza dough, etc.",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 4,
+    "name": "Ready-to-bake pie crust",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 60
+  },
+  {
+    "categoryId": 4,
+    "name": "Cookie dough",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 60
+  },
+  {
+    "categoryId": 18,
+    "name": "Apples",
+    "description": null,
+    "pantry": 21,
+    "refrigerate": 42,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Apricots",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Avocados",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Bananas",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Berries",
+    "description": "cherries, goose berries, lychee",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Berries",
+    "description": "blackberries, boysenberries, currant",
+    "pantry": -1,
+    "refrigerate": 6,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Blueberries",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Cherimoya",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Citrus fruit",
+    "description": "lemon, lime, orange, grapefruit, tangerines, clementines",
+    "pantry": 10,
+    "refrigerate": 21,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Coconut",
+    "description": "shredded",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Coconuts",
+    "description": "fresh",
+    "pantry": 7,
+    "refrigerate": 21,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Cranberries",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 60,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Dates",
+    "description": null,
+    "pantry": 60,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Grapes",
+    "description": null,
+    "pantry": 1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Guava",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Kiwi fruit",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Melons",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Papaya, mango, feijoa, passionfruit, casaha melon",
+    "description": null,
+    "pantry": 5,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Peaches, nectarines, plums, pears, sapote",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Pineapple",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Plantains",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Pomegranate",
+    "description": null,
+    "pantry": 5,
+    "refrigerate": 90,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Artichokes, whole",
+    "description": null,
+    "pantry": 2,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Asparagus",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 4,
+    "freeze": 150
+  },
+  {
+    "categoryId": 19,
+    "name": "Bamboo shoots",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Beans and peas",
+    "description": "green, fava, lima, soybean, wax, snow, sugar snap",
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 240
+  },
+  {
+    "categoryId": 19,
+    "name": "Beets",
+    "description": null,
+    "pantry": 1,
+    "refrigerate": 14,
+    "freeze": 240
+  },
+  {
+    "categoryId": 19,
+    "name": "Bok choy",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Broccoli and broccoli raab (rapini)",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Brussels sprouts",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Cabbage",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Carrots, parsnips",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 21,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Cauliflower",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Celery",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Corn on the cob",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 2,
+    "freeze": 240
+  },
+  {
+    "categoryId": 19,
+    "name": "Cucumbers",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 6,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Eggplant",
+    "description": null,
+    "pantry": 1,
+    "refrigerate": 7,
+    "freeze": 240
+  },
+  {
+    "categoryId": 19,
+    "name": "Garlic",
+    "description": null,
+    "pantry": 30,
+    "refrigerate": 14,
+    "freeze": 30
+  },
+  {
+    "categoryId": 19,
+    "name": "Ginger root",
+    "description": null,
+    "pantry": 5,
+    "refrigerate": 21,
+    "freeze": 180
+  },
+  {
+    "categoryId": 19,
+    "name": "Greens",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 4,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Herbs",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 10,
+    "freeze": 60
+  },
+  {
+    "categoryId": 19,
+    "name": "Leeks",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Lettuce",
+    "description": "iceberg, romaine",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Lettuce",
+    "description": "leaf, spinach",
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Mushrooms",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Okra",
+    "description": null,
+    "pantry": 1,
+    "refrigerate": 3,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Onions",
+    "description": "yellow, white, red, etc.",
+    "pantry": 30,
+    "refrigerate": 60,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Onions",
+    "description": "spring or green",
+    "pantry": 30,
+    "refrigerate": 7,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Peppers",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 240
+  },
+  {
+    "categoryId": 19,
+    "name": "Potatoes",
+    "description": null,
+    "pantry": 60,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Pumpkins",
+    "description": null,
+    "pantry": 90,
+    "refrigerate": 150,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Radishes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Rhubarb",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Rutabagas",
+    "description": null,
+    "pantry": 7,
+    "refrigerate": 21,
+    "freeze": 300
+  },
+  {
+    "categoryId": 19,
+    "name": "Squash",
+    "description": "summer and zucchini",
+    "pantry": 5,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Squash",
+    "description": "winter",
+    "pantry": 42,
+    "refrigerate": 90,
+    "freeze": 360
+  },
+  {
+    "categoryId": 19,
+    "name": "Tamarind",
+    "description": null,
+    "pantry": 21,
+    "refrigerate": 180,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Taro",
+    "description": null,
+    "pantry": 7,
+    "refrigerate": 3,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Tomatoes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 60
+  },
+  {
+    "categoryId": 19,
+    "name": "Turnips",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 300
+  },
+  {
+    "categoryId": 19,
+    "name": "Yuca/cassava",
+    "description": null,
+    "pantry": 7,
+    "refrigerate": 3,
+    "freeze": 60
+  },
+  {
+    "categoryId": 8,
+    "name": "Dough",
+    "description": "commercial (bread or cookie)",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 8,
+    "name": "Egg substitutes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 8,
+    "name": "Fish",
+    "description": "breaded",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 540
+  },
+  {
+    "categoryId": 8,
+    "name": "Fish",
+    "description": "raw but headed and gutted",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 180
+  },
+  {
+    "categoryId": 8,
+    "name": "Frozen potato products",
+    "description": "fries, hashbrowns, tater tots",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 8,
+    "name": "Frozen pretzels",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 270
+  },
+  {
+    "categoryId": 8,
+    "name": "Fruits",
+    "description": "such as berries, melons",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 540
+  },
+  {
+    "categoryId": 8,
+    "name": "Ice cream",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 180
+  },
+  {
+    "categoryId": 8,
+    "name": "Ice pops",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 270
+  },
+  {
+    "categoryId": 8,
+    "name": "Juice concentrates",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 730
+  },
+  {
+    "categoryId": 8,
+    "name": "Lobster tails",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 240
+  },
+  {
+    "categoryId": 8,
+    "name": "Pancakes, waffles",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 90
+  },
+  {
+    "categoryId": 8,
+    "name": "Sausages",
+    "description": "uncooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 60
+  },
+  {
+    "categoryId": 8,
+    "name": "Sausages",
+    "description": "precooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 60
+  },
+  {
+    "categoryId": 8,
+    "name": "Sherbet, sorbet",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 270
+  },
+  {
+    "categoryId": 8,
+    "name": "Shrimp, shellfish",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 540
+  },
+  {
+    "categoryId": 8,
+    "name": "Soy crumbles and hot dogs",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 60
+  },
+  {
+    "categoryId": 8,
+    "name": "Soy meat substitutes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 540
+  },
+  {
+    "categoryId": 8,
+    "name": "Tempeh",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 180
+  },
+  {
+    "categoryId": 8,
+    "name": "Frozen entrees",
+    "description": "prepared meals",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 8,
+    "name": "Vegetables",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 540
+  },
+  {
+    "categoryId": 9,
+    "name": "Fresh pasta",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Beans",
+    "description": "dried",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Lentils",
+    "description": "dried",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Pasta",
+    "description": "dry, without eggs",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Dry egg noodles",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Peas",
+    "description": "dried split",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Rice",
+    "description": "white or wild",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Rice",
+    "description": "brown",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Barbecue sauce",
+    "description": "bottled",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Chutney",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Cream sauces, milk solids",
+    "description": null,
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Dry gravy mixes",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Gravy",
+    "description": "jars and cans",
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Honey",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Horseradish",
+    "description": "in jar",
+    "pantry": -1,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Jams, jellies, and preserves",
+    "description": null,
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Ketchup, cocktail, or chili sauce",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Marinades",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Mayonnaise",
+    "description": "commercial",
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Mustard",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Olives",
+    "description": "black and green",
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Pickles",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Pesto",
+    "description": "jarred",
+    "pantry": -1,
+    "refrigerate": 180,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salad dressings",
+    "description": "commercial, bottled",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salsa",
+    "description": "picante and taco sauces",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Sauce mixes",
+    "description": "nondairy (spaghetti, taco, etc.)",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Spaghetti sauce",
+    "description": "in jars",
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Soy sauce or teriyaki sauce",
+    "description": null,
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Vinegar",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Worcestershire sauce",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 1,
+    "name": "Jars or pouches",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 1,
+    "name": "Fruit",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 1,
+    "name": "Vegetables",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 1,
+    "name": "Dinners",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 1,
+    "name": "Cereal, dry mixes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 1,
+    "name": "Formula",
+    "description": "prepared",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 1,
+    "name": "Liquid concentrate or ready-to-feed formula",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Applesauce",
+    "description": "commercial",
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Bacon bits",
+    "description": "imitation",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Canned goods",
+    "description": "low acid (such as meat, poultry, fish, gravy, stew, soups, beans, carrots, corn, pasta, peas, potatoes, spinach)",
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Canned goods",
+    "description": "high acid (such as juices, fruit, pickles, sauerkraut, tomato soup, and foods in vinegar-based sauce)",
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Cereal",
+    "description": "ready-to-eat",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Cereal",
+    "description": "cook before eating (oatmeal, etc.)",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Chocolate syrup",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Crackers",
+    "description": null,
+    "pantry": 240,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Graham cracker/animal cracker",
+    "description": null,
+    "pantry": 270,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Fruits, dried",
+    "description": "raisins, apricots, mangoes, cranberries, etc.",
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Gummy (fruit) snacks",
+    "description": null,
+    "pantry": 270,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Marshmallows",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Marshmallow cr\u00e8me",
+    "description": null,
+    "pantry": 150,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Milk",
+    "description": "canned evaporated or condensed",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Molasses",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Mushrooms",
+    "description": "dried",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Nuts",
+    "description": "jars or cans",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Peanut butter",
+    "description": "commercial",
+    "pantry": 720,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pectin",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Popcorn",
+    "description": "dry kernels in jar",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Popcorn",
+    "description": "commercially popped in bags",
+    "pantry": 90,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Popcorn",
+    "description": "microwave packets",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Potato chips",
+    "description": null,
+    "pantry": 60,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Potatoes",
+    "description": "instant",
+    "pantry": 450,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pretzels",
+    "description": null,
+    "pantry": 270,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pudding mixes",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Soup mixes",
+    "description": "dry bouillon",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Sun dried tomatoes",
+    "description": "jar",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Syrup",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Toaster pastries",
+    "description": null,
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Coffee",
+    "description": "whole beans",
+    "pantry": 150,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Coffee",
+    "description": "home ground, non-vacuum",
+    "pantry": 150,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Coffee",
+    "description": "instant",
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Diet powder mixes and drink mixes",
+    "description": null,
+    "pantry": 720,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Fruit Juice in cartons, fruit drinks, punch",
+    "description": null,
+    "pantry": 21,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Juice, boxes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Nectar",
+    "description": "papaya, mango, guava, or guavabana",
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Soda",
+    "description": "carbonated cola drinks, mixers, diet sodas; bottles or cans",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Soy or rice beverage",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Tea",
+    "description": "bags",
+    "pantry": 1080,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Tea",
+    "description": "instant",
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Tea",
+    "description": "loose",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Water",
+    "description": "commercially bottled",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Kumquats",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Bagged greens",
+    "description": "leaf, spinach, lettuce, etc.",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Tahini",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Egg salad",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Potato salad",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Seafood salads",
+    "description": "(tuna salad, shrimp salad, salmon salad, mixed seafood salad, etc.)",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Chicken salad",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Ham salad",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Pasta salad",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Soy milk",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Yams/sweet potatoes",
+    "description": null,
+    "pantry": 21,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Kale",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 5,
+    "freeze": 360
+  },
+  {
+    "categoryId": 9,
+    "name": "Quinoa",
+    "description": "uncooked",
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Quinoa",
+    "description": "cooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Almond milk",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Rice milk",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Coconut milk",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Coffee creamer",
+    "description": "powdered",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 14,
+    "name": "Turkey bacon",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 120
+  },
+  {
+    "categoryId": 23,
+    "name": "Fruit cocktail",
+    "description": "canned ",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Black bean sauce",
+    "description": null,
+    "pantry": 720,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Oyster sauce",
+    "description": null,
+    "pantry": 720,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Hoisin sauce",
+    "description": null,
+    "pantry": 720,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Pork roll",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Almonds ",
+    "description": "shell",
+    "pantry": 180,
+    "refrigerate": 480,
+    "freeze": 600
+  },
+  {
+    "categoryId": 23,
+    "name": "Almonds ",
+    "description": "no shell",
+    "pantry": 120,
+    "refrigerate": 240,
+    "freeze": 300
+  },
+  {
+    "categoryId": 23,
+    "name": "Cashews",
+    "description": "no shell",
+    "pantry": 28,
+    "refrigerate": 180,
+    "freeze": 360
+  },
+  {
+    "categoryId": 23,
+    "name": "Macadamias",
+    "description": "no shell",
+    "pantry": 28,
+    "refrigerate": 360,
+    "freeze": 720
+  },
+  {
+    "categoryId": 23,
+    "name": "Peanuts",
+    "description": "shell",
+    "pantry": 120,
+    "refrigerate": 360,
+    "freeze": 720
+  },
+  {
+    "categoryId": 23,
+    "name": "Peanuts",
+    "description": "no shell",
+    "pantry": 28,
+    "refrigerate": 360,
+    "freeze": 720
+  },
+  {
+    "categoryId": 23,
+    "name": "Pecans",
+    "description": "shell",
+    "pantry": 28,
+    "refrigerate": 360,
+    "freeze": 720
+  },
+  {
+    "categoryId": 23,
+    "name": "Pecans",
+    "description": "no shell",
+    "pantry": 28,
+    "refrigerate": 270,
+    "freeze": 720
+  },
+  {
+    "categoryId": 23,
+    "name": "Pistachios",
+    "description": "shell or no shell",
+    "pantry": 21,
+    "refrigerate": 360,
+    "freeze": 720
+  },
+  {
+    "categoryId": 23,
+    "name": "Walnuts",
+    "description": "shell or no shell",
+    "pantry": 28,
+    "refrigerate": 360,
+    "freeze": 720
+  },
+  {
+    "categoryId": 5,
+    "name": "Lime juice",
+    "description": null,
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Lemon juice",
+    "description": null,
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Bagel",
+    "description": "fresh baked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Bagel ",
+    "description": "commercially frozen",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Muffin",
+    "description": "homemade - including bran, blueberry, banana, corn, chocolate chip",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Muffin",
+    "description": "commercially packaged",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Muffin",
+    "description": "mix, dry, commercially packaged",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Coconut oil",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Orange juice",
+    "description": "commercially packaged carton",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 5,
+    "name": "Orange juice",
+    "description": "commercially frozen concentrate",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 360
+  },
+  {
+    "categoryId": 5,
+    "name": "Orange juice",
+    "description": "freshly squeezed",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Roasted red peppers",
+    "description": "jar",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Whole wheat flour",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Whole wheat bread",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Whole wheat bread",
+    "description": "commercially baked & pre-sliced",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Red wine",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "White wine",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Dry stuffing mix",
+    "description": "commercially packaged",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Powdered milk",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Almond butter",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Cashew butter",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Salt",
+    "description": "table, plain, or iodized",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Black pepper",
+    "description": "ground, dried, commercially bottled or purchased in bulk",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Black pepper",
+    "description": "cracked, dried, commercially bottled or purchased in bulk",
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Cajun seasoning blend ",
+    "description": "ground, dried, commercially bottled or purchased in bulk",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Cinnamon",
+    "description": "ground, dried, commercially bottled or purchased in bulk",
+    "pantry": 1460,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Cumin",
+    "description": "ground, dried, commercially bottled or purchased in bulk, opened or unopened",
+    "pantry": 1460,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Garlic powder",
+    "description": "dried, commercially bottled or purchased in bulk",
+    "pantry": 1460,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Onion powder ",
+    "description": "dried, commercially bottled or purchased in bulk",
+    "pantry": 1460,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Nutmeg",
+    "description": "ground, dried, commercially bottled or purchased in bulk",
+    "pantry": 1460,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Nacho cheese ",
+    "description": "store bought",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": 90
+  },
+  {
+    "categoryId": 18,
+    "name": "Star fruit",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Prickly pear ",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Pitaya/dragon fruit",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 21,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Strawberries",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Raspberries",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Cherries",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 3,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Broth",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Beef broth/stock/consomm\u00e9 ",
+    "description": "commercially produced",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Chicken broth/stock/consomm\u00e9 ",
+    "description": "commercially produced",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Vegetable stock/broth ",
+    "description": "commercially produced",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Peanut butter",
+    "description": "commercially produced, containing hydrogenated fat or other stabilizers",
+    "pantry": 270,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Peanut butter",
+    "description": "natural",
+    "pantry": -1,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Ricotta",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Baby carrots",
+    "description": null,
+    "pantry": 4,
+    "refrigerate": 28,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Jicama",
+    "description": "fresh",
+    "pantry": 120,
+    "refrigerate": 21,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Kimchi",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Kohlrabi",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Watermelon",
+    "description": null,
+    "pantry": 2,
+    "refrigerate": 4,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Cantaloupe",
+    "description": null,
+    "pantry": 4,
+    "refrigerate": 15,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Honeydew",
+    "description": null,
+    "pantry": 7,
+    "refrigerate": 4,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Peanuts ",
+    "description": "boiled, shelled",
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Refried beans",
+    "description": null,
+    "pantry": 1095,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Relish",
+    "description": null,
+    "pantry": 900,
+    "refrigerate": 270,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Tomato paste",
+    "description": null,
+    "pantry": 810,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Tapenade",
+    "description": null,
+    "pantry": 270,
+    "refrigerate": 270,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Flaxseed",
+    "description": "whole seed",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Flaxseed",
+    "description": "ground",
+    "pantry": -1,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Lemongrass",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 9,
+    "freeze": 180
+  },
+  {
+    "categoryId": 19,
+    "name": "Cilantro",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Mint",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Basil",
+    "description": "dried",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Basil",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Oregano",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Rosemary",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Chives",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Thyme",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Turkey ",
+    "description": "pre-packaged, luncheon/deli meat",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 60
+  },
+  {
+    "categoryId": 25,
+    "name": "Ham",
+    "description": "pre-packaged, luncheon/deli meat",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 60
+  },
+  {
+    "categoryId": 25,
+    "name": "Salami ",
+    "description": "pre-packaged, luncheon/deli meat",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 60
+  },
+  {
+    "categoryId": 25,
+    "name": "Chicken",
+    "description": "pre-packaged, luncheon/deli meat",
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": 60
+  },
+  {
+    "categoryId": 25,
+    "name": "Canadian bacon",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Canadian bacon",
+    "description": "sliced",
+    "pantry": -1,
+    "refrigerate": 80,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Canola oil",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Almond oil",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": 730,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Sunflower oil",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Grapeseed oil",
+    "description": null,
+    "pantry": 365,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Duck fat",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Bacon grease",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Frying oil",
+    "description": "re-used",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Almond extract",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Cinnamon extract",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Lemon extract",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Pure vanilla extract",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Butter flavor",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Coconut flavor",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "\"Genuine\" Maple syrup",
+    "description": "unopened, glass",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "\"Genuine\" Maple syrup",
+    "description": "unopened, plastic",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Lemon juice",
+    "description": "fresh squeezed",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Apple juice",
+    "description": "fresh squeezed",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Carrot juice",
+    "description": "fresh squeezed",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Hard liquors",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Cream liquors",
+    "description": "unopened",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Coffee",
+    "description": "commercial ground, non-vacuum",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Macaroons",
+    "description": "french",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Milk",
+    "description": "lactose-free",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "String Cheese",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 150,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Vegan Cheddar Cheese",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 120,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Quark",
+    "description": "fresh cheese",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Zucchini",
+    "description": "fresh, whole",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Hot peppers",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 7,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Bean sprouts",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 10,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Swiss chard",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": 14,
+    "freeze": -1
+  },
+  {
+    "categoryId": 4,
+    "name": "Puff pastry",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 4,
+    "name": "Biscuits",
+    "description": "refrigerated",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Tortillas",
+    "description": "corn",
+    "pantry": 45,
+    "refrigerate": 90,
+    "freeze": -1
+  },
+  {
+    "categoryId": 4,
+    "name": "Pie crust",
+    "description": "refrigerated",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Granola",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pork rinds",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Apple cider vinegar",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Nutrition supplement drinks",
+    "description": "canned",
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Hot sauce",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Thai red curry paste",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Yeast",
+    "description": "packaged",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 18,
+    "name": "Applesauce",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Pate",
+    "description": "meat ",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 14,
+    "name": "Pate",
+    "description": "poultry",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Cranberry sauce",
+    "description": "canned",
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Cranberry sauce",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Vegetable juice",
+    "description": "shelf-stable",
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Vegetable juice",
+    "description": "commercial, sold refrigerated",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Vegetable juice",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Marinated vegetables",
+    "description": "in oil",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 8,
+    "name": "Pizza",
+    "description": "frozen",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Salsa",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Chia seeds",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 2,
+    "name": "Bread",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Amaranth",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Amaranth",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Barley",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Barley",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Buckwheat",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Buckwheat",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Farro",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Farro",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Millet",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Millet",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Oats",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Oats",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Rye",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Rye",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Sorghum",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Sorghum",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Spelt",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Spelt",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Teff",
+    "description": "whole grain",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Teff",
+    "description": "flour, meal",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 10,
+    "name": "Rabbit",
+    "description": "whole, fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Spaghetti squash",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Spaghetti squash",
+    "description": "cut",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Garam masala",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Tomato sauce",
+    "description": "spaghetti, pizza",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Cherry tomatoes",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Coconut cream",
+    "description": "canned",
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Coconut milk",
+    "description": "canned",
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Coleslaw",
+    "description": "homemade, prepared",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pumpkin seeds",
+    "description": "raw, no shell",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pumpkin seeds",
+    "description": "raw, in-shell",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pumpkin seeds",
+    "description": "roasted, no-shell",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pumpkin seeds",
+    "description": "roasted, in-shell",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Sunflower seeds",
+    "description": "raw, unsalted, no shell",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Sunflower seeds",
+    "description": "roasted, no shell",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Sunflower seeds",
+    "description": "roasted, salted, in shell",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Parsley",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Sesame oil",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Sesame seeds",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Capers",
+    "description": "in jar",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Chocolate hazlenut spread",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Roasted nuts (peanuts, cashews, almonds)",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Tuna",
+    "description": "packet",
+    "pantry": 540,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Tuna",
+    "description": "canned",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Seafood",
+    "description": "canned",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Pimento cheese",
+    "description": "packaged",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 10,
+    "name": "Bison",
+    "description": "whole",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 10,
+    "name": "Bison",
+    "description": "ground",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salad dressing",
+    "description": "creamy",
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salad dressing",
+    "description": "vinaigrette,homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salad dressing",
+    "description": "vinaigrette",
+    "pantry": 180,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salad dressing",
+    "description": "dry,packaged",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Grits",
+    "description": "boxed",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Cheese Curds",
+    "description": "fresh, unaged",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Vegetable soup",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 10,
+    "name": "Chorizo",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Chorizo",
+    "description": "smoked and processed, uncooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Chorizo",
+    "description": "smoked and processed, cooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Beets",
+    "description": "pickled",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 4,
+    "name": "Cinnamon rolls",
+    "description": "unbaked, tube",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Cinnamon rolls",
+    "description": "baked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Cooking wine",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Bulgur",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 10,
+    "name": "Bratwurst",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Bratwurst",
+    "description": "smoked and processed",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Edamame",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 8,
+    "name": "Edamame",
+    "description": "frozen",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": 730
+  },
+  {
+    "categoryId": 23,
+    "name": "Edamame",
+    "description": "salted, dry roasted, out of pod",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Breadcrumbs",
+    "description": "commercial",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Milk ",
+    "description": "shelf-stable",
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Salsa",
+    "description": "homemade, fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salsa",
+    "description": "homemade, canned",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Tomato Sauce",
+    "description": "homemade, canned",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Barbecue Sauce",
+    "description": "homemade, canned",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 7,
+    "name": "Ghee",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Corn syrup",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Nutrition supplement drinks",
+    "description": "bottled",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Instant breakfast drinks",
+    "description": "bottled",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pine nuts",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 3,
+    "name": "Coconut flour",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Pecans",
+    "description": "chopped",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Polenta",
+    "description": "shelf-stable",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 8,
+    "name": "Polenta",
+    "description": "frozen",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Cereal or granola bars",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Milk ",
+    "description": "ultra-pasteurized",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Coconut water",
+    "description": null,
+    "pantry": 360,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Celery root",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Apple cider",
+    "description": "fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Yuzu juice",
+    "description": null,
+    "pantry": 180,
+    "refrigerate": 360,
+    "freeze": -1
+  },
+  {
+    "categoryId": 5,
+    "name": "Yuzu",
+    "description": "fruit, fresh",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Pastrami",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 8,
+    "name": "Kugel",
+    "description": "commercial",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 25,
+    "name": "Kugel",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Avocado Oil",
+    "description": null,
+    "pantry": 730,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Balsamic vinegar",
+    "description": null,
+    "pantry": 1825,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Aioli",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Salad dressing",
+    "description": "homemade",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Base",
+    "description": "beef, vegetable",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 6,
+    "name": "Anchovies",
+    "description": "canned",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Radicchio",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Prosciutto",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Ham ",
+    "description": "uncured, fresh, cooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 10,
+    "name": "Ham ",
+    "description": "uncured, fresh, uncooked",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 19,
+    "name": "Arugula",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Mung bean",
+    "description": "sprouts",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Mung bean",
+    "description": "dry, food-grade bags",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 9,
+    "name": "Mung bean",
+    "description": "dry, vacuum-sealed",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Croutons",
+    "description": null,
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 12,
+    "name": "Bacon",
+    "description": "uncured",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  },
+  {
+    "categoryId": 23,
+    "name": "Mustard",
+    "description": "dried, ground",
+    "pantry": -1,
+    "refrigerate": -1,
+    "freeze": -1
+  }
+]
