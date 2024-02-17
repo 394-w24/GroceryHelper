@@ -44,8 +44,9 @@ const Food = ({ fooditem }) => {
 		<Box
 			sx={{
 				marginInline: "10px",
+				// marginBlock: "20px",
 				width: "100%",
-				height: "90%",
+				minHeight: "100%",
 				padding: 2,
 				display: "flex",
 				alightItems: "center",
@@ -60,6 +61,7 @@ const Food = ({ fooditem }) => {
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "flex-start",
+					justifyContent: "space-between",
 				}}
 			>
 				<Typography
@@ -84,6 +86,7 @@ const Food = ({ fooditem }) => {
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "flex-end",
+					justifyContent: "space-between",
 				}}
 			>
 				<Typography variant='body2' sx={{ userSelect: "none" }}>

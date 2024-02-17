@@ -40,7 +40,7 @@ const HomePage = () => {
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [foodItems, setFoodItems] = useState([]);
 	const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
-	const [rerender, setRerender] = useState(false);
+	// const [rerender, setRerender] = useState(false);
 
 	const handleAddFoodItem = (newItem) => {
 		setFoodItems([...foodItems, newItem]); //update local frontend
@@ -108,7 +108,7 @@ const HomePage = () => {
 			);
 			setDisplayedFoodItems(temp);
 		}
-		setRerender(!rerender);
+		// setRerender(!rerender);
 	}, [foodItems, tab]);
 
 	return (
@@ -140,7 +140,7 @@ const HomePage = () => {
 				foodItems={displayedFoodItems}
 				handleDeleteFood={handleDeleteFood}
 				handleEditQuantity={handleEditQuantity}
-				rerender={rerender}
+				// rerender={rerender}
 			/>
 			<GroceryForm
 				open={isDialogOpen}

@@ -6,10 +6,15 @@ const FoodList = ({
 	foodItems,
 	handleDeleteFood,
 	handleEditQuantity,
-	rerender,
+	// rerender,
 }) => {
 	return (
-		<Box sx={{ padding: "5%" }}>
+		<Box
+			sx={{
+				padding: "2%",
+				paddingBottom: "80px",
+			}}
+		>
 			{foodItems.map((fooditem, i) => (
 				// <Food key={i} fooditem={fooditem} />
 				<SwipeOptions
@@ -17,7 +22,7 @@ const FoodList = ({
 					fooditem={fooditem}
 					handleDeleteFood={handleDeleteFood}
 					handleEditQuantity={handleEditQuantity}
-					rerender={rerender}
+					// rerender={rerender}
 				/>
 			))}
 		</Box>

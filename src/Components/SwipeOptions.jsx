@@ -20,11 +20,11 @@ const SwipeOptions = ({
 	fooditem,
 	handleDeleteFood,
 	handleEditQuantity,
-	rerender,
+	// rerender,
 }) => {
 	const [isScrolling, setIsScrolling] = useState(false);
 	const [isExpanded, setIsExpanded] = useState(false);
-	const [foodInfo, setfoodInfo] = useState(fooditem);
+	// const [foodInfo, setfoodInfo] = useState(fooditem);
 	const [isEditModalOpen, setEditModalOpen] = useState(false);
 	const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
 	const [quantity, setQuantity] = useState(fooditem?.quantity);
@@ -32,14 +32,14 @@ const SwipeOptions = ({
 	const theme = useTheme();
 	// console.log(foodInfo);
 
-	useEffect(() => {
-		const init = () => {
-			setfoodInfo(fooditem);
-			setQuantity(fooditem.quantity);
-		};
+	// useEffect(() => {
+	// 	const init = () => {
+	// 		// setfoodInfo(fooditem);
+	// 		// setQuantity(fooditem.quantity);
+	// 	};
 
-		init();
-	}, [rerender]);
+	// 	init();
+	// }, [rerender]);
 
 	const handlers = useSwipeable({
 		onSwiped: () => handlePanEnd(),
@@ -73,13 +73,9 @@ const SwipeOptions = ({
 			setDeleteModalOpen(true);
 		} else {
 			handleEditQuantity(fooditem.id, newValue);
-			// setfoodInfo((prev) => ({
-			// 	...prev,
-			// 	quantity: newValue,
-			// }));
 			setEditModalOpen(false);
 			setIsExpanded(false);
-			const docRef = doc(db, "userGroceries", foodInfo.id);
+			const docRef = doc(db, "userGroceries", fooditem.id);
 			updateDoc(docRef, {
 				quantity: newValue,
 			});
@@ -90,26 +86,40 @@ const SwipeOptions = ({
 		setDeleteModalOpen(false);
 		setIsExpanded(false);
 		// console.log("foodInfo: " + foodInfo.id);
-		// console.log("fooditem: " + fooditem.id);
-		handleDeleteFood(foodInfo.id);
+		console.log("fooditem: ", fooditem);
+		handleDeleteFood(fooditem.id);
 	};
+
+	useEffect(() => {
+		setIsExpanded(false);
+		setQuantity(fooditem.quantity);
+	}, [fooditem]);
 
 	return (
 		<Box
 			sx={{
-				height: "100px",
+				height: "120px",
+				// minHeight: "auto",
 				width: "100%",
 				position: "relative",
-				overflow: "hidden",
+				// overflow: "hidden",
 				display: "inline-flex",
 				boxSizing: "border-box",
 				// backgroundColor: "#000",
+				// border: "1px solid",
 			}}
 		>
-			<Box {...handlers}>
+			<Box
+				sx={
+					{
+						// minHeight: "100%",
+					}
+				}
+				{...handlers}
+			>
 				<Box
 					sx={{
-						height: "100%",
+						height: "90%",
 						transform: `translateX(${isExpanded ? `-140px` : "0px"})`,
 						width: "100%",
 						display: "inline-flex",
@@ -118,12 +128,14 @@ const SwipeOptions = ({
 						position: "absolute",
 						transition: "all 0.25s ease",
 						boxSizing: "border-box",
+						// paddingTop: "5%",
 						// paddingTop: "1rem",
 						// paddingBottom: "0.8rem",
 						zIndex: 2,
 					}}
 				>
-					<Food key={foodInfo.id} fooditem={foodInfo} />
+					{/* <Food key={foodInfo.id} fooditem={foodInfo} /> */}
+					<Food key={fooditem.id} fooditem={fooditem} />
 				</Box>
 				<Box
 					sx={{
@@ -132,7 +144,7 @@ const SwipeOptions = ({
 						display: "flex",
 						width: "100%",
 						position: "absolute",
-						top: "5px",
+						// top: "5%",
 						flexDirection: "row",
 						alignItems: "center",
 						justifyContent: "flex-end",

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useId } from "react";
 import {
 	Box,
 	Button,
@@ -69,20 +69,21 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
 		const selectedCategory = categoryLabels[category];
 		const currDate = new Date();
 
-		onAddFoodItem({
-			createdAt: currDate,
-			expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
-			imageURL: "",
-			productId: chosenProductId,
-			quantity: quantity,
-			storageType: selectedCategory,
-			userId: localStorage.getItem("uid"),
-		});
-
 		try {
-			await addDoc(collection(db, "userGroceries"), {
+			const docRef = await addDoc(collection(db, "userGroceries"), {
 				createdAt: currDate,
 				expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+				imageURL: "",
+				productId: chosenProductId,
+				quantity: quantity,
+				storageType: selectedCategory,
+				userId: localStorage.getItem("uid"),
+			});
+
+			onAddFoodItem({
+				createdAt: currDate,
+				expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+				id: docRef.id,
 				imageURL: "",
 				productId: chosenProductId,
 				quantity: quantity,
@@ -144,7 +145,7 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
 		const updateOptions = () => {
 			const lowercased = searchTerm.toLowerCase();
 			const filtered = allData.filter((item) => {
-				const { name } = item;
+				const { name } = item || "";
 				// console.log(name);
 				return name.toLowerCase().includes(lowercased) || "";
 			});
