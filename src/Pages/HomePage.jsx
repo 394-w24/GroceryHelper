@@ -108,7 +108,7 @@ const HomePage = () => {
 			<Tabs
 				value={tab}
 				onChange={handleChange}
-				indicatorColor='secondary'
+				indicatorColor='primary'
 				textColor='inherit'
 				variant='fullWidth'
 				aria-label='full width tabs example'
@@ -117,7 +117,11 @@ const HomePage = () => {
 				{tabsValue.map((location, i) => (
 					<Tab
 						key={i}
-						sx={{ margin: "1px", fontSize: "20px" }}
+						sx={{
+							margin: "1px",
+							fontSize: "20px",
+							fontWeight: "bold",
+						}}
 						label={location}
 						{...a11yProps(i)}
 					/>
