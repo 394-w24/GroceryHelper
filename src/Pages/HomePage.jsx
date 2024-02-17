@@ -52,7 +52,7 @@ const HomePage = () => {
 
 	const handleChange = (event, newValue) => {
 		setTab(newValue);
-		console.log(newValue);
+		// console.log(newValue);
 	};
 
 	const handleDeleteFood = (foodId) => {
@@ -62,7 +62,16 @@ const HomePage = () => {
 		deleteDoc(docRef);
 	};
 
-	const handleEdit = (foodId, quantity) => {};
+	const handleEditQuantity = (foodId, quantity) => {
+		const index = foodItems.findIndex((food) => food.id == foodId);
+		setFoodItems((prev) => {
+			const copy = prev;
+			const edittedItem = copy[index];
+			edittedItem.quantity = quantity;
+			copy.splice(index, 1, edittedItem);
+			return copy;
+		});
+	};
 
 	useEffect(() => {
 		const getUserGroceries = async () => {
@@ -130,6 +139,7 @@ const HomePage = () => {
 			<FoodList
 				foodItems={displayedFoodItems}
 				handleDeleteFood={handleDeleteFood}
+				handleEditQuantity={handleEditQuantity}
 				rerender={rerender}
 			/>
 			<GroceryForm

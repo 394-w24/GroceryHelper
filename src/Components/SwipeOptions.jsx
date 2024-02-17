@@ -18,8 +18,8 @@ import { db } from "../Firebase";
 
 const SwipeOptions = ({
 	fooditem,
-	height = "100px",
 	handleDeleteFood,
+	handleEditQuantity,
 	rerender,
 }) => {
 	const [isScrolling, setIsScrolling] = useState(false);
@@ -27,13 +27,15 @@ const SwipeOptions = ({
 	const [foodInfo, setfoodInfo] = useState(fooditem);
 	const [isEditModalOpen, setEditModalOpen] = useState(false);
 	const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+	const [quantity, setQuantity] = useState(fooditem?.quantity);
 
 	const theme = useTheme();
-	console.log(foodInfo);
+	// console.log(foodInfo);
 
 	useEffect(() => {
 		const init = () => {
 			setfoodInfo(fooditem);
+			setQuantity(fooditem.quantity);
 		};
 
 		init();
@@ -70,10 +72,11 @@ const SwipeOptions = ({
 		if (newValue === 0) {
 			setDeleteModalOpen(true);
 		} else {
-			setfoodInfo((prev) => ({
-				...prev,
-				quantity: newValue,
-			}));
+			handleEditQuantity(fooditem.id, newValue);
+			// setfoodInfo((prev) => ({
+			// 	...prev,
+			// 	quantity: newValue,
+			// }));
 			setEditModalOpen(false);
 			setIsExpanded(false);
 			const docRef = doc(db, "userGroceries", foodInfo.id);
@@ -86,13 +89,15 @@ const SwipeOptions = ({
 	const handleDeleteConfirm = () => {
 		setDeleteModalOpen(false);
 		setIsExpanded(false);
+		// console.log("foodInfo: " + foodInfo.id);
+		// console.log("fooditem: " + fooditem.id);
 		handleDeleteFood(foodInfo.id);
 	};
 
 	return (
 		<Box
 			sx={{
-				height: height,
+				height: "100px",
 				width: "100%",
 				position: "relative",
 				overflow: "hidden",
@@ -169,7 +174,7 @@ const SwipeOptions = ({
 						open={isEditModalOpen}
 						onClose={() => setEditModalOpen(false)}
 						onSave={handleEditSave}
-						initialValue={foodInfo.quantity}
+						initialValue={quantity}
 					/>
 					<DeleteConfirmationModal
 						open={isDeleteModalOpen}
