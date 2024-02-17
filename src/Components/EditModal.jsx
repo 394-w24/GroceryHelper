@@ -6,6 +6,8 @@ import {
 	DialogContent,
 	DialogTitle,
 	TextField,
+	IconButton,
+	InputAdornment,
 } from "@mui/material";
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
@@ -18,6 +20,10 @@ const EditModal = ({ open, onClose, onSave, initialValue }) => {
 	const handleChange = (event) => {
 		setValue(parseInt(event.target.value));
 	};
+
+	useEffect(() => {
+		if (open) setValue(initialValue);
+	}, [open]);
 
 	useEffect(() => {
 		setValue(initialValue);
@@ -49,6 +55,26 @@ const EditModal = ({ open, onClose, onSave, initialValue }) => {
 					InputProps={{
 						inputProps: { min: 0 },
 						style: { textAlign: "center", fontSize: "20px" },
+						startAdornment: (
+							<InputAdornment position='start'>
+								<IconButton
+									onClick={() => setValue((prev) => (prev > 1 ? prev - 1 : 0))}
+									aria-label='decrease quantity'
+								>
+									<RemoveIcon />
+								</IconButton>
+							</InputAdornment>
+						),
+						endAdornment: (
+							<InputAdornment position='end'>
+								<IconButton
+									onClick={() => setValue((prev) => prev + 1)}
+									aria-label='increase quantity'
+								>
+									<AddIcon />
+								</IconButton>
+							</InputAdornment>
+						),
 					}}
 					value={value}
 					onChange={handleChange}

@@ -65,10 +65,11 @@ const HomePage = () => {
 	const handleEditQuantity = (foodId, quantity) => {
 		const index = foodItems.findIndex((food) => food.id == foodId);
 		setFoodItems((prev) => {
-			const copy = prev;
-			const edittedItem = copy[index];
+			const copy = [...prev];
+			const edittedItem = Object.assign({}, copy[index]);
 			edittedItem.quantity = quantity;
 			copy.splice(index, 1, edittedItem);
+			// console.log("replace", prev[index]);
 			return copy;
 		});
 	};

@@ -84,6 +84,7 @@ const SwipeOptions = ({
 
 	const handleDeleteConfirm = () => {
 		setDeleteModalOpen(false);
+		setEditModalOpen(false);
 		setIsExpanded(false);
 		// console.log("foodInfo: " + foodInfo.id);
 		console.log("fooditem: ", fooditem);
@@ -92,6 +93,7 @@ const SwipeOptions = ({
 
 	useEffect(() => {
 		setIsExpanded(false);
+		console.log("quantity", fooditem.quantity);
 		setQuantity(fooditem.quantity);
 	}, [fooditem]);
 

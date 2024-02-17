@@ -93,7 +93,11 @@ const Food = ({ fooditem }) => {
 					Quantity: {quantity}
 				</Typography>
 				<Chip
-					label={`${daysUntilExpiration} days until expiration`}
+					label={
+						daysUntilExpiration >= 0
+							? `${daysUntilExpiration} days left`
+							: "Expired"
+					}
 					color={
 						daysUntilExpiration < 4
 							? "error"
@@ -101,7 +105,7 @@ const Food = ({ fooditem }) => {
 							? "warning"
 							: "success"
 					}
-					sx={{ userSelect: "none" }}
+					sx={{ userSelect: "none", fontSize: "17px" }}
 				/>
 			</Box>
 		</Box>

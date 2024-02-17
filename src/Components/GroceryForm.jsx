@@ -188,9 +188,27 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
 
 	return (
 		<Box>
-			<Dialog open={open} onClose={onClose} fullWidth maxWidth='md'>
+			<Dialog
+				open={open}
+				onClose={onClose}
+				PaperProps={{
+					style: {
+						borderRadius: 15,
+						padding: "10px",
+					},
+				}}
+				fullWidth
+				maxWidth='md'
+			>
 				<DialogTitle>Add Grocery Item</DialogTitle>
-				<DialogContent>
+				<DialogContent
+					sx={
+						{
+							// margin: "20px",
+							// border: "1px solid",
+						}
+					}
+				>
 					<Autocomplete
 						id='user-search-autocomplete'
 						options={options}
