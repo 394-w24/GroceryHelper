@@ -40,7 +40,7 @@ const HomePage = () => {
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [foodItems, setFoodItems] = useState([]);
 	const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
-	const [rerender, setRerender] = useState(false);
+	// const [rerender, setRerender] = useState(false);
 
 	const handleAddFoodItem = (newItem) => {
 		setFoodItems([...foodItems, newItem]); //update local frontend
@@ -52,7 +52,7 @@ const HomePage = () => {
 
 	const handleChange = (event, newValue) => {
 		setTab(newValue);
-		console.log(newValue);
+		// console.log(newValue);
 	};
 
 	const handleDeleteFood = (foodId) => {
@@ -62,7 +62,16 @@ const HomePage = () => {
 		deleteDoc(docRef);
 	};
 
-	const handleEdit = (foodId, quantity) => {};
+	const handleEditQuantity = (foodId, quantity) => {
+		const index = foodItems.findIndex((food) => food.id == foodId);
+		setFoodItems((prev) => {
+			const copy = prev;
+			const edittedItem = copy[index];
+			edittedItem.quantity = quantity;
+			copy.splice(index, 1, edittedItem);
+			return copy;
+		});
+	};
 
 	useEffect(() => {
 		const getUserGroceries = async () => {
@@ -99,7 +108,7 @@ const HomePage = () => {
 			);
 			setDisplayedFoodItems(temp);
 		}
-		setRerender(!rerender);
+		// setRerender(!rerender);
 	}, [foodItems, tab]);
 
 	return (
@@ -108,7 +117,7 @@ const HomePage = () => {
 			<Tabs
 				value={tab}
 				onChange={handleChange}
-				indicatorColor='secondary'
+				indicatorColor='primary'
 				textColor='inherit'
 				variant='fullWidth'
 				aria-label='full width tabs example'
@@ -117,7 +126,11 @@ const HomePage = () => {
 				{tabsValue.map((location, i) => (
 					<Tab
 						key={i}
-						sx={{ margin: "1px", fontSize: "20px" }}
+						sx={{
+							margin: "1px",
+							fontSize: "20px",
+							fontWeight: "bold",
+						}}
 						label={location}
 						{...a11yProps(i)}
 					/>
@@ -126,7 +139,8 @@ const HomePage = () => {
 			<FoodList
 				foodItems={displayedFoodItems}
 				handleDeleteFood={handleDeleteFood}
-				rerender={rerender}
+				handleEditQuantity={handleEditQuantity}
+				// rerender={rerender}
 			/>
 			<GroceryForm
 				open={isDialogOpen}

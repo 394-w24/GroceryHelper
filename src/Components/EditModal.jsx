@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	Button,
 	Dialog,
@@ -18,6 +18,10 @@ const EditModal = ({ open, onClose, onSave, initialValue }) => {
 	const handleChange = (event) => {
 		setValue(parseInt(event.target.value));
 	};
+
+	useEffect(() => {
+		setValue(initialValue);
+	}, [initialValue]);
 
 	return (
 		<Dialog
