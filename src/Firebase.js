@@ -59,6 +59,13 @@ const signInWithGoogle = async (user, navigate) => {
   localStorage.setItem("name", displayName);
   localStorage.setItem("photoUrl", photoURL);
   localStorage.setItem("uid", uid);
+
+  const userRef = doc(db, "users", uid);
+  const snapshot = await getDoc(userRef);
+  const settings = snapshot.data()?.settings;
+  localStorage.setItem("sendEmail", settings?.sendEmail);
+  localStorage.setItem("sendBefore", settings?.sendBefore);
+  localStorage.setItem("sendTime", settings?.sendTime);
   navigate(0);
 };
 
@@ -127,4 +134,10 @@ const getUserData = async () => {
   return null;
 };
 
-export { db, auth, storage, signUpWithGoogle, checkIfLoggedIn, getUserData, handleLogOut };
+const updateUserSettings = async (uid, settings) => {
+  console.log("updating settings", settings);
+  const userRef = doc(db, "users", uid);
+  await updateDoc(userRef, settings);
+};
+
+export { db, auth, storage, signUpWithGoogle, checkIfLoggedIn, getUserData, handleLogOut, updateUserSettings };

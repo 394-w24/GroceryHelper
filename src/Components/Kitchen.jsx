@@ -10,6 +10,7 @@ import {
 	Divider,
 } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { HomeOutlined } from "@mui/icons-material";
 import { handleLogOut } from "../Firebase";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -40,7 +41,7 @@ const Kitchen = () => {
 					</Typography>
 				</Grid>
 				<Grid item>
-					<LogoutIcon onClick={handleLogOut} sx={{ cursor: "pointer" }} />
+					<HomeOutlined onClick={() => window.location.href = "/profile"} sx={{ cursor: "pointer" }}/>
 				</Grid>
 			</Grid>
 			<Divider />
