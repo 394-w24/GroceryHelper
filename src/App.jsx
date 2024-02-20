@@ -8,11 +8,16 @@ import { checkIfLoggedIn, getUserData } from "./Firebase";
 import LoginPage from "./Pages/LoginPage";
 import { Box } from "@mui/material";
 import LoadingContainer from "./Components/LoadingContainer";
+import Profile from "./Pages/Profile";
 
 const privateRoutes = [
   {
     path: "/",
     component: () => <HomePage />,
+  },
+  {
+    path: "/profile",
+    component: () => <Profile />,
   },
   {
     path: "*",
