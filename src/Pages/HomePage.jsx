@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../index.css";
 import FoodList from "../Components/FoodList";
-import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Kitchen from "../Components/Kitchen";
 import GroceryForm from "../Components/GroceryForm";
-import {
-  Container,
-  Box,
-  Button,
-  Typography,
-  useTheme,
-  Tabs,
-  Tab,
-} from "@mui/material";
+import { Box, useTheme, Tabs, Tab } from "@mui/material";
 import {
   getDocs,
   getDoc,
@@ -26,13 +17,6 @@ import {
 } from "firebase/firestore";
 import { db } from "../Firebase";
 
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
-
 const HomePage = () => {
   const uid = localStorage.getItem("uid");
   const theme = useTheme();
@@ -40,10 +24,9 @@ const HomePage = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [foodItems, setFoodItems] = useState([]);
   const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
-  // const [rerender, setRerender] = useState(false);
 
   const handleAddFoodItem = (newItem) => {
-    setFoodItems([...foodItems, newItem]); //update local frontend
+    setFoodItems([...foodItems, newItem]);
   };
 
   const toggleDialog = () => {
@@ -113,22 +96,29 @@ const HomePage = () => {
   }, [foodItems, tab]);
 
   return (
-    <Box sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+    <Box
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Kitchen />
       <Tabs
         value={tab}
         onChange={handleChange}
         indicatorColor="primary"
         textColor="inherit"
-        centered
+        fullWidth
       >
         {tabsValue.map((location, i) => (
           <Tab
             key={i}
             sx={{
               margin: "1px",
-              fontSize: "16px",
+              fontSize: "15px",
               fontWeight: "bold",
+              textAlign: "center",
               color: theme.palette.primary["darkGreen"],
             }}
             label={location}
