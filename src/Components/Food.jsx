@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Typography, useTheme, Chip } from "@mui/material";
+import { Box, Typography, useTheme, Chip, IconButton } from "@mui/material";
 import {
   getDocs,
   getDoc,
@@ -23,6 +23,7 @@ const Food = ({ fooditem }) => {
     id,
   } = fooditem;
   const [productName, setProductName] = useState("");
+  const [isExpanded, setIsExpanded] = useState(false);
   const expirationDate = expiredAt;
   const today = new Date();
   const difference = expirationDate - today;
@@ -53,6 +54,8 @@ const Food = ({ fooditem }) => {
         boxShadow: 10,
         borderRadius: 3,
         backgroundColor: "white",
+        transform: `translateX(${isExpanded ? `-140px` : "0px"})`,
+        transition: "0.5s ease-in",
       }}
     >
       <Box>
@@ -137,60 +140,10 @@ const Food = ({ fooditem }) => {
           alignItems: "center",
         }}
       >
-        <MoreHorizIcon sx={{ fontSize: "30px" }} />
+        <IconButton onClick={() => setIsExpanded(!isExpanded)}>
+          <MoreHorizIcon sx={{ fontSize: "30px" }} />
+        </IconButton>
       </Box>
-      {/* <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "space-between",
-        }}
-      >
-        <Typography
-          variant="h6"
-          sx={{ fontWeight: "bold", userSelect: "none" }}
-        >
-          {productName}
-        </Typography>
-        <Typography
-          variant="h7"
-          sx={{
-            fontSize: "17px",
-            fontStyle: "italic",
-            userSelect: "none",
-          }}
-        >
-          {storageType}
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-        }}
-      >
-        <Typography variant="body2" sx={{ userSelect: "none" }}>
-          Quantity: {quantity}
-        </Typography>
-        <Chip
-          label={
-            daysUntilExpiration >= 0
-              ? `${daysUntilExpiration} days left`
-              : "Expired"
-          }
-          color={
-            daysUntilExpiration < 4
-              ? "error"
-              : daysUntilExpiration < 8
-              ? "warning"
-              : "success"
-          }
-          sx={{ userSelect: "none", fontSize: "17px" }}
-        />
-      </Box> */}
     </Box>
   );
 };
