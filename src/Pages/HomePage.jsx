@@ -113,7 +113,7 @@ const HomePage = () => {
   }, [foodItems, tab]);
 
   return (
-    <div>
+    <Box sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <Kitchen />
       <Tabs
         value={tab}
@@ -121,8 +121,6 @@ const HomePage = () => {
         indicatorColor="primary"
         textColor="inherit"
         variant="fullWidth"
-        aria-label="full width tabs example"
-        sx={{ mt: "5%" }}
       >
         {tabsValue.map((location, i) => (
           <Tab
@@ -148,8 +146,9 @@ const HomePage = () => {
         onClose={toggleDialog}
         onAddFoodItem={handleAddFoodItem}
       />
+
       <Footer onAddFoodClick={toggleDialog} />
-    </div>
+    </Box>
   );
 };
 

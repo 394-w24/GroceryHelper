@@ -29,7 +29,7 @@ const Kitchen = () => {
         container
         alignItems="center"
         justifyContent="space-between"
-        sx={{ padding: 3 }}
+        sx={{ padding: "10px" }}
       >
         <Grid item xs={true}>
           <Typography
@@ -50,7 +50,6 @@ const Kitchen = () => {
           />
         </Grid>
       </Grid>
-      <Divider />
     </Box>
   );
 };
