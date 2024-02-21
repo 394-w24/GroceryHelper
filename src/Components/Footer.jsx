@@ -38,14 +38,14 @@ const Footer = ({ onAddFoodClick }) => {
         <Typography
           sx={{
             fontWeight: "bolder",
-            fontSize: "16px",
+            fontSize: "80px",
             textAlign: "center",
-            textTransform: "capitalize",
           }}
         >
-          Add
+          +
+          {/* Add
           <br />
-          Items
+          Items */}
         </Typography>
       </Button>
     </Box>
