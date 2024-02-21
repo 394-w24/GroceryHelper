@@ -142,7 +142,7 @@ const Food = ({ fooditem, isExpanded, setIsExpanded }) => {
                   About to expire, eat it!
                 </Box>
               )}
-              {daysUntilExpiration > 2 && (
+              {daysUntilExpiration >= 2 && (
                 <Typography variant="h6" sx={{ fontSize: "16px" }}>
                   Expires in {daysUntilExpiration} days
                 </Typography>
