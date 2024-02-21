@@ -2,31 +2,26 @@ import React, { useEffect, useState } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import SwipeOptions from "./SwipeOptions";
 
-const FoodList = ({
-	foodItems,
-	handleDeleteFood,
-	handleEditQuantity,
-	// rerender,
-}) => {
-	return (
-		<Box
-			sx={{
-				padding: "2%",
-				paddingBottom: "80px",
-			}}
-		>
-			{foodItems.map((fooditem, i) => (
-				// <Food key={i} fooditem={fooditem} />
-				<SwipeOptions
-					key={i}
-					fooditem={fooditem}
-					handleDeleteFood={handleDeleteFood}
-					handleEditQuantity={handleEditQuantity}
-					// rerender={rerender}
-				/>
-			))}
-		</Box>
-	);
+const FoodList = ({ foodItems, handleDeleteFood, handleEditQuantity }) => {
+  return (
+    <Box
+      sx={{
+        padding: "15px 5px",
+        marginBottom: "80px",
+        maxHeight: "calc(100vh - 200px)",
+        overflowY: "auto",
+      }}
+    >
+      {foodItems.map((fooditem, i) => (
+        <SwipeOptions
+          key={i}
+          fooditem={fooditem}
+          handleDeleteFood={handleDeleteFood}
+          handleEditQuantity={handleEditQuantity}
+        />
+      ))}
+    </Box>
+  );
 };
 
 export default FoodList;
