@@ -35,7 +35,7 @@ function a11yProps(index) {
 
 const HomePage = () => {
   const uid = localStorage.getItem("uid");
-  const Theme = useTheme();
+  const theme = useTheme();
   const [tab, setTab] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [foodItems, setFoodItems] = useState([]);
@@ -120,18 +120,19 @@ const HomePage = () => {
         onChange={handleChange}
         indicatorColor="primary"
         textColor="inherit"
-        variant="fullWidth"
+        centered
       >
         {tabsValue.map((location, i) => (
           <Tab
             key={i}
             sx={{
               margin: "1px",
-              fontSize: "18px",
+              fontSize: "16px",
               fontWeight: "bold",
+              color: theme.palette.primary["darkGreen"],
             }}
             label={location}
-            {...a11yProps(i)}
+            // {...a11yProps(i)}
           />
         ))}
       </Tabs>

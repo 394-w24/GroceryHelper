@@ -1,19 +1,6 @@
-import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  Container,
-  useTheme,
-  Divider,
-} from "@mui/material";
-import LogoutIcon from "@mui/icons-material/Logout";
-import { HomeOutlined } from "@mui/icons-material";
-import { handleLogOut } from "../Firebase";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
+import React from "react";
+import { Box, useTheme } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
 
 const Kitchen = () => {
   const theme = useTheme();
@@ -21,35 +8,36 @@ const Kitchen = () => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: "column",
+        justifyContent: "space-between",
         color: theme.palette.primary["darkGreen"],
+        padding: "10px 5px",
       }}
     >
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="space-between"
-        sx={{ padding: "10px" }}
+      <Box sx={{ width: "20%" }}></Box>
+      <Box sx={{ width: "60%" }}>
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: "1.5rem",
+            fontWeight: "bolder",
+          }}
+        >
+          My Kitchen
+        </h1>
+      </Box>
+      <Box
+        sx={{
+          width: "20%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <Grid item xs={true}>
-          <Typography
-            variant="h1"
-            sx={{
-              textAlign: "center",
-              fontSize: "1.5rem",
-              fontWeight: "bolder",
-            }}
-          >
-            My Kitchen
-          </Typography>
-        </Grid>
-        <Grid item>
-          <HomeOutlined
-            onClick={() => (window.location.href = "/profile")}
-            sx={{ cursor: "pointer" }}
-          />
-        </Grid>
-      </Grid>
+        <PersonIcon
+          onClick={() => (window.location.href = "/profile")}
+          sx={{ cursor: "pointer" }}
+        />
+      </Box>
     </Box>
   );
 };

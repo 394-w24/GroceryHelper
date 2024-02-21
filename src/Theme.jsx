@@ -29,27 +29,22 @@ export const theme = createTheme({
   },
   typography: {
     h1: {
-      fontFamily: "Julius Sans One",
       fontWeight: 700,
       fontSize: "1.7rem",
     },
     h2: {
-      fontFamily: "Julius Sans One",
       fontWeight: 400,
       fontSize: "1rem",
     },
     h3: {
-      fontFamily: "Julius Sans One",
       fontWeight: 700,
       fontSize: "1.2rem",
     },
     h4: {
-      fontFamily: "Julius Sans One",
       fontWeight: 300,
       fontSize: "0.8rem",
     },
     h5: {
-      fontFamily: "Julius Sans One",
       fontSize: "0.6rem",
     },
     body1: {

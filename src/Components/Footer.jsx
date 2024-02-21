@@ -9,7 +9,7 @@ const Footer = ({ onAddFoodClick }) => {
     <Box
       sx={{
         position: "fixed",
-        bottom: 15,
+        bottom: 5,
         left: 0,
         right: 0,
         zIndex: 100,
@@ -29,8 +29,8 @@ const Footer = ({ onAddFoodClick }) => {
           "&:hover": {
             backgroundColor: theme.palette.primary[5],
           },
-          height: "100px",
-          width: "100px",
+          height: "80px",
+          width: "80px",
           borderRadius: "100%",
         }}
         onClick={onAddFoodClick}
