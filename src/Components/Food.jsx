@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Box, Typography, useTheme, Chip, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  useTheme,
+  Chip,
+  IconButton,
+  Divider,
+} from "@mui/material";
 import {
   getDocs,
   getDoc,
@@ -62,7 +69,7 @@ const Food = ({ fooditem }) => {
       <Box>
         <Box sx={{ display: "flex" }}>
           <Box>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <Typography
                 variant="h6"
                 sx={{ fontWeight: "bold", marginRight: "5px" }}
@@ -74,6 +81,7 @@ const Food = ({ fooditem }) => {
                   background: "#D9D9D9",
                   padding: "3px 10px",
                   borderRadius: "15px",
+                  fontSize: "14px",
                 }}
               >
                 {storageType}
@@ -82,22 +90,32 @@ const Food = ({ fooditem }) => {
             <Box
               sx={{
                 display: "flex",
+                alignItems: "center",
                 marginTop: "10px",
               }}
             >
-              <Typography variant="h6" sx={{ marginRight: "10px" }}>
+              <Typography
+                variant="h6"
+                sx={{ marginRight: "10px", fontSize: "18px" }}
+              >
                 {quantity}
                 {quantity == 1 ? "pc" : "pcs"}
               </Typography>
-              <Typography variant="h6" sx={{ marginRight: "10px" }}>
-                |
-              </Typography>
+              <Divider
+                orientation="vertical"
+                flexItem
+                sx={{
+                  marginRight: "5px",
+                  backgroundColor: "#000000",
+                }}
+              />
               {daysUntilExpiration < 0 && (
                 <Box
                   sx={{
                     padding: "3px 10px",
                     backgroundColor: "#FCA5A5",
                     borderRadius: "15px",
+                    fontSize: "14px",
                   }}
                 >
                   Expired!!!
@@ -109,6 +127,7 @@ const Food = ({ fooditem }) => {
                     padding: "3px 10px",
                     backgroundColor: "#FBC300",
                     borderRadius: "15px",
+                    fontSize: "14px",
                   }}
                 >
                   Expires today, eat it!
@@ -120,13 +139,14 @@ const Food = ({ fooditem }) => {
                     padding: "3px 10px",
                     backgroundColor: "#FBC300",
                     borderRadius: "15px",
+                    fontSize: "14px",
                   }}
                 >
                   About to expire, eat it!
                 </Box>
               )}
               {daysUntilExpiration > 2 && (
-                <Typography variant="h6">
+                <Typography variant="h6" sx={{ fontSize: "16px" }}>
                   Expires in {daysUntilExpiration} days
                 </Typography>
               )}
