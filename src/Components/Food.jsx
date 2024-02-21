@@ -18,7 +18,7 @@ import {
 import { db } from "../Firebase";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
-const Food = ({ fooditem }) => {
+const Food = ({ fooditem, isExpanded, setIsExpanded }) => {
   const {
     createdAt,
     expiredAt,
@@ -30,7 +30,6 @@ const Food = ({ fooditem }) => {
     id,
   } = fooditem;
   const [productName, setProductName] = useState("");
-  const [isExpanded, setIsExpanded] = useState(false);
   const expirationDate = expiredAt;
   const today = new Date();
   const difference = expirationDate - today;
@@ -62,8 +61,6 @@ const Food = ({ fooditem }) => {
         boxShadow: "0 7px 2px -2px #D9D9D9",
         borderRadius: 3,
         backgroundColor: "white",
-        transform: `translateX(${isExpanded ? `-140px` : "0px"})`,
-        transition: "0.5s ease-in",
       }}
     >
       <Box>
