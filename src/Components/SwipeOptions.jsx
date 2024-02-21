@@ -104,7 +104,12 @@ const SwipeOptions = ({ fooditem, handleDeleteFood, handleEditQuantity }) => {
             zIndex: 2,
           }}
         >
-          <Food key={fooditem.id} fooditem={fooditem} />
+          <Food
+            key={fooditem.id}
+            fooditem={fooditem}
+            isExpanded={isExpanded}
+            setIsExpanded={setIsExpanded}
+          />
         </Box>
         <Box
           sx={{
