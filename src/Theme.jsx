@@ -19,7 +19,6 @@ export const theme = createTheme({
       5: "#2F2D30",
       green: "#003E1F",
       claim: "#FEBF46",
-      lightGreen: "#86dd69",
       darkGreen: "#427E57",
     },
   },

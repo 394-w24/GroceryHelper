@@ -1,19 +1,31 @@
 import React from "react";
-import { Box, Button, Typography, styled, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  useTheme,
+  Container,
+  styled,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { signUpWithGoogle } from "../Firebase";
-import logo from "../assets/logo/logo.jpg";
+import EmailIcon from "@mui/icons-material/Email";
 
-const StyledButton = styled(Button)({
-  backgroundColor: "#196f3d ",
-  color: "white",
+const MyStyledButton = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.primary["2"],
+  color: "black",
   "&:hover": {
-    backgroundColor:"#003E1F",
+    backgroundColor: theme.palette.primary["1"],
   },
-  width: "80%",
-  height: "50px",
-  border: "none",
-});
+  justifyContent: 'start', 
+  alignItems: 'center',    
+  padding: "8px",
+  paddingLeft: "25px",
+  borderRadius: "16px",
+  fontSize: "1rem",
+  textAlign: "left",
+  width: "85%",
+}));
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -21,52 +33,58 @@ const LoginPage = () => {
   const handleSignIn = () => {
     signUpWithGoogle(navigate);
   };
-  
+
   return (
-    <Box
+    <Container
+      component="main"
       sx={{
-        height: "100vh",
-        width: "100vw",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-        backgroundColor: theme.palette.primary["lightGreen"]
+        height: "100vh",
       }}
     >
-      <Box
-        sx={{
-          width: "100%",
-          height: "80%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      <Typography
+        variant="h1"
+        component="h1"
+        marginBottom="75px"
+        marginTop="15%"
+        fontSize="2.3rem"
+        align="center"
+        color={theme.palette.primary["main"]}
       >
-        <img
-          src={logo}
-          alt="Stay Fresh Logo"
-          style={{
-            maxWidth: "100%",
-            maxHeight: "130%",
-            height: "auto",
-            width: "auto",
-          }}
-        />
+        StayFresh.
+      </Typography>
+      <Box justifyContent="start" marginLeft="5%">
+        <Typography
+          variant="h1"
+          component="h2"
+          fontSize="2rem"
+          marginBottom="0.3em"
+          color={theme.palette.primary["main"]}
+        >
+          Reduce Waste!
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          color={theme.palette.primary["main"]}
+          marginBottom="75px"
+        >
+          say goodbye to spoilage &amp;
+          <br /> get tailored suggestions
+        </Typography>
       </Box>
-      <Box
-        sx={{
-          width: "100%",
-          height: "50%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          
-        }}
-      >
-        <StyledButton onClick={handleSignIn}>Login With Google</StyledButton>
+      <Box mt={2} width="100%" display="flex" marginLeft="5%">
+        <MyStyledButton
+          variant="contained"
+          onClick={handleSignIn}
+          startIcon={
+            <EmailIcon style={{ color: "black" }} />
+          }
+        >
+          Login with Gmail
+        </MyStyledButton>
       </Box>
-    </Box>
+    </Container>
   );
 };
 
