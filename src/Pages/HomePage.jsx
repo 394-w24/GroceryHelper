@@ -109,12 +109,14 @@ const HomePage = () => {
         onChange={handleChange}
         indicatorColor="primary"
         textColor="inherit"
-        fullWidth
+        variant="fullWidth"
+        scrollButtons={false}
       >
         {tabsValue.map((location, i) => (
           <Tab
             key={i}
             sx={{
+              minWidth: "10%",
               margin: "1px",
               fontSize: "15px",
               fontWeight: "bold",
@@ -122,10 +124,10 @@ const HomePage = () => {
               color: theme.palette.primary["darkGreen"],
             }}
             label={location}
-            // {...a11yProps(i)}
           />
         ))}
       </Tabs>
+
       <FoodList
         foodItems={displayedFoodItems}
         handleDeleteFood={handleDeleteFood}
