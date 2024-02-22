@@ -187,17 +187,17 @@ pub async fn email(db: web::Data<ServiceSession>, data: web::Query<EmailReq>) ->
         if expired {
             let mut list = expired_groceries.entry(item.user_id.clone()).or_insert(vec![]);
             // println!("Expired: {:?}", &item.product_id);
-            let product_name = products_map.get(&item.product_id).unwrap();
+            let product_name = products_map.get(&item.product_id).unwrap().clone();
             // let product_name = item.product_id.clone();
             let storage_type = item.storage_type.clone();
             let quantity = item.quantity;
-            list.push(format!("{}: {} in {}", product_name, quantity, storage_type));
+            list.push((product_name, quantity, storage_type));
         }
     }
     let mut emails_sent = 0;
     for (user_id, list) in expired_groceries {
         if let Some(email) = get_user_email(db.get_ref(), &user_id).await {
-            let body = "Your groceries have expired".to_string();
+            let body = "Your groceries will be expired soon!".to_string();
             let image_url = "".to_string();
             println!("Sending email to {}", &email);
             println!("list: {:?}", &list);

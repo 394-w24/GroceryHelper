@@ -2,6 +2,7 @@ mod data;
 mod email_sender;
 mod detect;
 mod api;
+mod recipe;
 
 use actix_web::{App, get, HttpServer, Responder, web};
 use firestore_db_and_auth::{Credentials, ServiceSession, documents};

@@ -15,5 +15,6 @@ chrono = { version = "*", features = ["serde"] }
 lettre = { version = "*", features = ["tokio1-native-tls"] }
 mime = "*"
 reqwest = "*"
+scraper = "*"
 actix-web = { version = "*", features = ["openssl"] }
 base64 = { version = "*", features = [] }
