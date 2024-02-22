@@ -19,8 +19,12 @@ import { handleLogOut } from "../Firebase";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import datjs from "dayjs";
+
+import dayjs from "dayjs";
 import { updateUserSettings } from "../Firebase";
+
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat)
 
 const Profile = () => {
   const theme = useTheme();
@@ -34,21 +38,40 @@ const Profile = () => {
   const [sendEmail, setSendEmail] = useState(
     localStorage.getItem("sendEmail") === "true" ? true : false
   );
+  const getTime = () => {
+      {
+          const tmp = localStorage.getItem("sendBefore");
+          if (!tmp) return 24;
+          const parsed = parseInt(tmp);
+          if (parsed === 24) return 24;
+          if (parsed === 48) return 48;
+          if (parsed === 72) return 72;
+          return 24;
+      }
+  };
+  
   const [sendBefore, setSendBefore] = useState(
-    localStorage.getItem("sendBefore")
-      ? parseInt(localStorage.getItem("sendBefore"))
-      : 24
+    getTime()
   );
+
+    const getSendTime = () => {
+        const tmp = localStorage.getItem("sendTime");
+        let result = dayjs("07:00", "HH:mm");
+        console.log(tmp, result);
+        if (!tmp) return result;
+        if (tmp.length !== 5) return result;
+        return dayjs(tmp, "HH:mm").isValid() ? dayjs(tmp, "HH:mm") : result;
+    };
+
   const [sendTime, setSendTime] = useState(
-    datjs(
-      localStorage.getItem("sendTime")
-        ? localStorage.getItem("sendTime")
-        : "07:00",
-      "HH:mm"
-    )
+    getSendTime()
   );
 
   useEffect(() => {
+      console.log(dayjs(
+          "07:00",
+          "HH:mm"
+      ));
     localStorage.setItem("sendEmail", sendEmail);
     localStorage.setItem("sendBefore", sendBefore);
     localStorage.setItem("sendTime", sendTime.format("HH:mm"));

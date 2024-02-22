@@ -62,21 +62,9 @@ pub async fn check_user_id(db: &ServiceSession, id: &String) -> bool {
 }
 
 pub async fn get_products_map(db: &ServiceSession) -> HashMap<String, String> {
-    let mut map = HashMap::new();
-    let mut stream = documents::list(db, "products");
-    while let Some(item_result) = stream.next().await {
-        if let Err(e) = &item_result {
-            println!("Error fetching document: {:?}", e);
-            continue;
-        }
-        let (item, _metadata) = item_result.unwrap();
-        let item: Product = item;
-        let id = _metadata.name.split("/").collect::<Vec<&str>>();
-        let id = id[id.len() - 1].to_string();
-        map.insert(id.clone(), item.name.clone());
-        // println!("Product: {} -> {}", &id, &item.name);
-    }
-    map
+    // including json file from product.json
+    let content = include_str!("../product.json");
+    return serde_json::from_str(content).unwrap();
 }
 #[derive(Debug, Serialize, Deserialize)]
 pub struct DetectResp {

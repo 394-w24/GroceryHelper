@@ -63,6 +63,7 @@ const signInWithGoogle = async (user, navigate) => {
   const userRef = doc(db, "users", uid);
   const snapshot = await getDoc(userRef);
   const settings = snapshot.data()?.settings;
+  console.log("settings", settings?.sendEmail, settings?.sendBefore, settings?.sendTime);
   localStorage.setItem("sendEmail", settings?.sendEmail);
   localStorage.setItem("sendBefore", settings?.sendBefore);
   localStorage.setItem("sendTime", settings?.sendTime);
