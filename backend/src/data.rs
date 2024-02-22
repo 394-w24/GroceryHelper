@@ -1,6 +1,29 @@
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Settings {
+    #[serde(rename = "sendBefore")]
+    pub send_before: i32,
+
+    #[serde(rename = "sendEmail")]
+    pub send_email: bool,
+
+    #[serde(rename = "sendTime")]
+    pub send_time: String,
+}
+
+impl Settings {
+    pub fn new(data: &HashMap<String, String>) -> Settings {
+        Settings {
+            send_before: data.get("sendBefore").unwrap().parse::<i32>().unwrap_or(24),
+            send_email: data.get("sendEmail").unwrap().parse::<bool>().unwrap_or(false),
+            send_time: data.get("sendTime").unwrap().parse::<String>().unwrap_or("08:00".to_string()),
+        }
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct User {
     pub uid: String,
 
@@ -11,6 +34,9 @@ pub struct User {
 
     #[serde(rename = "photoURL")]
     pub photo_url: String,
+
+    // #[serde(skip_deserializing)]
+    pub settings: Option<Settings>,
 }
 
 // #[derive(Debug, Serialize, Deserialize)]
