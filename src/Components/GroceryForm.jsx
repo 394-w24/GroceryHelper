@@ -44,6 +44,49 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
   const [allCategories, setAllCategories] = useState([]);
   const [chosenProductId, setChosenProductId] = useState(null);
   const [chosenProduct, setChosenProduct] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [matchNotFound, setMatchNotFound] = useState(false);
+
+  const handleImageUpload = (file) => {
+    setImageFile(file);
+  };
+
+  const handleFoodDetected = async (detectedItems) => {
+    if (detectedItems.length > 0) {
+      const detectedItem = detectedItems[0].toLowerCase();
+      const matchedOption = options.find(option => option.name.toLowerCase().includes(detectedItem));
+  
+      if (matchedOption) {
+        await updateSelection(matchedOption);
+        setSelectedOption(matchedOption);
+
+        await handleSelect(null, matchedOption);
+      } else {
+        setMatchNotFound(true);
+        setSelectedOption(null);
+      }
+    } else {
+      console.log("No food items detected");
+      setMatchNotFound(false);
+    }
+  };
+  
+
+  const updateSelection = async (selectedItem) => {
+
+    setSelectedOption(selectedItem); 
+  
+
+    if (selectedItem) {
+      const categoryLabels = ["pantry", "refrigerate", "freeze"];
+      const currCategory = categoryLabels[category]; 
+
+      const expirationDays = selectedItem[currCategory];
+      setDaysUntilExpiration(expirationDays || -1);
+    }
+  };
+  
 
   const handleCategoryChange = (event, newValue) => {
     setCategory(newValue);
@@ -93,10 +136,23 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
         userId: localStorage.getItem("uid"),
       });
 
+      resetForm();
       onClose();
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const resetForm = () => {
+    setGroceryItem("");
+    setQuantity(1);
+    setCategory(0);
+    setDaysUntilExpiration(1);
+    setSelectedOption(null);
+    setMatchNotFound(false);
+    setImageFile(null);
+    setChosenProductId(null);
+    setChosenProduct(null);
   };
 
   useEffect(() => {
@@ -225,34 +281,44 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
             }
           }
         >
-          <ImageDropBox onImageUpload={handleImageUpload} />
+        <ImageDropBox onImageUpload={handleImageUpload} />
         {imageFile && <FoodRecognition imageFile={imageFile} onFoodDetected={handleFoodDetected} />}
-          <Autocomplete
-            id="user-search-autocomplete"
-            options={options}
-            inputValue={searchTerm}
-            getOptionLabel={(option) => {
-              const { name, description, categoryId } = option;
+        {matchNotFound && (
+        <Box sx={{ color: 'red', marginTop: '10px' }}>
+          Could not match image to item, please select manually from dropdown.
+        </Box>
+        )}
+        <Autocomplete
+          id="user-search-autocomplete"
+          options={options}
+          value={selectedOption}
+          getOptionLabel={(option) => option ? `${option.name}${option.description ? "/" + option.description : ""}/${categoryData[option.categoryId]?.categoryName}` : ''}
+          style={{ marginBlock: "10px" }}
+          onInputChange={(event, newInputValue) => {
+            setSearchTerm(newInputValue);
+            if (!newInputValue) {
+              setSelectedOption(null);
+              setMatchNotFound(false);
+            }
+          }}
+          onChange={(event, newValue) => {
+            setSelectedOption(newValue);
+            setMatchNotFound(false);
+            if (newValue) {
+              setSearchTerm(newValue.name);
+              handleSelect(event, newValue);
+            }
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Grocery Item"
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
 
-              const result = `${name}${description ? "/" + description : ""}/${
-                categoryData[categoryId].categoryName
-              }`;
-              return result;
-            }}
-            style={{ marginBlock: "10px" }}
-            onInputChange={(event, newInputValue) => {
-              setSearchTerm(newInputValue);
-            }}
-            onChange={handleSelect}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Grocery Item"
-                variant="outlined"
-                fullWidth
-              />
-            )}
-          />
           <TextField
             margin="dense"
             id="quantity"
