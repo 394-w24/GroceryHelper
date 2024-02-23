@@ -28,6 +28,8 @@ import { db } from "../Firebase";
 import foodItems from "../assets/data.json";
 import categoryData from "../assets/category.json";
 import GroceryAutocomplete from "./GroceryAutocomplete";
+import FoodRecognition from "./FoodRecognition";
+import ImageDropBox from "./ImageDropBox";
 
 export default function GroceryForm({ open, onClose, onAddFoodItem }) {
   const [groceryItem, setGroceryItem] = useState("");
@@ -223,6 +225,8 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
             }
           }
         >
+          <ImageDropBox onImageUpload={handleImageUpload} />
+        {imageFile && <FoodRecognition imageFile={imageFile} onFoodDetected={handleFoodDetected} />}
           <Autocomplete
             id="user-search-autocomplete"
             options={options}
