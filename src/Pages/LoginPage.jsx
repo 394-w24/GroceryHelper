@@ -1,31 +1,20 @@
-import React from "react";
-import {
-  Box,
-  Button,
-  Typography,
-  useTheme,
-  Container,
-  styled,
-} from "@mui/material";
+
+import { Box, Button, Typography, styled, useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { signUpWithGoogle } from "../Firebase";
-import EmailIcon from "@mui/icons-material/Email";
+import logo from "../assets/logo/logo.jpg";
 
-const MyStyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.primary["2"],
-  color: "black",
+const StyledButton = styled(Button)({
+  backgroundColor: "#196f3d ",
+  color: "white",
   "&:hover": {
-    backgroundColor: theme.palette.primary["1"],
+    backgroundColor:"#003E1F",
   },
-  justifyContent: 'start', 
-  alignItems: 'center',    
-  padding: "8px",
-  paddingLeft: "25px",
-  borderRadius: "16px",
-  fontSize: "1rem",
-  textAlign: "left",
-  width: "85%",
-}));
+  width: "80%",
+  height: "50px",
+  border: "none",
+});
+
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -33,59 +22,52 @@ const LoginPage = () => {
   const handleSignIn = () => {
     signUpWithGoogle(navigate);
   };
-
+  
   return (
-    <Container
-      component="main"
+    <Box
       sx={{
+        height: "100vh",
+        width: "100vw",
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
+        alignItems: "center",
+        justifyContent: "space-between",
+        backgroundColor: 'rgb(140, 219, 110)',
       }}
     >
-      <Typography
-        variant="h1"
-        component="h1"
-        marginBottom="75px"
-        marginTop="15%"
-        fontSize="2.3rem"
-        align="center"
-        color={theme.palette.primary["main"]}
+      <Box
+        sx={{
+          width: "100%",
+          height: "80%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        StayFresh.
-      </Typography>
-      <Box justifyContent="start" marginLeft="5%">
-        <Typography
-          variant="h1"
-          component="h2"
-          fontSize="2rem"
-          marginBottom="0.3em"
-          color={theme.palette.primary["main"]}
-        >
-          Reduce Waste!
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          color={theme.palette.primary["main"]}
-          marginBottom="75px"
-        >
-          say goodbye to spoilage &amp;
-          <br /> get tailored suggestions
-        </Typography>
+        <img
+          src={logo}
+          alt="Stay Fresh Logo"
+          style={{
+            maxWidth: "100%",
+            maxHeight: "130%",
+            height: "auto",
+            width: "auto",
+          }}
+        />
       </Box>
-      <Box mt={2} width="100%" display="flex" marginLeft="5%">
-        <MyStyledButton
-          variant="contained"
-          onClick={handleSignIn}
-          startIcon={
-            <EmailIcon style={{ color: "black" }} />
-          }
-        >
-          Login with Gmail
-        </MyStyledButton>
+      <Box
+        sx={{
+          width: "100%",
+          height: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          
+        }}
+      >
+        <StyledButton onClick={handleSignIn}>Login With Gmail</StyledButton>
       </Box>
-    </Container>
+    </Box>
   );
 };
-
 export default LoginPage;

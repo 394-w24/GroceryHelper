@@ -29,20 +29,20 @@ const Footer = ({ onAddFoodClick }) => {
           "&:hover": {
             backgroundColor: theme.palette.primary[5],
           },
-          height: "80px",
-          width: "80px",
-          borderRadius: "100%",
+          height: "60px",
+          width: "120[x",
+          borderRadius: "10%%",
         }}
         onClick={onAddFoodClick}
       >
         <Typography
           sx={{
             fontWeight: "bolder",
-            fontSize: "80px",
+            fontSize: "16px",
             textAlign: "center",
           }}
         >
-          +
+          Add Item
           {/* Add
           <br />
           Items */}

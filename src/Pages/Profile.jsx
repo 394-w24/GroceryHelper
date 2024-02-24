@@ -205,7 +205,7 @@ const Profile = () => {
               />
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid item xs={12} sx={{ display: "flex", justifyContent: "center", marginTop: "320px"}}>
             <Button
               variant="contained"
               onClick={handleLogOut}
