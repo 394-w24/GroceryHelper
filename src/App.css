@@ -6,3 +6,8 @@
   min-height: 100vh;
   max-height: 100vh;
 }
+
+video {
+  object-fit: cover;
+  height: 600px;
+}

@@ -6,6 +6,7 @@ import HomePage from "./Pages/HomePage";
 import "./App.css";
 import { checkIfLoggedIn, getUserData } from "./Firebase";
 import LoginPage from "./Pages/LoginPage";
+import Product from "./Pages/Product";
 import { Box } from "@mui/material";
 import LoadingContainer from "./Components/LoadingContainer";
 import Profile from "./Pages/Profile";
@@ -22,7 +23,11 @@ const privateRoutes = [
   {
     path: "*",
     component: () => <HomePage />,
-  }
+  },
+  {
+    path: "newProduct",
+    component: () => <Product />,
+  },
 ];
 
 const publicRoutes = [

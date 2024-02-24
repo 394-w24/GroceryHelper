@@ -21,16 +21,11 @@ const HomePage = () => {
   const uid = localStorage.getItem("uid");
   const theme = useTheme();
   const [tab, setTab] = useState(0);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [foodItems, setFoodItems] = useState([]);
   const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
 
   const handleAddFoodItem = (newItem) => {
     setFoodItems([...foodItems, newItem]);
-  };
-
-  const toggleDialog = () => {
-    setIsDialogOpen(!isDialogOpen);
   };
 
   const handleChange = (event, newValue) => {
@@ -134,13 +129,8 @@ const HomePage = () => {
         handleEditQuantity={handleEditQuantity}
         // rerender={rerender}
       />
-      <GroceryForm
-        open={isDialogOpen}
-        onClose={toggleDialog}
-        onAddFoodItem={handleAddFoodItem}
-      />
 
-      <Footer onAddFoodClick={toggleDialog} />
+      <Footer />
     </Box>
   );
 };
