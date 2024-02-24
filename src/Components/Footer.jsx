@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { Box, IconButton, useTheme } from "@mui/material";
 
-const Footer = ({ onAddFoodClick }) => {
+const Footer = ({}) => {
   const theme = useTheme();
 
   return (
@@ -33,7 +33,7 @@ const Footer = ({ onAddFoodClick }) => {
           width: "120[x",
           borderRadius: "10%%",
         }}
-        onClick={onAddFoodClick}
+        onClick={() => (window.location.href = "/newProduct")}
       >
         <Typography
           sx={{

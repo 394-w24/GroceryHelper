@@ -31,7 +31,12 @@ import GroceryAutocomplete from "./GroceryAutocomplete";
 import FoodRecognition from "./FoodRecognition";
 import ImageDropBox from "./ImageDropBox";
 
-export default function GroceryForm({ open, onClose, onAddFoodItem }) {
+export default function GroceryForm({
+  open,
+  onClose,
+  onAddFoodItem,
+  passedInFoodName,
+}) {
   const [groceryItem, setGroceryItem] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState(0);
@@ -55,8 +60,10 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
   const handleFoodDetected = async (detectedItems) => {
     if (detectedItems.length > 0) {
       const detectedItem = detectedItems[0].toLowerCase();
-      const matchedOption = options.find(option => option.name.toLowerCase().includes(detectedItem));
-  
+      const matchedOption = options.find((option) =>
+        option.name.toLowerCase().includes(detectedItem)
+      );
+
       if (matchedOption) {
         await updateSelection(matchedOption);
         setSelectedOption(matchedOption);
@@ -71,22 +78,33 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
       setMatchNotFound(false);
     }
   };
-  
+
+  useEffect(() => {
+    if (passedInFoodName) {
+      const lowercased = passedInFoodName.toLowerCase();
+      const filtered = allData.filter((item) => {
+        const { name } = item || "";
+        return name.toLowerCase().includes(lowercased) || "";
+      });
+      const selected = filtered[0];
+      setSelectedOption(selected);
+      handleSelect(null, selected);
+    } else {
+      setSelectedOption(null);
+    }
+  }, [passedInFoodName]);
 
   const updateSelection = async (selectedItem) => {
-
-    setSelectedOption(selectedItem); 
-  
+    setSelectedOption(selectedItem);
 
     if (selectedItem) {
       const categoryLabels = ["pantry", "refrigerate", "freeze"];
-      const currCategory = categoryLabels[category]; 
+      const currCategory = categoryLabels[category];
 
       const expirationDays = selectedItem[currCategory];
       setDaysUntilExpiration(expirationDays || -1);
     }
   };
-  
 
   const handleCategoryChange = (event, newValue) => {
     setCategory(newValue);
@@ -281,43 +299,48 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
             }
           }
         >
-        <ImageDropBox onImageUpload={handleImageUpload} />
-        {imageFile && <FoodRecognition imageFile={imageFile} onFoodDetected={handleFoodDetected} />}
-        {matchNotFound && (
-        <Box sx={{ color: 'red', marginTop: '10px' }}>
-          Could not match image to item, please select manually from dropdown.
-        </Box>
-        )}
-        <Autocomplete
-          id="user-search-autocomplete"
-          options={options}
-          value={selectedOption}
-          getOptionLabel={(option) => option ? `${option.name}${option.description ? "/" + option.description : ""}/${categoryData[option.categoryId]?.categoryName}` : ''}
-          style={{ marginBlock: "10px" }}
-          onInputChange={(event, newInputValue) => {
-            setSearchTerm(newInputValue);
-            if (!newInputValue) {
-              setSelectedOption(null);
-              setMatchNotFound(false);
-            }
-          }}
-          onChange={(event, newValue) => {
-            setSelectedOption(newValue);
-            setMatchNotFound(false);
-            if (newValue) {
-              setSearchTerm(newValue.name);
-              handleSelect(event, newValue);
-            }
-          }}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Grocery Item"
-              variant="outlined"
-              fullWidth
-            />
+          {matchNotFound && (
+            <Box sx={{ color: "red", marginTop: "10px" }}>
+              Could not match image to item, please select manually from
+              dropdown.
+            </Box>
           )}
-        />
+          <Autocomplete
+            id="user-search-autocomplete"
+            options={options}
+            value={selectedOption}
+            getOptionLabel={(option) =>
+              option
+                ? `${option.name}${
+                    option.description ? "/" + option.description : ""
+                  }/${categoryData[option.categoryId]?.categoryName}`
+                : ""
+            }
+            style={{ marginBlock: "10px" }}
+            onInputChange={(event, newInputValue) => {
+              setSearchTerm(newInputValue);
+              if (!newInputValue) {
+                setSelectedOption(null);
+                setMatchNotFound(false);
+              }
+            }}
+            onChange={(event, newValue) => {
+              setSelectedOption(newValue);
+              setMatchNotFound(false);
+              if (newValue) {
+                setSearchTerm(newValue.name);
+                handleSelect(event, newValue);
+              }
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Grocery Item"
+                variant="outlined"
+                fullWidth
+              />
+            )}
+          />
 
           <TextField
             margin="dense"
@@ -381,12 +404,35 @@ export default function GroceryForm({ open, onClose, onAddFoodItem }) {
             <Tab label="Freezer" sx={{ minWidth: "60px" }} />
           </Tabs>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={onClose}>Cancel</Button>
-          <Button onClick={handleSubmit} disabled={daysUntilExpiration < 1}>
-            Add Item
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Button
+            sx={{
+              marginRight: "10px",
+              color: "#000000",
+              backgroundColor: "#ffffff",
+              fontWeight: "bolder",
+              border: "1px solid #D9D9D9",
+            }}
+            onClick={() => {
+              resetForm();
+              onClose();
+            }}
+          >
+            Cancel
           </Button>
-        </DialogActions>
+          <Button
+            onClick={handleSubmit}
+            disabled={daysUntilExpiration < 1}
+            variant="contained"
+            sx={{
+              backgroundColor: "#D9DF95",
+              color: "#000000",
+              fontWeight: "bolder",
+            }}
+          >
+            Save
+          </Button>
+        </Box>
       </Dialog>
     </Box>
   );

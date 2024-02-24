@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "scripts": {
     "start": "vite",
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest --ui",
@@ -26,6 +26,7 @@
     "react-dropzone": "^14.2.3",
     "react-router-dom": "^6.22.0",
     "react-swipeable": "^7.0.1",
+    "react-webcam": "^7.2.0",
     "rollup": "^4.10.0"
   },
   "devDependencies": {
