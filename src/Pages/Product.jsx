@@ -51,7 +51,7 @@ const Product = () => {
   const videoConstraints = {
     width: { min: 640, ideal: 1920 },
     height: { min: 720, ideal: 1080 },
-    facingMode: "enviornment",
+    facingMode: { exact: "environment" },
   };
 
   useEffect(() => {
@@ -79,7 +79,6 @@ const Product = () => {
         <Webcam
           audio={false}
           height={1080}
-          width="100%"
           screenshotFormat="image/jpeg"
           ref={webcamRef}
           videoConstraints={videoConstraints}
@@ -115,14 +114,6 @@ const Product = () => {
           marginTop: "50px",
         }}
       >
-        {/* <Button
-          variant="contained"
-          onClick={toggleDialog}
-          sx={{ background: "#ffffff", color: "#000000" }}
-        >
-          Manual Input My Item
-        </Button> */}
-
         <GroceryForm
           open={isDialogOpen}
           onClose={toggleDialog}
