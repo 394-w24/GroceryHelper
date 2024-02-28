@@ -13,34 +13,55 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
     // Add styles for the header, table with border, table header, and footer
     html.push_str("<html><head><style>");
     html.push_str("
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        h1 { text-align: center; font-size: 24px; margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
+        html { height: 100%;}
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding-right: 80px; padding-left: 80px;
+            background: linear-gradient(to bottom, #f9fff7 0%, #bde8a5 100%); background-attachment: fixed; text-align: center; }
+        h1 {font-size: 1.8rem;margin-top: 20px;}
+        h2 {font-size: 0.8rem;font-weight: normal;}
+        h3 {font-size: 0.7rem;margin-top: 10px;font-weight: normal;}
         .recipe-list { margin-top: 20px; }
-        .recipe-item a { color: #0066CC; text-decoration: none; }
+        .recipe-item a { color: #000000; text-decoration: none; }
+        ul, li {list-style-type: none; padding-left: 0; margin-left: 0; }
         .footer { text-align: center; font-size: 0.8em; margin-top: 30px; color: #777; }
+        button {
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 15px;
+            display: inline-block; /* This will allow you to set a width and height if you want */
+            transition: all 0.3s ease;
+            width: 100%; /* Adjust width as needed or use 'auto' for content-based width */
+            height: 70px;
+            background: lightblue;
+          }
+        button:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.24);
+            transform: translateY(-2px);
+          }
     ");
     html.push_str("</style></head><body>");
-
-    // Add header
-    html.push_str(&format!("<h1>{}</h1>", body));
-
-    // Create table for food items with headers
-    html.push_str("<table><tr><th>Item</th><th>Qty</th><th>Location</th></tr>");
-    for food in food_list {
-        html.push_str(&format!("<tr><td>{}</td><td>{}</td><td>{}</td></tr>", food.0, food.1, food.2));
+    // TODO: Need to add a image at top
+    // Add header,
+    // TODO: need to change the hour -- 48 hours
+    // html.push_str(&format!("<h1>{}</h1>", body));
+    html.push_str("<h1>Oh crap! The following items in your kitchen are going bad in 48 hours.</h1>");
+    // List the produce items
+    html.push_str("<div class=\"food-list\">");
+    for (i, food) in food_list.iter().enumerate() {
+        html.push_str(&format!("<p>{} {} in your {}</p>", food.1, food.0, food.2));
     }
-    html.push_str("</table>");
-
+    html.push_str("</div>");    
+    html.push_str("<br />");
     // Fetch and list the recipes with links
     let recipes = recipe::get_recipes(&food_list.iter().map(|x| x.0.clone()).collect()).await;
     if recipes.is_ok() {
         let recipes = recipes.unwrap();
-        html.push_str("<div class=\"recipe-list\"><h2>Well, you know what to do, Here are the recipes you may need:</h2><ul>");
+        html.push_str("<div class=\"recipe-list\"><h2>Good thing we know exactly what you should make with it.</h2><ul>");
         for recipe in recipes {
-            html.push_str(&format!("<li class=\"recipe-item\"><a href=\"{}\">{}</a></li>", recipe.1, recipe.0));
+            html.push_str(&format!("<li class=\"recipe-item\"><button><a href=\"{}\">{}</a></button></li>", recipe.1, recipe.0));
         }
         html.push_str("</ul></div>");
     }
@@ -48,7 +69,10 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
     // Add footer
     html.push_str("<div class=\"footer\">");
     html.push_str("You are receiving this email because you opted in via the app.<br/>");
-    html.push_str("Corporation<br/>Evanston, IL</div>");
+    html.push_str("Tired of the fridge surprise with more science experiment than snack? 🍓🥦 Meet Stay Fresh - <br/>");
+    html.push_str("your produce's new best friend. We're here to banish food waste one alert at a time, making sure<br/>");
+    html.push_str("your fruits and veggies live their best (and tastiest) life before making the tragic journey to the trash.<br/>");
+    html.push_str("Stay Fresh: Where every bite is at its prime, and nothing goes to waste. Let's keep it crisp together!<br/>");
 
     if image_url.len() > 0 {
         html.push_str(&format!("<img src=\"{}\" alt=\"Food Image\">", image_url));
