@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "groceryhelper-fdb2d"
-  }
+  },
+  "targets": {
+    "groceryhelper-fdb2d": {
+      "hosting": {
+        "dev": [
+          "stayfresh-dev"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
