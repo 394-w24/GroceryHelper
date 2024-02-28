@@ -4,7 +4,7 @@ import FoodList from "../Components/FoodList";
 import Footer from "../Components/Footer";
 import Kitchen from "../Components/Kitchen";
 import GroceryForm from "../Components/GroceryForm";
-import { Box, useTheme, Tabs, Tab } from "@mui/material";
+import { Box, useTheme, Tabs, Tab, Button } from "@mui/material";
 import {
   getDocs,
   getDoc,
@@ -23,7 +23,12 @@ const HomePage = () => {
   const [tab, setTab] = useState(0);
   const [foodItems, setFoodItems] = useState([]);
   const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
+  const toggleDialog = () => {
+    setIsDialogOpen(!isDialogOpen);
+  };
+  
   const handleAddFoodItem = (newItem) => {
     setFoodItems([...foodItems, newItem]);
   };
@@ -129,8 +134,14 @@ const HomePage = () => {
         handleEditQuantity={handleEditQuantity}
         // rerender={rerender}
       />
+      
+      <GroceryForm
+        open={isDialogOpen}
+        onClose={toggleDialog}
+        onAddFoodItem={handleAddFoodItem}
+      />
 
-      <Footer />
+      <Footer onAddFoodClick={toggleDialog} />
     </Box>
   );
 };

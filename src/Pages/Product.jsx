@@ -115,13 +115,13 @@ const Product = () => {
           marginTop: "50px",
         }}
       >
-        <Button
+        {/* <Button
           variant="contained"
           onClick={toggleDialog}
           sx={{ background: "#ffffff", color: "#000000" }}
         >
           Manual Input My Item
-        </Button>
+        </Button> */}
 
         <GroceryForm
           open={isDialogOpen}

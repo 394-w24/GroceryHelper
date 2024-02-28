@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { Box, IconButton, useTheme } from "@mui/material";
 
-const Footer = ({}) => {
+const Footer = ({onAddFoodClick}) => {
   const theme = useTheme();
 
   return (
@@ -42,10 +42,30 @@ const Footer = ({}) => {
             textAlign: "center",
           }}
         >
-          Add Item
-          {/* Add
-          <br />
-          Items */}
+          Take Photo Of My Item
+        </Typography>
+      </Button>
+      <Button
+        variant="contained"
+        sx={{
+          backgroundColor: theme.palette.primary["darkGreen"],
+          "&:hover": {
+            backgroundColor: theme.palette.primary[5],
+          },
+          height: "60px",
+          width: "120[x",
+          borderRadius: "10%%",
+        }}
+        onClick={onAddFoodClick}
+      >
+        <Typography
+          sx={{
+            fontWeight: "bolder",
+            fontSize: "16px",
+            textAlign: "center",
+          }}
+        >
+          Manually Input My Item
         </Typography>
       </Button>
     </Box>
