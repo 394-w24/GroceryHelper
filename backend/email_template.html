@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        font-family: Julius Sans One;
+        line-height: 1.6;
+        margin: 0;
+        padding-right: 80px;
+        padding-left: 80px;
+        background: linear-gradient(to bottom, #f9fff7 0%, #bde8a5 100%);
+        background-attachment: fixed;
+        text-align: center;
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin-top: 20px;
+      }
+      h2 {
+        font-size: 0.9rem;
+        font-weight: normal;
+      }
+      h3 {
+        font-size: 0.7rem;
+        margin-top: 10px;
+        font-weight: normal;
+      }
+      .food-list {
+        margin-top: 20px;
+      }
+      .recipe-suggestion a {
+        color: black;
+        text-decoration: none;
+      }
+      .footer {
+        font-size: 0.8em;
+        margin-top: 30px;
+        color: #777;
+      }
+      .footer a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      button {
+        padding: 15px 30px;
+        font-size: 1.3rem;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 15px;
+        display: inline-block;
+        width: 80%;
+        height: 70px;
+        background: lightblue;
+      }
+      button:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.24);
+        transform: translateY(-2px);
+      }
+      ul,li{
+        list-style-type: none; /* Removes the bullet points or numbers */
+        padding-left: 0; /* Removes padding from the left side */
+        margin-left: 0; /* Removes margin from the left side */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Oh crap! The following items in your kitchen are going bad in 48 hours.
+    </h1>
+    <div class="food-list">
+      <h2>Produce 1 in your fridge/pantry: Apples</h2>
+      <h2>Produce 2 in your fridge/pantry: Bananas</h2>
+      <!-- More items can be added here -->
+    </div>
+    <br />
+    <div class="recipe-suggestion">
+      <h3>Good thing we know exactly what you should make with it.</h3>
+      <ul>
+        <li>
+          <button>
+            <a href="https://example.com/recipe1"
+              >Make this delicious Apple Pie</a
+            >
+          </button>
+        </li>
+        <li>
+          <button>
+            <a href="https://example.com/recipe2"
+              >Make this delicious Banana Bread</a
+            >
+          </button>
+        </li>
+        <!-- More recipes can be added here -->
+      </ul>
+    </div>
+    <div class="footer">
+      You are receiving this email because you opted in via our app.<br />
+      You are receiving this email because you opted in via our app.<br />
+      Tired of the fridge surprise with more science experiment than snack? 🍓🥦 Meet Stay Fresh - <br />
+      You are receiving this email because you opted in via our app.<br />
+      <a href="#">Unsubscribe</a>
+    </div>
+  </body>
+</html>
