@@ -72,8 +72,11 @@ const Product = () => {
       </Box>
       <Box
         sx={{
+          display: "flex",
+          justifyContent: "center",
           position: "relative",
           height: "600px",
+
         }}
       >
         <Webcam
