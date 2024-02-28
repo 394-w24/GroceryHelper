@@ -2,6 +2,10 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { Box, IconButton, useTheme } from "@mui/material";
 
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+
+
 const Footer = ({onAddFoodClick}) => {
   const theme = useTheme();
 
@@ -42,8 +46,9 @@ const Footer = ({onAddFoodClick}) => {
             textAlign: "center",
           }}
         >
-          Take Photo Of My Item
+          Take Photo
         </Typography>
+        <CameraAltIcon/>
       </Button>
       <Button
         variant="contained"
@@ -65,8 +70,9 @@ const Footer = ({onAddFoodClick}) => {
             textAlign: "center",
           }}
         >
-          Manually Input My Item
+          Manual Input
         </Typography>
+        <KeyboardIcon/>
       </Button>
     </Box>
   );
