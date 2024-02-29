@@ -43,7 +43,14 @@ const Food = ({ fooditem, isExpanded, setIsExpanded }) => {
       }
       const productRef = doc(db, "products", productId);
       const snapshot = await getDoc(productRef);
-      setProductName(snapshot.data().name);
+
+      if (snapshot.exists()) {
+        setProductName(snapshot.data().name);
+      } else {
+        const userProductRef = doc(db, "userProducts", productId);
+        const userProductSnapshot = await getDoc(userProductRef);
+        setProductName(userProductSnapshot.data().name);
+      }
     };
     fetchProductName();
   }, [productId]);
