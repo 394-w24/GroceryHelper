@@ -28,7 +28,7 @@ const HomePage = () => {
   const toggleDialog = () => {
     setIsDialogOpen(!isDialogOpen);
   };
-  
+
   const handleAddFoodItem = (newItem) => {
     setFoodItems([...foodItems, newItem]);
   };
@@ -132,9 +132,8 @@ const HomePage = () => {
         foodItems={displayedFoodItems}
         handleDeleteFood={handleDeleteFood}
         handleEditQuantity={handleEditQuantity}
-        // rerender={rerender}
       />
-      
+
       <GroceryForm
         open={isDialogOpen}
         onClose={toggleDialog}

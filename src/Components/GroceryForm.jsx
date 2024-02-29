@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useNavigate } from "react-router-dom";
 import {
   getDocs,
   getDoc,
@@ -52,6 +53,14 @@ export default function GroceryForm({
   const [imageFile, setImageFile] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [matchNotFound, setMatchNotFound] = useState(false);
+  const [isUserAdding, setIsUserAdding] = useState(false);
+  const [userProduct, setUserProduct] = useState(null);
+  const [openResults, setOpenResults] = useState(false);
+
+  const openPopper = () => setOpenResults(true);
+  const closePopper = () => setOpenResults(false);
+
+  const navigate = useNavigate();
 
   const handleImageUpload = (file) => {
     setImageFile(file);
@@ -127,37 +136,85 @@ export default function GroceryForm({
     return newDate;
   };
 
+  const addCustomProduct = async () => {
+    const docRef = await addDoc(collection(db, "userProducts"), {
+      categoryId: 26,
+      description: "",
+      freeze: category === 0 ? daysUntilExpiration : -1,
+      name: userProduct,
+      pantry: category === 1 ? daysUntilExpiration : -1,
+      refrigerate: category === 2 ? daysUntilExpiration : -1,
+    });
+
+    const id = docRef.id;
+    return id;
+  };
+
   const handleSubmit = async () => {
     const categoryLabels = ["Pantry", "Fridge", "Freezer"];
     const selectedCategory = categoryLabels[category];
     const currDate = new Date();
 
-    try {
-      const docRef = await addDoc(collection(db, "userGroceries"), {
-        createdAt: currDate,
-        expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
-        imageURL: "",
-        productId: chosenProductId,
-        quantity: quantity,
-        storageType: selectedCategory,
-        userId: localStorage.getItem("uid"),
-      });
+    if (isUserAdding) {
+      console.log("isuseradding", isUserAdding);
+      const newProductId = await addCustomProduct();
 
-      onAddFoodItem({
-        createdAt: currDate,
-        expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
-        id: docRef.id,
-        imageURL: "",
-        productId: chosenProductId,
-        quantity: quantity,
-        storageType: selectedCategory,
-        userId: localStorage.getItem("uid"),
-      });
+      try {
+        const docRef = await addDoc(collection(db, "userGroceries"), {
+          createdAt: currDate,
+          expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+          imageURL: "",
+          productId: newProductId,
+          quantity: quantity,
+          storageType: selectedCategory,
+          userId: localStorage.getItem("uid"),
+        });
 
-      resetForm();
-      onClose();
-    } catch (error) {
-      console.error(error);
+        onAddFoodItem({
+          createdAt: currDate,
+          expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+          id: docRef.id,
+          imageURL: "",
+          productId: newProductId,
+          quantity: quantity,
+          storageType: selectedCategory,
+          userId: localStorage.getItem("uid"),
+        });
+
+        resetForm();
+        onClose();
+        navigate(0);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      try {
+        const docRef = await addDoc(collection(db, "userGroceries"), {
+          createdAt: currDate,
+          expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+          imageURL: "",
+          productId: chosenProductId,
+          quantity: quantity,
+          storageType: selectedCategory,
+          userId: localStorage.getItem("uid"),
+        });
+
+        onAddFoodItem({
+          createdAt: currDate,
+          expiredAt: GetExpirationDate(currDate, daysUntilExpiration),
+          id: docRef.id,
+          imageURL: "",
+          productId: chosenProductId,
+          quantity: quantity,
+          storageType: selectedCategory,
+          userId: localStorage.getItem("uid"),
+        });
+
+        resetForm();
+        onClose();
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -174,7 +231,7 @@ export default function GroceryForm({
   };
 
   useEffect(() => {
-    const init = () => {
+    const init = async () => {
       const temp = [];
       foodItems.forEach((curr) => {
         if (
@@ -195,11 +252,17 @@ export default function GroceryForm({
           return;
         }
 
-        // return curr;
         temp.push(curr);
       });
 
-      //   setAllData(filtered);
+      const docRef = collection(db, "userProducts");
+      const docSnap = await getDocs(docRef);
+
+      docSnap.forEach((doc) => {
+        const tempData = Object.assign(doc.data(), { productId: doc.id });
+        temp.push(tempData);
+      });
+
       setAllData(temp);
     };
 
@@ -212,22 +275,31 @@ export default function GroceryForm({
 
     if (value) {
       const { name, description, categoryId } = value;
-      const docRef = collection(db, "products");
-      const q = query(
-        docRef,
-        where("categoryId", "==", categoryId),
-        where("name", "==", name),
-        where("description", "==", description)
-      );
 
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        setChosenProductId(doc.id);
-        setDaysUntilExpiration(doc.data()[currCategory]);
-        setChosenProduct(doc.data());
-      });
+      //if data is from userProducts, productId should exist
+      if (!!value.productId) {
+        console.log("here", value);
+        setChosenProductId(value.productId);
+        setDaysUntilExpiration(value[currCategory]);
+        setChosenProduct(value);
+      } else {
+        const docRef = collection(db, "products");
+        const q = query(
+          docRef,
+          where("categoryId", "==", categoryId),
+          where("name", "==", name),
+          where("description", "==", description)
+        );
 
-      setSearchResults([value]);
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          setChosenProductId(doc.id);
+          setDaysUntilExpiration(doc.data()[currCategory]);
+          setChosenProduct(doc.data());
+        });
+
+        setSearchResults([value]);
+      }
     }
   };
 
@@ -236,17 +308,12 @@ export default function GroceryForm({
       const lowercased = searchTerm.toLowerCase();
       const filtered = allData.filter((item) => {
         const { name } = item || "";
-        // console.log(name);
         return name.toLowerCase().includes(lowercased) || "";
       });
-      // console.log(filtered);
       setOptions(filtered);
     };
 
-    // if (searchTerm !== "") {
-    // console.log("here", searchTerm);
     updateOptions();
-    // }
   }, [searchTerm, allData]);
 
   useEffect(() => {
@@ -291,14 +358,7 @@ export default function GroceryForm({
         maxWidth="md"
       >
         <DialogTitle>Add Grocery Item</DialogTitle>
-        <DialogContent
-          sx={
-            {
-              // margin: "20px",
-              // border: "1px solid",
-            }
-          }
-        >
+        <DialogContent>
           {matchNotFound && (
             <Box sx={{ color: "red", marginTop: "10px" }}>
               Could not match image to item, please select manually from
@@ -307,13 +367,31 @@ export default function GroceryForm({
           )}
           <Autocomplete
             id="user-search-autocomplete"
+            open={openResults}
+            onOpen={openPopper}
+            onClose={closePopper}
             options={options}
+            noOptionsText={
+              <Button
+                onClick={() => {
+                  closePopper();
+                  setUserProduct(searchTerm);
+                  setIsUserAdding(true);
+                }}
+              >
+                Can't Find My Item?
+              </Button>
+            }
             value={selectedOption}
             getOptionLabel={(option) =>
               option
                 ? `${option.name}${
                     option.description ? "/" + option.description : ""
-                  }/${categoryData[option.categoryId]?.categoryName}`
+                  }${
+                    option.categoryId === 26
+                      ? ""
+                      : "/" + categoryData[option.categoryId]?.categoryName
+                  }`
                 : ""
             }
             style={{ marginBlock: "10px" }}
@@ -328,6 +406,7 @@ export default function GroceryForm({
               setSelectedOption(newValue);
               setMatchNotFound(false);
               if (newValue) {
+                console.log("newvalue is", newValue);
                 setSearchTerm(newValue.name);
                 handleSelect(event, newValue);
               }
@@ -341,6 +420,19 @@ export default function GroceryForm({
               />
             )}
           />
+          {isUserAdding && (
+            <TextField
+              margin="dense"
+              id="productName"
+              label="product Name"
+              type="string"
+              fullWidth
+              variant="outlined"
+              value={userProduct}
+              sx={{ marginBlock: "10px" }}
+              onChange={(e) => setUserProduct(e.target.value)}
+            ></TextField>
+          )}
 
           <TextField
             margin="dense"

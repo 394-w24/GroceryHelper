@@ -75,7 +75,6 @@ const SwipeOptions = ({ fooditem, handleDeleteFood, handleEditQuantity }) => {
 
   useEffect(() => {
     setIsExpanded(false);
-    console.log("quantity", fooditem.quantity);
     setQuantity(fooditem.quantity);
   }, [fooditem]);
 
