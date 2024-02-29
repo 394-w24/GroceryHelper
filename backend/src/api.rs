@@ -185,7 +185,13 @@ pub async fn email(db: web::Data<ServiceSession>, data: web::Query<EmailReq>) ->
     let mut emails_sent = 0;
     for (user_id, list) in expired_groceries {
         if let Some(email) = get_user_email(db.get_ref(), &user_id).await {
-            let body = "Your groceries will be expired soon!".to_string();
+            let current_user = get_all_users(db.get_ref(), &mut users_map, &user_id).await;
+            if current_user.is_none() {
+                println!("User not found: {}", &user_id);
+                continue;
+            }
+            let user_settings = current_user.unwrap().settings.clone();
+            let body = format!("Your groceries will be expired in {} hours!", user_settings.unwrap().send_before);
             let image_url = "".to_string();
             println!("Sending email to {}", &email);
             println!("list: {:?}", &list);

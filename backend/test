@@ -1,0 +1,14 @@
+for dataset:
+    items = [[seed=1], [seed=2] ... [seed=n]]
+
+    items[seed, k]
+    history[1] = avg(items[:, 1])
+
+    history = [Test[items[0]], Test[items[1]], ... Test[items[n]]] 
+    M = F[history]
+
+    gen(M, items) => items_new
+    gen(Mbest, items) => items_new_best
+    avg(Test[items_new]) - max(Test[items_new_best]) = R[1..n]
+
+
