@@ -7,6 +7,9 @@
       "hosting": {
         "dev": [
           "stayfresh-dev"
+        ],
+        "main": [
+          "groceryhelper-fdb2d"
         ]
       }
     }

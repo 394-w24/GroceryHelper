@@ -1,5 +1,5 @@
 {
-  "hosting": {
+  "hosting": [{
     "target": "dev",
     "public": "dist",
     "ignore": [
@@ -13,5 +13,20 @@
         "destination": "/index.html"
       }
     ]
-  }
+  },
+  {
+    "target": "main",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }]
 }
