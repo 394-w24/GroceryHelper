@@ -12,6 +12,8 @@ import {
   Container,
   useTheme,
   Divider,
+  Tab, 
+  Tabs,
 } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { ArrowBack } from "@mui/icons-material";
@@ -38,6 +40,9 @@ const Profile = () => {
   const [sendEmail, setSendEmail] = useState(
     localStorage.getItem("sendEmail") === "true" ? true : false
   );
+  const name = localStorage.getItem("name");
+  const photoUrl = localStorage.getItem("photoUrl");
+
   const getTime = () => {
       {
           const tmp = localStorage.getItem("sendBefore");
@@ -84,6 +89,12 @@ const Profile = () => {
     });
   }, [sendEmail, sendBefore, sendTime]);
 
+  const [tabValue, setTabValue] = useState(0);
+
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue); 
+  };
+
   return (
     <Box>
       <Box
@@ -118,7 +129,23 @@ const Profile = () => {
         </Grid>
         <Divider />
       </Box>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
+        <Tabs value={tabValue} 
+          onChange={handleTabChange} 
+          aria-label="tabs example" 
+         indicatorColor="primary"
+         textColor="inherit"
+         variant="fullWidth"
+         scrollButtons={false}
+         >
+          <Tab label="Profile" />
+          <Tab label="Notifications" />
+
+        </Tabs>
+      </Box>
       <Box sx={{ padding: 3 }}>
+
+      {tabValue === 1 && (
         <Grid container spacing={2}>
           {" "}
           {/* Added container with spacing */}
@@ -204,20 +231,75 @@ const Profile = () => {
                 }}
               />
             </LocalizationProvider>
-          </Grid>
-          <Grid item xs={12} sx={{ display: "flex", justifyContent: "center", marginTop: "320px"}}>
+          </Grid> 
+        </Grid> 
+
+          )}
+
+        {tabValue === 0 && (
+          <Box>
+
+           <Box 
+              sx={{
+                display: "flex",
+                alignItems: "center", 
+                justifyContent: "start",  
+                gap: 1,  
+                pl: 1,  
+              }}
+            > 
+              <Box
+                component="img"
+                src={photoUrl}
+                sx={{
+                  width: 60,
+                  height: 60,
+                  borderRadius: "50%",
+                  filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+                }}
+              />
+              
+              <Typography
+                variant="h1"  
+                sx={{ ml: 1, fontSize: "28px" }}  
+              >
+                {name}
+              </Typography>
+            </Box>
+
+          <Grid item xs={12} sx={{ display: "flex", flexDirection: "column"}}>
             <Button
               variant="contained"
               onClick={handleLogOut}
               sx={{
                 backgroundColor: theme.palette.primary["darkGreen"],
                 color: theme.palette.primary.contrastText,
+                mt: "40px",
+                ml: "20px",
+                width: "310px",
               }}
             >
               Logout
             </Button>
+            {/* <Button
+            //  onClick={() => handleDelete()}
+              variant="contained"
+              sx={{
+                
+                backgroundColor: theme.palette.primary["darkGreen"],
+                color: theme.palette.primary.contrastText,
+                ml: "20px",
+                mt: 2,
+                width: "310px",
+              }}
+            >
+              Delete Account
+            </Button> */}
           </Grid>
-        </Grid>
+          </Box>
+        )}
+      
+      
       </Box>
     </Box>
   );

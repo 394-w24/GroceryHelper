@@ -141,4 +141,34 @@ const updateUserSettings = async (uid, settings) => {
   await updateDoc(userRef, settings);
 };
 
+const deleteUserFirestore = async (uid) => {
+  const userDocRef = doc(db, "users", uid);
+  await deleteDoc(userDocRef);
+};
+
+// const handleDelete = async () => {
+//   const auth = getAuth();
+//   const user = auth.currentUser;
+
+//   if (user) {
+//     try {
+//       //need to delete all firebase data somehow
+//       await deleteUserFirestore(user.uid);
+//       await deleteUser(user);
+
+//       localStorage.removeItem("isSignedIn");
+//       localStorage.removeItem("name");
+//       localStorage.removeItem("photoUrl");
+//       localStorage.removeItem("uid");
+
+//       window.location.reload();
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   } else {
+//     console.log("no user exist");
+//   }
+// };
+
+
 export { db, auth, storage, signUpWithGoogle, checkIfLoggedIn, getUserData, handleLogOut, updateUserSettings };
