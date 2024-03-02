@@ -14,6 +14,7 @@ const Product = () => {
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
   const [image, setImage] = useState(null);
   const [foodName, setFoodName] = useState(null);
+  const [chosenName, setChosenName] = useState(null);
 
   const toggleDialog = () => {
     if (isConfirmModalOpen) {
@@ -76,7 +77,6 @@ const Product = () => {
           justifyContent: "center",
           position: "relative",
           height: "600px",
-
         }}
       >
         <Webcam
@@ -117,21 +117,27 @@ const Product = () => {
           marginTop: "50px",
         }}
       >
-        <GroceryForm
-          open={isDialogOpen}
-          onClose={toggleDialog}
-          onAddFoodItem={handleAddFoodItem}
-          passedInFoodName={foodName}
-        />
+        {isDialogOpen && (
+          <GroceryForm
+            open={isDialogOpen}
+            onClose={toggleDialog}
+            onAddFoodItem={handleAddFoodItem}
+            passedInFoodName={chosenName}
+            productName={foodName}
+          />
+        )}
       </Box>
 
-      <ConfirmModal
-        open={isConfirmModalOpen}
-        onClose={toggleConfirmModal}
-        onConfirm={openGroceryFormOnConfirm}
-        image={image}
-        name={foodName}
-      />
+      {isConfirmModalOpen && (
+        <ConfirmModal
+          open={isConfirmModalOpen}
+          onClose={toggleConfirmModal}
+          onConfirm={openGroceryFormOnConfirm}
+          setChosenName={setChosenName}
+          image={image}
+          name={foodName}
+        />
+      )}
     </Box>
   );
 };

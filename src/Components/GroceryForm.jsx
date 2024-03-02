@@ -37,6 +37,7 @@ export default function GroceryForm({
   onClose,
   onAddFoodItem,
   passedInFoodName,
+  productName,
 }) {
   const [groceryItem, setGroceryItem] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -89,12 +90,19 @@ export default function GroceryForm({
   };
 
   useEffect(() => {
-    if (passedInFoodName) {
-      const lowercased = passedInFoodName.toLowerCase();
+    if (passedInFoodName !== null) {
+      if (passedInFoodName === "") {
+        setIsUserAdding(true);
+        setUserProduct(productName);
+        return;
+      }
+
       const filtered = allData.filter((item) => {
-        const { name } = item || "";
-        return name.toLowerCase().includes(lowercased) || "";
+        const { name, description } = item || "";
+        const temp = `${name}/${description}`;
+        return temp === passedInFoodName || "";
       });
+
       const selected = filtered[0];
       setSelectedOption(selected);
       handleSelect(null, selected);
@@ -156,7 +164,6 @@ export default function GroceryForm({
     const currDate = new Date();
 
     if (isUserAdding) {
-      console.log("isuseradding", isUserAdding);
       const newProductId = await addCustomProduct();
 
       try {
@@ -228,6 +235,8 @@ export default function GroceryForm({
     setImageFile(null);
     setChosenProductId(null);
     setChosenProduct(null);
+    setIsUserAdding(false);
+    setUserProduct(null);
   };
 
   useEffect(() => {
@@ -423,7 +432,7 @@ export default function GroceryForm({
           {isUserAdding && (
             <TextField
               margin="dense"
-              id="productName"
+              id="productNameInput"
               label="product Name"
               type="string"
               fullWidth
