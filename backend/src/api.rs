@@ -175,7 +175,11 @@ pub async fn email(db: web::Data<ServiceSession>, data: web::Query<EmailReq>) ->
         if expired {
             let mut list = expired_groceries.entry(item.user_id.clone()).or_insert(vec![]);
             // println!("Expired: {:?}", &item.product_id);
-            let product_name = products_map.get(&item.product_id).unwrap().clone();
+            let product_name = products_map.get(&item.product_id);
+            if product_name.is_none() {
+                continue;
+            }
+            let product_name = product_name.unwrap().clone();
             // let product_name = item.product_id.clone();
             let storage_type = item.storage_type.clone();
             let quantity = item.quantity;
@@ -191,7 +195,7 @@ pub async fn email(db: web::Data<ServiceSession>, data: web::Query<EmailReq>) ->
                 continue;
             }
             let user_settings = current_user.unwrap().settings.clone();
-            let body = format!("Your groceries will be expired in {} hours!", user_settings.unwrap().send_before);
+            let body = format!("Oh crap! Your these things in your kitchen are going bad in {} hours!", user_settings.unwrap().send_before);
             let image_url = "".to_string();
             println!("Sending email to {}", &email);
             println!("list: {:?}", &list);

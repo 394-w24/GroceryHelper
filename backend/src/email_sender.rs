@@ -17,12 +17,12 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       height: 100%;
     }
     .header-background {
-        background-image: url('https://foodrevolution.org/wp-content/uploads/2019/01/iStock-855098134-marilyna-featured.jpg'); /* 这里填写你的图片路径 */
+        background-image: url('https://foodrevolution.org/wp-content/uploads/2019/01/iStock-855098134-marilyna-featured.jpg'); 
         background-size: cover;
         background-position: center;
-        height: 200px; /* 可以根据需要调整高度 */
+        height: 200px; 
       }
-    body {
+    .appbody {
       font-family: 'Arial', sans-serif;
       /* Adjusted to a more commonly available font */
       line-height: 1.6;
@@ -50,7 +50,7 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       font-weight: normal;
       color: #333;
       /* Darker text color */
-      text-align: left;
+      text-align: center;
       /* Align text to the left */
     }
 
@@ -101,7 +101,7 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       font-weight: bold;
       margin: 15px;
       display: inline-block;
-      width: auto;
+      width: 100%;
       /* Adjusted width */
       height: 50px;
       /* Adjusted height */
@@ -111,6 +111,8 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       /* Rounded corners */
       box-shadow: 0 4px #c75b39;
       /* Added box-shadow for 3D effect */
+      text-align: center;
+      
     }
 
     button:hover {
@@ -142,15 +144,15 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       /* Shadow for list items */
     }
     ");
-    html.push_str("</style></head><body>");
+    html.push_str("</style></head><body><div class=\"appbody\">");
     html.push_str("<div class=\"header-background\"></div>");
     // Add header
     html.push_str(&format!("<h1>{}</h1>", body));
 
     // Create table for food items with headers
     html.push_str("<div class=\"food-list\"><ul>");
-    for (id, food) in food_list.iter().enumerate() {
-        html.push_str(&format!("<li><h2>Produce {} in your {}:  {} Qty: {}</h2></li>", id + 1, food.2, food.0, food.1));
+    for food in food_list {
+        html.push_str(&format!("<li><h2>{} {} in your {}</h2></li>", food.1, food.0, food.2));
     }
     html.push_str("</ul></div>");
     html.push_str("<div class=\"recipe-suggestion\">
@@ -178,7 +180,7 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
         html.push_str(&format!("<img src=\"{}\" alt=\"Food Image\">", image_url));
     }
 
-    html.push_str("</body></html>");
+    html.push_str("</div></body></html>");
 
     html
 }
