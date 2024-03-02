@@ -29,7 +29,7 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       margin: 0;
       padding: 0 80px;
       /* Combined padding-right and padding-left */
-      background: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
+      background: linear-gradient(to bottom, #e1f3cd 0%, #a4eb54 100%);
       /* Updated gradient colors */
       background-attachment: fixed;
       text-align: center;

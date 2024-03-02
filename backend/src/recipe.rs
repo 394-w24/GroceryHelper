@@ -23,5 +23,8 @@ pub async fn get_recipes(food: &Vec<String>) -> Result<Vec<(String, String)>, re
         }
     }
     println!("Recipes: {:?}", &recipes);
+    if recipes.len() > 5 {
+        recipes.truncate(5);
+    }
     Ok(recipes)
 }
