@@ -12,10 +12,12 @@ import {
   collection,
   query,
   where,
+  updateDoc,
   orderBy,
   doc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
+import OnboardingPopup from "../Components/OnboardingPopup";
 
 const HomePage = () => {
   const uid = localStorage.getItem("uid");
@@ -24,6 +26,34 @@ const HomePage = () => {
   const [foodItems, setFoodItems] = useState([]);
   const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+
+  useEffect(() => {
+    const checkOnboardingStatus = async () => {
+      if (uid) {
+        const userSettingsRef = doc(db, "users", uid);
+        const docSnap = await getDoc(userSettingsRef);
+
+        if (docSnap.exists() && docSnap.data().onboardingComplete) {
+          setShowOnboarding(false);
+        } else {
+          setShowOnboarding(true);
+        }
+      }
+    };
+
+    checkOnboardingStatus();
+  }, [uid]);
+
+  const handleCompleteOnboarding = async () => {
+    if (uid) {
+      const userSettingsRef = doc(db, "users", uid);
+      await updateDoc(userSettingsRef, {
+        onboardingComplete: true,
+      });
+      setShowOnboarding(false);
+    }
+  };
 
   const toggleDialog = () => {
     setIsDialogOpen(!isDialogOpen);
@@ -127,6 +157,7 @@ const HomePage = () => {
           />
         ))}
       </Tabs>
+      {showOnboarding && <OnboardingPopup onClose={handleCompleteOnboarding} />}
 
       <FoodList
         foodItems={displayedFoodItems}
