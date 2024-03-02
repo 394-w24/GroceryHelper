@@ -1,5 +1,14 @@
-import logo from "../assets/logo/logo.jpg";
 import React, { useState } from "react";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import CloseIcon from "@mui/icons-material/Close";
+import img1 from "../assets/onBoard/1.png";
+import img2 from "../assets/onBoard/2.png";
+import img3 from "../assets/onBoard/3.png";
+import img4 from "../assets/onBoard/4.png";
+import img5 from "../assets/onBoard/5.png";
+import img6 from "../assets/onBoard/6.png";
+import img7 from "../assets/onBoard/7.png";
 import {
   Dialog,
   MobileStepper,
@@ -9,13 +18,11 @@ import {
   IconButton,
   CardMedia,
 } from "@mui/material";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import CloseIcon from "@mui/icons-material/Close";
 
 const OnboardingPopup = ({ onClose }) => {
   const [activeStep, setActiveStep] = useState(0);
-  const maxSteps = 3; // Adjust based on the number of slides
+  const maxSteps = 7;
+  const images = [img1, img2, img3, img4, img5, img6, img7];
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -27,20 +34,13 @@ const OnboardingPopup = ({ onClose }) => {
 
   const slides = [
     {
-      label: "Welcome to the App!",
-      description: "Here's how you can get started...",
+      label: "Welcome to Our App!",
+      description: "We're excited to have you onboard. Let's get you started.",
+      image: null,
     },
-    {
-      label: "Feature 1",
-      description: "Learn how to use feature 1...",
-      image: logo,
-    },
-    {
-      label: "Feature 2",
-      description: "Learn how to use feature 2...",
-      image: logo,
-    },
-    // Add more slides as needed
+    ...images.map((image, index) => ({
+      image,
+    })),
   ];
 
   return (
@@ -66,11 +66,18 @@ const OnboardingPopup = ({ onClose }) => {
             component="img"
             image={slides[activeStep].image}
             alt={slides[activeStep].label}
-            sx={{ width: "100%", height: "auto", marginBottom: 2 }}
+            sx={{
+              width: "100%",
+              height: "auto",
+              objectFit: "contain",
+              maxHeight: "100%",
+            }}
           />
         )}
-        <Typography variant="h5">{slides[activeStep].label}</Typography>
-        <Typography>{slides[activeStep].description}</Typography>
+        <Typography variant="h1">{slides[activeStep].label}</Typography>
+        <Typography sx={{ textAlign: "center" }}>
+          {slides[activeStep].description}
+        </Typography>
       </Box>
       <MobileStepper
         steps={maxSteps}
