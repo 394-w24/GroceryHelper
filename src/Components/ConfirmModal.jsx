@@ -186,7 +186,11 @@ const ConfirmModal = ({
                   return (
                     <Button
                       onClick={() => {
-                        setChosenName(`${option.name}/${option.description}`);
+                        setChosenName(
+                          option.description
+                            ? `${option.name}/${option.description}`
+                            : `${option.name}`
+                        );
                         onConfirm();
                       }}
                       variant="contained"
@@ -199,7 +203,10 @@ const ConfirmModal = ({
                         border: "1px solid #D9D9D9",
                       }}
                     >
-                      {option.name}/{option.description}
+                      {option.description
+                        ? `${option.name}/${option.description}
+                      `
+                        : `${option.name}`}
                     </Button>
                   );
                 })}

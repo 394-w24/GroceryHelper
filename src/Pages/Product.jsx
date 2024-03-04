@@ -52,7 +52,7 @@ const Product = () => {
   const videoConstraints = {
     width: { min: 640, ideal: 1920 },
     height: { min: 720, ideal: 1080 },
-    facingMode: { exact: "environment" },
+    facingMode: { ideal: "environment" },
   };
 
   useEffect(() => {

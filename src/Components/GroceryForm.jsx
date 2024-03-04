@@ -99,7 +99,7 @@ export default function GroceryForm({
 
       const filtered = allData.filter((item) => {
         const { name, description } = item || "";
-        const temp = `${name}/${description}`;
+        const temp = description ? `${name}/${description}` : `${name}`;
         return temp === passedInFoodName || "";
       });
 
