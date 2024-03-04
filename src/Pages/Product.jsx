@@ -8,9 +8,9 @@ import GroceryForm from "../Components/GroceryForm";
 import FoodRecognition from "../Components/FoodRecognition";
 import ConfirmModal from "../Components/ConfirmModal";
 import recognizeImage from "../helper";
-import foodItems from "../assets/data.json";
-import { getDocs, collection } from "firebase/firestore";
 import { db } from "../Firebase";
+import { getDocs, collection } from "firebase/firestore";
+import foodData from "../assets/data.json";
 
 const Product = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -23,7 +23,7 @@ const Product = () => {
   useEffect(() => {
     const init = async () => {
       const temp = [];
-      foodItems.forEach((curr) => {
+      foodData.forEach((curr) => {
         if (
           !!curr.freeze &&
           curr.freeze === -1 &&
@@ -164,7 +164,7 @@ const Product = () => {
             onAddFoodItem={handleAddFoodItem}
             passedInFoodName={chosenName}
             productName={foodName}
-            allData={allData}
+            allData={allData || []}
           />
         )}
       </Box>
@@ -177,7 +177,7 @@ const Product = () => {
           setChosenName={setChosenName}
           image={image}
           name={foodName}
-          allData={allData}
+          allData={allData || []}
         />
       )}
     </Box>

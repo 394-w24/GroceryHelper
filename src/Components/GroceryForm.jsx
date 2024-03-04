@@ -218,51 +218,9 @@ export default function GroceryForm({
     setUserProduct(null);
   };
 
-  // useEffect(() => {
-  //   const init = async () => {
-  //     const temp = [];
-  //     foodItems.forEach((curr) => {
-  //       if (
-  //         !!curr.freeze &&
-  //         curr.freeze === -1 &&
-  //         !!curr.pantry &&
-  //         curr.pantry === -1 &&
-  //         !!curr.refrigerate &&
-  //         curr.refrigerate === -1
-  //       ) {
-  //         return;
-  //       }
-
-  //       const categoryLabels = ["pantry", "Fridge", "freezer"];
-  //       const currCategory = categoryLabels[category];
-
-  //       if (!curr[currCategory]) {
-  //         return;
-  //       }
-
-  //       temp.push(curr);
-  //     });
-  //     // setAllData(temp);
-
-  //     const docRef = collection(db, "userProducts");
-  //     const docSnap = await getDocs(docRef);
-
-  //     docSnap.forEach((doc) => {
-  //       const tempData = Object.assign(doc.data(), { productId: doc.id });
-  //       temp.push(tempData);
-  //     });
-
-  //     setAllData(temp);
-  //     console.log("temp.length", temp.length);
-  //   };
-
-  //   init();
-  // }, []);
-
   useEffect(() => {
-    console.log("passeinfood alldata", allData.length);
     if (passedInFoodName !== null) {
-      if (passedInFoodName === "") {
+      if (passedInFoodName === "" && productName != null) {
         setIsUserAdding(true);
         setUserProduct(productName);
         return;
@@ -359,7 +317,10 @@ export default function GroceryForm({
     <Box>
       <Dialog
         open={open}
-        onClose={onClose}
+        onClose={() => {
+          resetForm();
+          onClose();
+        }}
         PaperProps={{
           style: {
             borderRadius: 15,

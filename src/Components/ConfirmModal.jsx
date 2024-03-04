@@ -100,6 +100,22 @@ const ConfirmModal = ({
               No, retake photo
             </Button>
             <Button
+              onClick={() => {
+                onClose();
+                onConfirm();
+              }}
+              variant="contained"
+              sx={{
+                color: "#000000",
+                backgroundColor: "#ffffff",
+                fontWeight: "bolder",
+                border: "1px solid #D9D9D9",
+                marginRight: "10px",
+              }}
+            >
+              Add Item Manually
+            </Button>
+            <Button
               onClick={() => setStep(1)}
               variant="contained"
               sx={{
@@ -148,14 +164,6 @@ const ConfirmModal = ({
                     <Button
                       key={i}
                       onClick={() => {
-                        console.log(
-                          option,
-                          option.description,
-                          "okay",
-                          option.description
-                            ? `${option.name}/${option.description}`
-                            : `${option.name}`
-                        );
                         setChosenName(
                           option.description
                             ? `${option.name}/${option.description}`
