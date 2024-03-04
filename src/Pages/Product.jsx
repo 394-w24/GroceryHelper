@@ -8,6 +8,9 @@ import GroceryForm from "../Components/GroceryForm";
 import FoodRecognition from "../Components/FoodRecognition";
 import ConfirmModal from "../Components/ConfirmModal";
 import recognizeImage from "../helper";
+import foodItems from "../assets/data.json";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../Firebase";
 
 const Product = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -15,6 +18,43 @@ const Product = () => {
   const [image, setImage] = useState(null);
   const [foodName, setFoodName] = useState(null);
   const [chosenName, setChosenName] = useState(null);
+  const [allData, setAllData] = useState([]);
+
+  useEffect(() => {
+    const init = async () => {
+      const temp = [];
+      foodItems.forEach((curr) => {
+        if (
+          !!curr.freeze &&
+          curr.freeze === -1 &&
+          !!curr.pantry &&
+          curr.pantry === -1 &&
+          !!curr.refrigerate &&
+          curr.refrigerate === -1
+        ) {
+          return;
+        }
+
+        if (!curr["pantry"] && !curr["fridge"] && !curr["freezer"]) {
+          return;
+        }
+
+        temp.push(curr);
+      });
+
+      const docRef = collection(db, "userProducts");
+      const docSnap = await getDocs(docRef);
+
+      docSnap.forEach((doc) => {
+        const tempData = Object.assign(doc.data(), { productId: doc.id });
+        temp.push(tempData);
+      });
+
+      setAllData(temp);
+    };
+
+    init();
+  }, []);
 
   const toggleDialog = () => {
     if (isConfirmModalOpen) {
@@ -124,6 +164,7 @@ const Product = () => {
             onAddFoodItem={handleAddFoodItem}
             passedInFoodName={chosenName}
             productName={foodName}
+            allData={allData}
           />
         )}
       </Box>
@@ -136,6 +177,7 @@ const Product = () => {
           setChosenName={setChosenName}
           image={image}
           name={foodName}
+          allData={allData}
         />
       )}
     </Box>

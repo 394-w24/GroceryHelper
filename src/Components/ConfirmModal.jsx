@@ -7,9 +7,6 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import { getDocs, collection } from "firebase/firestore";
-import { db } from "../Firebase";
-import foodItems from "../assets/data.json";
 
 const ConfirmModal = ({
   open,
@@ -18,46 +15,10 @@ const ConfirmModal = ({
   setChosenName,
   image,
   name,
+  allData,
 }) => {
   const [step, setStep] = useState(0);
-  const [allData, setAllData] = useState([]);
   const [filteredOptions, setFilteredOptions] = useState([]);
-
-  useEffect(() => {
-    const init = async () => {
-      const temp = [];
-      foodItems.forEach((curr) => {
-        if (
-          !!curr.freeze &&
-          curr.freeze === -1 &&
-          !!curr.pantry &&
-          curr.pantry === -1 &&
-          !!curr.refrigerate &&
-          curr.refrigerate === -1
-        ) {
-          return;
-        }
-
-        if (!curr["pantry"] && !curr["fridge"] && !curr["freezer"]) {
-          return;
-        }
-
-        temp.push(curr);
-      });
-
-      const docRef = collection(db, "userProducts");
-      const docSnap = await getDocs(docRef);
-
-      docSnap.forEach((doc) => {
-        const tempData = Object.assign(doc.data(), { productId: doc.id });
-        temp.push(tempData);
-      });
-
-      setAllData(temp);
-    };
-
-    init();
-  }, []);
 
   const filterFoods = () => {
     const lowercased = name.toLowerCase();
@@ -182,10 +143,19 @@ const ConfirmModal = ({
             ) : (
               <>
                 <Typography>Choose from one of the options</Typography>
-                {filteredOptions.map((option) => {
+                {filteredOptions.map((option, i) => {
                   return (
                     <Button
+                      key={i}
                       onClick={() => {
+                        console.log(
+                          option,
+                          option.description,
+                          "okay",
+                          option.description
+                            ? `${option.name}/${option.description}`
+                            : `${option.name}`
+                        );
                         setChosenName(
                           option.description
                             ? `${option.name}/${option.description}`
@@ -225,6 +195,23 @@ const ConfirmModal = ({
               }}
             >
               No, retake photo
+            </Button>
+          </Box>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              onClick={() => {
+                onClose();
+                onConfirm();
+              }}
+              variant="contained"
+              sx={{
+                color: "#000000",
+                backgroundColor: "#ffffff",
+                fontWeight: "bolder",
+                border: "1px solid #D9D9D9",
+              }}
+            >
+              Add Item Manually
             </Button>
           </Box>
         </Box>
