@@ -16,6 +16,7 @@ import {
   deleteDoc,
   where,
   deleteField,
+  connectFirestoreEmulator
 } from "firebase/firestore";
 
 import {
@@ -23,6 +24,8 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithCredential,
+  connectAuthEmulator,
   signOut,
   fetchSignInMethodsForEmail,
   deleteUser,
@@ -49,6 +52,18 @@ const analytics = getAnalytics(app);
 const storage = getStorage(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
+
+if (!globalThis.EMULATION && import.meta.env.MODE === 'development') {
+  connectAuthEmulator(auth, "http://127.0.0.1:9099");
+  connectFirestoreEmulator(db, "127.0.0.1", 8080);
+
+  signInWithCredential(auth, GoogleAuthProvider.credential(
+    '{"sub": "H8fSW7M5bNI9sLT5Ol5pyaDJP6Ma", "email": "test@gmail.com", "displayName":"test", "email_verified": true}'
+  ));
+  
+  // set flag to avoid connecting twice, e.g., because of an editor hot-reload
+  globalThis.EMULATION = true;
+}
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
