@@ -39,7 +39,7 @@ const Footer = ({onAddFoodClick}) => {
         }}
         onClick={() => (window.location.href = "/newProduct")}
       >
-        <Typography
+        <Typography data-cy = "footer"
           sx={{
             fontWeight: "bolder",
             fontSize: "16px",

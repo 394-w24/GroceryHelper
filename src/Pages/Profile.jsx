@@ -120,6 +120,7 @@ const Profile = () => {
           </Grid>
           <Grid item xs={true}>
             <Typography
+            data-cy = "accounttitle"
               variant="h1"
               sx={{ textAlign: "center", fontSize: "28px" }}
             >

@@ -65,7 +65,7 @@ const LoginPage = () => {
           
         }}
       >
-        <StyledButton onClick={handleSignIn}>Login With Gmail</StyledButton>
+        <StyledButton data-cy="login" onClick={handleSignIn}>Login With Gmail</StyledButton>
       </Box>
     </Box>
   );

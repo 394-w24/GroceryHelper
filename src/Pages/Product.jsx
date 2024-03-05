@@ -62,7 +62,7 @@ const Product = () => {
   }, [image]);
 
   return (
-    <Box>
+    <Box data-cy="productPage">
       <IconButton onClick={() => (window.location.href = "/")}>
         <ChevronLeftIcon />
       </IconButton>
