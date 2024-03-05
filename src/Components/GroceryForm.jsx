@@ -38,13 +38,14 @@ export default function GroceryForm({
   onAddFoodItem,
   passedInFoodName,
   productName,
+  allData,
 }) {
   const [groceryItem, setGroceryItem] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState(0);
   const [daysUntilExpiration, setDaysUntilExpiration] = useState(1);
   const [allGroceryTypes, setAllGroceryTypes] = useState({});
-  const [allData, setAllData] = useState([]);
+  // const [allData, setAllData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [options, setOptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -88,28 +89,6 @@ export default function GroceryForm({
       setMatchNotFound(false);
     }
   };
-
-  useEffect(() => {
-    if (passedInFoodName !== null) {
-      if (passedInFoodName === "") {
-        setIsUserAdding(true);
-        setUserProduct(productName);
-        return;
-      }
-
-      const filtered = allData.filter((item) => {
-        const { name, description } = item || "";
-        const temp = `${name}/${description}`;
-        return temp === passedInFoodName || "";
-      });
-
-      const selected = filtered[0];
-      setSelectedOption(selected);
-      handleSelect(null, selected);
-    } else {
-      setSelectedOption(null);
-    }
-  }, [passedInFoodName]);
 
   const updateSelection = async (selectedItem) => {
     setSelectedOption(selectedItem);
@@ -240,43 +219,26 @@ export default function GroceryForm({
   };
 
   useEffect(() => {
-    const init = async () => {
-      const temp = [];
-      foodItems.forEach((curr) => {
-        if (
-          !!curr.freeze &&
-          curr.freeze === -1 &&
-          !!curr.pantry &&
-          curr.pantry === -1 &&
-          !!curr.refrigerate &&
-          curr.refrigerate === -1
-        ) {
-          return;
-        }
+    if (passedInFoodName !== null) {
+      if (passedInFoodName === "" && productName != null) {
+        setIsUserAdding(true);
+        setUserProduct(productName);
+        return;
+      }
 
-        const categoryLabels = ["pantry", "Fridge", "freezer"];
-        const currCategory = categoryLabels[category];
-
-        if (!curr[currCategory]) {
-          return;
-        }
-
-        temp.push(curr);
+      const filtered = allData.filter((item) => {
+        const { name, description } = item || "";
+        const temp = description ? `${name}/${description}` : name;
+        return temp === passedInFoodName || "";
       });
 
-      const docRef = collection(db, "userProducts");
-      const docSnap = await getDocs(docRef);
-
-      docSnap.forEach((doc) => {
-        const tempData = Object.assign(doc.data(), { productId: doc.id });
-        temp.push(tempData);
-      });
-
-      setAllData(temp);
-    };
-
-    init();
-  }, []);
+      const selected = filtered[0];
+      setSelectedOption(selected);
+      handleSelect(null, selected);
+    } else {
+      setSelectedOption(null);
+    }
+  }, [passedInFoodName]);
 
   const handleSelect = async (event, value) => {
     const categoryLabels = ["pantry", "refrigerate", "freeze"];
@@ -285,7 +247,6 @@ export default function GroceryForm({
     if (value) {
       const { name, description, categoryId } = value;
 
-      //if data is from userProducts, productId should exist
       if (!!value.productId) {
         console.log("here", value);
         setChosenProductId(value.productId);
@@ -356,7 +317,10 @@ export default function GroceryForm({
     <Box>
       <Dialog
         open={open}
-        onClose={onClose}
+        onClose={() => {
+          resetForm();
+          onClose();
+        }}
         PaperProps={{
           style: {
             borderRadius: 15,

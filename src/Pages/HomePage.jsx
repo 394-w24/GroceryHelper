@@ -18,6 +18,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../Firebase";
 import OnboardingPopup from "../Components/OnboardingPopup";
+import foodData from "../assets/data.json";
 
 const HomePage = () => {
   const uid = localStorage.getItem("uid");
@@ -27,6 +28,43 @@ const HomePage = () => {
   const [displayedFoodItems, setDisplayedFoodItems] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const [allData, setAllData] = useState([]);
+
+  useEffect(() => {
+    const init = async () => {
+      const temp = [];
+      foodData.forEach((curr) => {
+        if (
+          !!curr.freeze &&
+          curr.freeze === -1 &&
+          !!curr.pantry &&
+          curr.pantry === -1 &&
+          !!curr.refrigerate &&
+          curr.refrigerate === -1
+        ) {
+          return;
+        }
+
+        if (!curr["pantry"] && !curr["fridge"] && !curr["freezer"]) {
+          return;
+        }
+
+        temp.push(curr);
+      });
+
+      const docRef = collection(db, "userProducts");
+      const docSnap = await getDocs(docRef);
+
+      docSnap.forEach((doc) => {
+        const tempData = Object.assign(doc.data(), { productId: doc.id });
+        temp.push(tempData);
+      });
+
+      setAllData(temp);
+    };
+
+    init();
+  }, []);
 
   useEffect(() => {
     const checkOnboardingStatus = async () => {
@@ -169,6 +207,7 @@ const HomePage = () => {
         open={isDialogOpen}
         onClose={toggleDialog}
         onAddFoodItem={handleAddFoodItem}
+        allData={allData}
       />
 
       <Footer onAddFoodClick={toggleDialog} />
