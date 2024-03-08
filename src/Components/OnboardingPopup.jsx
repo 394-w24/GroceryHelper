@@ -46,7 +46,7 @@ const OnboardingPopup = ({ onClose }) => {
   return (
     <Dialog open={true} fullWidth maxWidth="sm">
       <Box sx={{ position: "absolute", top: 8, right: 8 }}>
-        <IconButton onClick={onClose}>
+        <IconButton onClick={onClose} data-testid="close-button">
           <CloseIcon />
         </IconButton>
       </Box>
@@ -88,6 +88,7 @@ const OnboardingPopup = ({ onClose }) => {
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
+            data-testid="next-button"
           >
             Next
             <KeyboardArrowRight />
