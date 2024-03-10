@@ -19,9 +19,6 @@ pub async fn get_user_email(db: &ServiceSession, user_id: &String) -> Option<Str
     }
     for metadata in values.unwrap() {
         let user: User = documents::read_by_name(db, &metadata.name).await.unwrap();
-        // if user.settings.is_none() {
-        //     return None;
-        // }
         return Some(user.email);
     }
     None
@@ -39,9 +36,6 @@ pub async fn get_all_users(db: &ServiceSession, data: &mut HashMap<String, User>
     for metadata in values.unwrap() {
         let user: User = documents::read_by_name(db, &metadata.name).await.unwrap();
         data.insert(uid.clone(), user.clone());
-        // if user.settings.is_none() {
-        //     return None;
-        // }
         return Some(user);
     }
     None
@@ -54,15 +48,12 @@ pub async fn check_user_id(db: &ServiceSession, id: &String) -> bool {
         return false;
     }
     for value in values.unwrap() {
-        // println!("Value: {:?}", value);
         return true;
     }
-    // values.unwrap().any(|x| true)
     false
 }
 
 pub async fn get_products_map(db: &ServiceSession) -> HashMap<String, String> {
-    // including json file from product.json
     let content = include_str!("../product.json");
     return serde_json::from_str(content).unwrap();
 }
@@ -136,7 +127,6 @@ pub async fn email(db: web::Data<ServiceSession>, data: web::Query<EmailReq>) ->
             println!("Error fetching userGroceries: {:?}", e);
             continue;
         }
-        // println!("Item: {:?}", &item_result);
         let (item, _metadata) = item_result.unwrap();
         let item: UserGroceries = item;
         let current_user = get_all_users(db.get_ref(), &mut users_map, &item.user_id).await;
@@ -158,29 +148,19 @@ pub async fn email(db: web::Data<ServiceSession>, data: web::Query<EmailReq>) ->
         }
         let send_time = send_time.unwrap();
         let now = chrono::Local::now().time();
-        // if now < send_time || now - send_time > chrono::Duration::minutes(5) {
-        //     continue;
-        // }
-        // println!("Item2");
-
         let expired = match parse_iso8601(&item.expired_at) {
             Ok(date_time) => {
-                // println!("Date time: {:?}", &date_time);
-                // println!("Now: {:?}", date_time - Utc::now());
-                // println!("user id {:?}", &item.user_id);
                 date_time - Utc::now() < chrono::Duration::hours(user_settings.send_before as i64)
             },
             Err(e) => false,
         };
         if expired {
             let mut list = expired_groceries.entry(item.user_id.clone()).or_insert(vec![]);
-            // println!("Expired: {:?}", &item.product_id);
             let product_name = products_map.get(&item.product_id);
             if product_name.is_none() {
                 continue;
             }
             let product_name = product_name.unwrap().clone();
-            // let product_name = item.product_id.clone();
             let storage_type = item.storage_type.clone();
             let quantity = item.quantity;
             list.push((product_name, quantity, storage_type));

@@ -6,7 +6,6 @@ pub async fn get_recipes(food: &Vec<String>) -> Result<Vec<(String, String)>, re
     let index = min(3, food.len());
     let query = food[..index].join("+");
     let url = format!("https://www.allrecipes.com/search?q={}", query);
-    println!("URL: {}", url);
     let resp = reqwest::get(url).await?;
     let body = resp.text().await?;
     let document = Html::parse_document(&body);

@@ -1,13 +1,6 @@
-import React, {
-  useState,
-  ReactNode,
-  CSSProperties,
-  useId,
-  useEffect,
-} from "react";
+import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import { Box, Button, useTheme } from "@mui/material";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import Food from "./Food";

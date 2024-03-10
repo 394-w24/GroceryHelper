@@ -14,8 +14,6 @@ use crate::data::{ProductCategories, User, UserGroceries};
 use crate::detect::{detect_image, get_objects_from_response};
 use crate::email_sender::send_email;
 
-static AZURE_API_KEY: &str = "47d777cfc7e84bb98c9120f0cbfeb693";
-
 #[get("/")]
 async fn hello_world() -> impl Responder {
     "Hello World!"

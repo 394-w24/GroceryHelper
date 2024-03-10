@@ -2,7 +2,6 @@ use std::collections::{HashMap, HashSet};
 use reqwest;
 use serde::Serialize;
 use serde_json::{Value, json};
-use crate::AZURE_API_KEY;
 use base64::{Engine as _, engine::{self, general_purpose}, alphabet};
 use base64;
 
@@ -15,9 +14,9 @@ pub async fn detect_image(image_url: &String) -> Result<HashMap<String, Value>, 
     }
     let base64_image = base64::encode(&image_data);
     let api_url = format!("https://api.clarifai.com/v2/models/{}/versions/{}/outputs",
-                          "food-item-recognition", "1d5fd481e0cf4826aa72ec3ff049e044");
+                          "food-item-recognition", "key");
     let response = client.post(&api_url)
-        .header("Authorization", "Key 58da21198d904a27b939b5845659ab29")
+        .header("Authorization", "Key")
         .header("Content-Type", "application/json")
         .json(&json!({
             "user_app_id": {
@@ -42,7 +41,6 @@ pub async fn detect_image(image_url: &String) -> Result<HashMap<String, Value>, 
 
 pub fn get_objects_from_response(response: &HashMap<String, Value>) -> Vec<String> {
     let mut ans = HashSet::new();
-    // println!("{:?}", response);
     if let Some(outputs) = response.get("outputs") {
         if let Some(data) = outputs.get(0) {
             if let Some(data) = data.get("data") {

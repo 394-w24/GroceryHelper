@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogTitle,
   TextField,
@@ -45,7 +44,6 @@ export default function GroceryForm({
   const [category, setCategory] = useState(0);
   const [daysUntilExpiration, setDaysUntilExpiration] = useState(1);
   const [allGroceryTypes, setAllGroceryTypes] = useState({});
-  // const [allData, setAllData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [options, setOptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);

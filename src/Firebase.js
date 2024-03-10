@@ -16,7 +16,7 @@ import {
   deleteDoc,
   where,
   deleteField,
-  connectFirestoreEmulator
+  connectFirestoreEmulator,
 } from "firebase/firestore";
 
 import {
@@ -31,11 +31,6 @@ import {
   deleteUser,
 } from "firebase/auth";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDgvfRM8_g9dPdMiEooaU-q4lBUDHqz3TA",
   authDomain: "groceryhelper-fdb2d.firebaseapp.com",
@@ -53,14 +48,17 @@ const storage = getStorage(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-if (!globalThis.EMULATION && import.meta.env.MODE === 'development') {
+if (!globalThis.EMULATION && import.meta.env.MODE === "development") {
   connectAuthEmulator(auth, "http://127.0.0.1:9099");
   connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
-  signInWithCredential(auth, GoogleAuthProvider.credential(
-    '{"sub": "H8fSW7M5bNI9sLT5Ol5pyaDJP6Ma", "email": "test@gmail.com", "displayName":"test", "email_verified": true}'
-  ));
-  
+  signInWithCredential(
+    auth,
+    GoogleAuthProvider.credential(
+      '{"sub": "H8fSW7M5bNI9sLT5Ol5pyaDJP6Ma", "email": "test@gmail.com", "displayName":"test", "email_verified": true}'
+    )
+  );
+
   // set flag to avoid connecting twice, e.g., because of an editor hot-reload
   globalThis.EMULATION = true;
 }
@@ -78,7 +76,12 @@ const signInWithGoogle = async (user, navigate) => {
   const userRef = doc(db, "users", uid);
   const snapshot = await getDoc(userRef);
   const settings = snapshot.data()?.settings;
-  console.log("settings", settings?.sendEmail, settings?.sendBefore, settings?.sendTime);
+  console.log(
+    "settings",
+    settings?.sendEmail,
+    settings?.sendBefore,
+    settings?.sendTime
+  );
   localStorage.setItem("sendEmail", settings?.sendEmail);
   localStorage.setItem("sendBefore", settings?.sendBefore);
   localStorage.setItem("sendTime", settings?.sendTime);
@@ -185,5 +188,13 @@ const deleteUserFirestore = async (uid) => {
 //   }
 // };
 
-
-export { db, auth, storage, signUpWithGoogle, checkIfLoggedIn, getUserData, handleLogOut, updateUserSettings };
+export {
+  db,
+  auth,
+  storage,
+  signUpWithGoogle,
+  checkIfLoggedIn,
+  getUserData,
+  handleLogOut,
+  updateUserSettings,
+};

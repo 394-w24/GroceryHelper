@@ -35,16 +35,9 @@ pub struct User {
     #[serde(rename = "photoURL")]
     pub photo_url: String,
 
-    // #[serde(skip_deserializing)]
     pub settings: Option<Settings>,
 }
 
-// #[derive(Debug, Serialize, Deserialize)]
-// pub enum StorageType {
-//     Freezer,
-//     Fridge,
-//     Pantry,
-// }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UserGroceries {

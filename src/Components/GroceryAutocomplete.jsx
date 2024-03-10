@@ -9,17 +9,6 @@ const GroceryAutocomplete = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const init = () => {
-      // const allData = data.forEach((curr) => {
-      //     console.log(curr);
-      // });
-      console.log(data);
-    };
-
-    init();
-  }, []);
-
-  useEffect(() => {
     if (!searchTerm) {
       setOptions([]);
       setSearchResults(null);

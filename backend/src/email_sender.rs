@@ -6,11 +6,13 @@ use lettre::transport::smtp::authentication::Credentials;
 use lettre::transport::smtp::response::Response;
 use crate::recipe;
 
+static SMTP_URL = "";
+static EMAIL = "";
+static PASSWORD = "";
+
 
 async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(String, i32, String)>) -> String {
     let mut html = String::new();
-
-    // Add styles for the header, table with border, table header, and footer
     html.push_str("<html><head><style>");
     html.push_str("
        html {
@@ -23,61 +25,45 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
         height: 200px; 
       }
     .appbody {
-      font-family: 'Arial', sans-serif;
-      /* Adjusted to a more commonly available font */
+      font-family: 'Arial', sans-seri
       line-height: 1.6;
       margin: 0;
       padding: 0 80px;
-      /* Combined padding-right and padding-left */
       background: linear-gradient(to bottom, #e1f3cd 0%, #a4eb54 100%);
-      /* Updated gradient colors */
       background-attachment: fixed;
       text-align: center;
     }
 
     h1 {
       font-size: 2.5rem;
-      /* Increased font size */
       color: #333;
-      /* Darker text color */
       margin-top: 40px;
-      /* Increased top margin */
     }
 
     h2 {
       font-size: 1rem;
-      /* Increased font size */
       font-weight: normal;
       color: #333;
-      /* Darker text color */
       text-align: center;
-      /* Align text to the left */
     }
 
     h3 {
       font-size: 0.9rem;
-      /* Increased font size */
       margin-top: 10px;
       font-weight: normal;
       color: #333;
-      /* Darker text color */
       text-align: left;
-      /* Align text to the left */
     }
 
     .food-list {
       text-align: left;
-      /* Align text to the left */
       padding: 0;
-      /* Adjust padding */
     }
 
     .recipe-suggestion a {
       color: white;
-      /* Light text color for better contrast */
       text-decoration: none;
       display: block;
-      /* Make the link fill the button */
     }
 
     .footer {
@@ -94,7 +80,6 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
     button {
       padding: 15px 30px;
       font-size: 1.1rem;
-      /* Adjusted font size */
       border: none;
       cursor: pointer;
       text-transform: uppercase;
@@ -102,22 +87,16 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       margin: 15px;
       display: inline-block;
       width: 100%;
-      /* Adjusted width */
       height: 50px;
-      /* Adjusted height */
       background: #ff8a65;
-      /* Adjusted button color */
       border-radius: 25px;
-      /* Rounded corners */
       box-shadow: 0 4px #c75b39;
-      /* Added box-shadow for 3D effect */
       text-align: center;
       
     }
 
     button:hover {
       background: #ff7043;
-      /* Darker background on hover */
     }
 
     ul,
@@ -126,30 +105,22 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
       padding: 0;
       margin: 0;
     }
-
-    /* Additional styling for list items */
     .food-list ul {
       padding: 0;
     }
 
     .food-list li {
       background: #ffffff;
-      /* White background for list items */
       margin-bottom: 10px;
-      /* Space between list items */
       padding: 10px;
       border-radius: 5px;
-      /* Rounded corners for list items */
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      /* Shadow for list items */
     }
     ");
     html.push_str("</style></head><body><div class=\"appbody\">");
     html.push_str("<div class=\"header-background\"></div>");
-    // Add header
     html.push_str(&format!("<h1>{}</h1>", body));
 
-    // Create table for food items with headers
     html.push_str("<div class=\"food-list\"><ul>");
     for food in food_list {
         html.push_str(&format!("<li><h2>{} {} in your {}</h2></li>", food.1, food.0, food.2));
@@ -159,7 +130,6 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
     <h3>Good thing we know exactly what you should make with it.</h3>
     <ul>");
 
-    // Fetch and list the recipes with links
     let recipes = recipe::get_recipes(&food_list.iter().map(|x| x.0.clone()).collect()).await;
     if recipes.is_ok() {
         let recipes = recipes.unwrap();
@@ -169,7 +139,6 @@ async fn create_html_body(body: &String, image_url: &String, food_list: &Vec<(St
         html.push_str("</ul></div>");
     }
 
-    // Add footer
     html.push_str("<div class=\"footer\">");
     html.push_str("<p>You are receiving this email because you opted in via our app.</p>
     <p>Tired of the fridge surprise with more science experiment than snack? 🍓🥦 Meet Stay Fresh.</p>
@@ -190,10 +159,8 @@ pub async fn send_email(receiver: &String, body: &String, image_url: &String, fo
 {
 
     println!("Creating email");
-    // println!("{}", create_html_body(&body, &image_url, &food_list).await);
-    // return Err("Error".into());
     let email = Message::builder()
-        .from("GroceryHelper <xukunliu2025@u.northwestern.edu>".parse()?)
+        .from("GroceryHelper".parse()?)
         .to(receiver.parse()?)
         .subject("GroceryHelper")
         .multipart(
@@ -202,9 +169,9 @@ pub async fn send_email(receiver: &String, body: &String, image_url: &String, fo
             ),
         )?;
     println!("Email created");
-    let creds = Credentials::new("xukunliu2025@u.northwestern.edu".to_owned(), "qnlrztpvtguuhfcj".to_owned());
+    let creds = Credentials::new(EMAIL.clone().to_owned(), PASSWORD.clone().to_owned());
     let mailer: AsyncSmtpTransport<Tokio1Executor> =
-        AsyncSmtpTransport::<Tokio1Executor>::relay("smtp.gmail.com")
+        AsyncSmtpTransport::<Tokio1Executor>::relay(&SMTP_URL)
             .unwrap()
             .credentials(creds)
             .build();

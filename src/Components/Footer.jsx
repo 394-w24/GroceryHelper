@@ -1,12 +1,11 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Typography, Button } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import KeyboardIcon from '@mui/icons-material/Keyboard';
+import KeyboardIcon from "@mui/icons-material/Keyboard";
 
-
-const Footer = ({onAddFoodClick}) => {
+const Footer = ({ onAddFoodClick }) => {
   const theme = useTheme();
 
   return (
@@ -39,7 +38,8 @@ const Footer = ({onAddFoodClick}) => {
         }}
         onClick={() => (window.location.href = "/newProduct")}
       >
-        <Typography data-cy = "footer"
+        <Typography
+          data-cy="footer"
           sx={{
             fontWeight: "bolder",
             fontSize: "16px",
@@ -48,7 +48,7 @@ const Footer = ({onAddFoodClick}) => {
         >
           Take Photo
         </Typography>
-        <CameraAltIcon/>
+        <CameraAltIcon />
       </Button>
       <Button
         variant="contained"
@@ -72,7 +72,7 @@ const Footer = ({onAddFoodClick}) => {
         >
           Manual Input
         </Typography>
-        <KeyboardIcon/>
+        <KeyboardIcon />
       </Button>
     </Box>
   );

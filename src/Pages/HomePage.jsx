@@ -4,7 +4,7 @@ import FoodList from "../Components/FoodList";
 import Footer from "../Components/Footer";
 import Kitchen from "../Components/Kitchen";
 import GroceryForm from "../Components/GroceryForm";
-import { Box, useTheme, Tabs, Tab, Button } from "@mui/material";
+import { Box, useTheme, Tabs, Tab } from "@mui/material";
 import {
   getDocs,
   getDoc,
@@ -13,7 +13,6 @@ import {
   query,
   where,
   updateDoc,
-  orderBy,
   doc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
@@ -120,7 +119,6 @@ const HomePage = () => {
       const edittedItem = Object.assign({}, copy[index]);
       edittedItem.quantity = quantity;
       copy.splice(index, 1, edittedItem);
-      // console.log("replace", prev[index]);
       return copy;
     });
   };
@@ -140,14 +138,12 @@ const HomePage = () => {
         });
       });
 
-      //   groceries.sort((x, y) => x.expiredAt - y.expiredAt);
       setFoodItems(groceries);
     };
     getUserGroceries();
   }, []);
 
   const tabsValue = ["All", "Fridge", "Freezer", "Pantry"];
-  //   let storingMethod = tabsValue[tab];
 
   useEffect(() => {
     const storingMethod = tabsValue[tab];
@@ -160,7 +156,6 @@ const HomePage = () => {
       );
       setDisplayedFoodItems(temp);
     }
-    // setRerender(!rerender);
   }, [foodItems, tab]);
 
   return (
