@@ -56,6 +56,7 @@ describe("Profile Logout", () => {
 
     const logoutButton = screen.getByRole('button', { name: /logout/i });
     fireEvent.click(logoutButton);
+    expect(FirebaseModule.handleLogOut).toHaveBeenCalled();
     expect(screen.queryByText(/login with gmail/i)).toBeDefined(); 
   });
 });
