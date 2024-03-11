@@ -143,7 +143,7 @@ const Product = () => {
             background: "#D9D9D9",
           }}
         >
-          <IconButton onClick={() => capture()}>
+          <IconButton data-testid="cameraIconButton" onClick={() => capture()}>
             <CameraAltIcon />
           </IconButton>
         </Box>
