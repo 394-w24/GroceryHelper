@@ -34,6 +34,7 @@ const Kitchen = () => {
         }}
       >
         <PersonIcon
+          data-testid="profileIcon"
           onClick={() => (window.location.href = "/profile")}
           sx={{ cursor: "pointer" }}
         />
