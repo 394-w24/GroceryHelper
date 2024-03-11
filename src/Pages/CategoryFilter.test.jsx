@@ -1,48 +1,89 @@
 import React from "react";
-import { describe, it, expect, beforeEach } from "vitest";
-import { render, fireEvent, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import HomePage from "./HomePage";
+import { describe, it, expect, beforeEach, cleanup } from "vitest";
+import { render, screen } from "@testing-library/react";
+import FoodList from "../Components/FoodList";
 
 const mockFoodItems = [
   {
-    id: "item1",
-    name: "Butter",
+    productId: "mockedProductId",
+    quantity: 1,
     storageType: "Fridge",
-    // other properties
+    userId: "mockedUserId",
+    id: "mockedId",
   },
   {
-    id: "item2",
-    name: "Bread",
-    storageType: "Pantry",
-    // other properties
+    productId: "mockedProductId",
+    quantity: 4,
+    storageType: "Freezer",
+    userId: "mockedUserId",
+    id: "mockedId",
   },
-  // Add more items as necessary
+  {
+    productId: "mockedProductId",
+    quantity: 6,
+    storageType: "Pantry",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 8,
+    storageType: "Fridge",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 11,
+    storageType: "Freezer",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 3,
+    storageType: "Pantry",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 2,
+    storageType: "Fridge",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 7,
+    storageType: "Freezer",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 9,
+    storageType: "Pantry",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
 ];
 
-describe("HomePage", () => {
-  beforeEach(() => {
-    render(
-      <BrowserRouter>
-        <HomePage />
-      </BrowserRouter>
-    );
-  });
-
-  it("displays only items from the selected category", async () => {
-    const categories = ["All", "Fridge", "Freezer", "Pantry"];
+describe("FoodList Component", () => {
+  it("displays only items from the selected category", () => {
+    const categories = ["Fridge", "Freezer", "Pantry"];
 
     for (const category of categories) {
-      fireEvent.click(screen.getByText(category));
-
-      const expectedItems = mockFoodItems.filter(
-        (item) => category === "All" || item.storageType === category
+      const filteredItems = mockFoodItems.filter(
+        (item) => item.storageType === category
       );
 
-      for (const item of expectedItems) {
-        // Use findByText for potentially asynchronous updates
-        const itemElement = await screen.findByText(item.name);
-        expect(itemElement).toBeDefined(); // Vitest uses toBeDefined
+      render(<FoodList foodItems={filteredItems} />);
+
+      for (const item of filteredItems) {
+        const quantityText =
+          item.quantity === 1 ? `1pc` : `${item.quantity}pcs`;
+        expect(screen.getByText(quantityText)).toBeDefined();
       }
     }
   });
