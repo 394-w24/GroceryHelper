@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.65% </span>
+                <span class="strong">10.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/145</span>
+                <span class='fraction'>14/139</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.65% </span>
+                <span class="strong">10.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/145</span>
+                <span class='fraction'>14/139</span>
             </div>
         
             
@@ -202,13 +202,7 @@
 <a name='L137'></a><a href='#L137'>137</a>
 <a name='L138'></a><a href='#L138'>138</a>
 <a name='L139'></a><a href='#L139'>139</a>
-<a name='L140'></a><a href='#L140'>140</a>
-<a name='L141'></a><a href='#L141'>141</a>
-<a name='L142'></a><a href='#L142'>142</a>
-<a name='L143'></a><a href='#L143'>143</a>
-<a name='L144'></a><a href='#L144'>144</a>
-<a name='L145'></a><a href='#L145'>145</a>
-<a name='L146'></a><a href='#L146'>146</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L140'></a><a href='#L140'>140</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -220,12 +214,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -406,7 +394,7 @@ const Product = <span class="fstat-no" title="function not covered" >() =&gt; {<
 <span class="cstat-no" title="statement not covered" >  const videoConstraints = {</span>
 <span class="cstat-no" title="statement not covered" >    width: { min: 640, ideal: 1920 },</span>
 <span class="cstat-no" title="statement not covered" >    height: { min: 720, ideal: 1080 },</span>
-<span class="cstat-no" title="statement not covered" >    facingMode: "enviornment",</span>
+<span class="cstat-no" title="statement not covered" >    facingMode: { exact: "environment" },</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
@@ -427,14 +415,16 @@ const Product = <span class="fstat-no" title="function not covered" >() =&gt; {<
 <span class="cstat-no" title="statement not covered" >      &lt;/Box&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;Box</span>
 <span class="cstat-no" title="statement not covered" >        sx={{</span>
+<span class="cstat-no" title="statement not covered" >          display: "flex",</span>
+<span class="cstat-no" title="statement not covered" >          justifyContent: "center",</span>
 <span class="cstat-no" title="statement not covered" >          position: "relative",</span>
 <span class="cstat-no" title="statement not covered" >          height: "600px",</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        }}</span>
 <span class="cstat-no" title="statement not covered" >      &gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;Webcam</span>
 <span class="cstat-no" title="statement not covered" >          audio={false}</span>
 <span class="cstat-no" title="statement not covered" >          height={1080}</span>
-<span class="cstat-no" title="statement not covered" >          width="100%"</span>
 <span class="cstat-no" title="statement not covered" >          screenshotFormat="image/jpeg"</span>
 <span class="cstat-no" title="statement not covered" >          ref={webcamRef}</span>
 <span class="cstat-no" title="statement not covered" >          videoConstraints={videoConstraints}</span>
@@ -470,14 +460,6 @@ const Product = <span class="fstat-no" title="function not covered" >() =&gt; {<
 <span class="cstat-no" title="statement not covered" >          marginTop: "50px",</span>
 <span class="cstat-no" title="statement not covered" >        }}</span>
 <span class="cstat-no" title="statement not covered" >      &gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >          variant="contained"</span>
-<span class="cstat-no" title="statement not covered" >          onClick={toggleDialog}</span>
-<span class="cstat-no" title="statement not covered" >          sx={{ background: "#ffffff", color: "#000000" }}</span>
-<span class="cstat-no" title="statement not covered" >        &gt;</span>
-<span class="cstat-no" title="statement not covered" >          Manual Input My Item</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        &lt;GroceryForm</span>
 <span class="cstat-no" title="statement not covered" >          open={isDialogOpen}</span>
 <span class="cstat-no" title="statement not covered" >          onClose={toggleDialog}</span>
@@ -505,7 +487,7 @@ export default Product;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-26T22:42:58.566Z
+                at 2024-03-12T22:50:50.871Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
