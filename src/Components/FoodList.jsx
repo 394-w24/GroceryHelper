@@ -40,6 +40,7 @@ const FoodList = ({ foodItems, handleDeleteFood, handleEditQuantity }) => {
             fooditem={fooditem}
             handleDeleteFood={handleDeleteFood}
             handleEditQuantity={handleEditQuantity}
+            testId={`food-item-${i}`}
           />
         ))
       )}

@@ -66,7 +66,7 @@ const Food = ({ fooditem, isExpanded, setIsExpanded }) => {
       <Box>
         <Box sx={{ display: "flex" }}>
           <Box>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box data-testid="product-name" sx={{ display: "flex", alignItems: "center" }}>
               <Typography
                 variant="h6"
                 sx={{ fontWeight: "bold", marginRight: "5px" }}

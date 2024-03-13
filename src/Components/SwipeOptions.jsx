@@ -16,7 +16,7 @@ import EditModal from "./EditModal";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../Firebase";
 
-const SwipeOptions = ({ fooditem, handleDeleteFood, handleEditQuantity }) => {
+const SwipeOptions = ({ fooditem, handleDeleteFood, handleEditQuantity,testId }) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
@@ -81,6 +81,7 @@ const SwipeOptions = ({ fooditem, handleDeleteFood, handleEditQuantity }) => {
 
   return (
     <Box
+    data-testid={testId}
       sx={{
         height: "120px",
         width: "100%",
