@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogTitle,
   TextField,
@@ -16,21 +15,9 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useNavigate } from "react-router-dom";
-import {
-  getDocs,
-  getDoc,
-  collection,
-  query,
-  where,
-  Timestamp,
-  addDoc,
-} from "firebase/firestore";
+import { getDocs, collection, query, where, addDoc } from "firebase/firestore";
 import { db } from "../Firebase";
-import foodItems from "../assets/data.json";
 import categoryData from "../assets/category.json";
-import GroceryAutocomplete from "./GroceryAutocomplete";
-import FoodRecognition from "./FoodRecognition";
-import ImageDropBox from "./ImageDropBox";
 
 export default function GroceryForm({
   open,
@@ -45,7 +32,6 @@ export default function GroceryForm({
   const [category, setCategory] = useState(0);
   const [daysUntilExpiration, setDaysUntilExpiration] = useState(1);
   const [allGroceryTypes, setAllGroceryTypes] = useState({});
-  // const [allData, setAllData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [options, setOptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);

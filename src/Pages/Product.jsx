@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { Box, Typography, IconButton, Button } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 import Webcam from "react-webcam";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import placeholder from "../assets/imagePlaceholder.webp";
 import GroceryForm from "../Components/GroceryForm";
-import FoodRecognition from "../Components/FoodRecognition";
 import ConfirmModal from "../Components/ConfirmModal";
 import recognizeImage from "../helper";
 import { db } from "../Firebase";

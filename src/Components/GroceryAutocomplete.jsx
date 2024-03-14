@@ -1,23 +1,11 @@
 import { useState, useEffect } from "react";
 import { TextField, Autocomplete } from "@mui/material";
-import data from "../assets/data.json";
 
 const GroceryAutocomplete = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [allData, setAllData] = useState([]);
   const [options, setOptions] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const init = () => {
-      // const allData = data.forEach((curr) => {
-      //     console.log(curr);
-      // });
-      console.log(data);
-    };
-
-    init();
-  }, []);
 
   useEffect(() => {
     if (!searchTerm) {

@@ -1,34 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Typography,
-  useTheme,
-  Chip,
-  IconButton,
-  Divider,
-} from "@mui/material";
-import {
-  getDocs,
-  getDoc,
-  collection,
-  query,
-  where,
-  doc,
-} from "firebase/firestore";
+import { Box, Typography, IconButton, Divider } from "@mui/material";
+import { getDoc, doc } from "firebase/firestore";
 import { db } from "../Firebase";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 const Food = ({ fooditem, isExpanded, setIsExpanded }) => {
-  const {
-    createdAt,
-    expiredAt,
-    imageURL,
-    productId,
-    quantity,
-    storageType,
-    userId,
-    id,
-  } = fooditem;
+  const { expiredAt, productId, quantity, storageType } = fooditem;
   const [productName, setProductName] = useState("");
   const expirationDate = expiredAt;
   const today = new Date();

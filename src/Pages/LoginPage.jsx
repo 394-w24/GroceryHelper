@@ -1,5 +1,4 @@
-
-import { Box, Button, Typography, styled, useTheme } from "@mui/material";
+import { Box, Button, styled, useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { signUpWithGoogle } from "../Firebase";
 import logo from "../assets/logo/logo.jpg";
@@ -8,13 +7,12 @@ const StyledButton = styled(Button)({
   backgroundColor: "#196f3d ",
   color: "white",
   "&:hover": {
-    backgroundColor:"#003E1F",
+    backgroundColor: "#003E1F",
   },
   width: "80%",
   height: "50px",
   border: "none",
 });
-
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -22,7 +20,7 @@ const LoginPage = () => {
   const handleSignIn = () => {
     signUpWithGoogle(navigate);
   };
-  
+
   return (
     <Box
       sx={{
@@ -32,7 +30,7 @@ const LoginPage = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: 'rgb(140, 219, 110)',
+        backgroundColor: "rgb(140, 219, 110)",
       }}
     >
       <Box
@@ -62,10 +60,11 @@ const LoginPage = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          
         }}
       >
-        <StyledButton data-cy="login" onClick={handleSignIn}>Login With Gmail</StyledButton>
+        <StyledButton data-cy="login" onClick={handleSignIn}>
+          Login With Gmail
+        </StyledButton>
       </Box>
     </Box>
   );
