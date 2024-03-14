@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import React from "react";
+import { Box, Typography } from "@mui/material";
 import SwipeOptions from "./SwipeOptions";
 
 const FoodList = ({ foodItems, handleDeleteFood, handleEditQuantity }) => {
@@ -21,8 +21,6 @@ const FoodList = ({ foodItems, handleDeleteFood, handleEditQuantity }) => {
             padding: 2,
             display: "flex",
             mt: 20,
-            // border: "1px solid #D9D9D9",
-            // boxShadow: "0 7px 2px -2px #D9D9D9",
             borderRadius: 3,
             backgroundColor: "white",
             justifyContent: "center",

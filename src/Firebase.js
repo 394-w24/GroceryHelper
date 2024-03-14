@@ -5,30 +5,20 @@ import { getStorage } from "firebase/storage";
 import {
   getFirestore,
   doc,
-  addDoc,
-  getDocs,
   setDoc,
   updateDoc,
   getDoc,
-  collection,
-  arrayUnion,
-  query,
   deleteDoc,
-  where,
-  deleteField,
-  connectFirestoreEmulator
+  connectFirestoreEmulator,
 } from "firebase/firestore";
 
 import {
   getAuth,
   GoogleAuthProvider,
-  onAuthStateChanged,
   signInWithPopup,
   signInWithCredential,
   connectAuthEmulator,
   signOut,
-  fetchSignInMethodsForEmail,
-  deleteUser,
 } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -53,14 +43,17 @@ const storage = getStorage(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-if (!globalThis.EMULATION && import.meta.env.MODE === 'development') {
+if (!globalThis.EMULATION && import.meta.env.MODE === "development") {
   connectAuthEmulator(auth, "http://127.0.0.1:9099");
   connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
-  signInWithCredential(auth, GoogleAuthProvider.credential(
-    '{"sub": "H8fSW7M5bNI9sLT5Ol5pyaDJP6Ma", "email": "test@gmail.com", "displayName":"test", "email_verified": true}'
-  ));
-  
+  signInWithCredential(
+    auth,
+    GoogleAuthProvider.credential(
+      '{"sub": "H8fSW7M5bNI9sLT5Ol5pyaDJP6Ma", "email": "test@gmail.com", "displayName":"test", "email_verified": true}'
+    )
+  );
+
   // set flag to avoid connecting twice, e.g., because of an editor hot-reload
   globalThis.EMULATION = true;
 }
@@ -78,7 +71,12 @@ const signInWithGoogle = async (user, navigate) => {
   const userRef = doc(db, "users", uid);
   const snapshot = await getDoc(userRef);
   const settings = snapshot.data()?.settings;
-  console.log("settings", settings?.sendEmail, settings?.sendBefore, settings?.sendTime);
+  console.log(
+    "settings",
+    settings?.sendEmail,
+    settings?.sendBefore,
+    settings?.sendTime
+  );
   localStorage.setItem("sendEmail", settings?.sendEmail);
   localStorage.setItem("sendBefore", settings?.sendBefore);
   localStorage.setItem("sendTime", settings?.sendTime);
@@ -161,29 +159,13 @@ const deleteUserFirestore = async (uid) => {
   await deleteDoc(userDocRef);
 };
 
-// const handleDelete = async () => {
-//   const auth = getAuth();
-//   const user = auth.currentUser;
-
-//   if (user) {
-//     try {
-//       //need to delete all firebase data somehow
-//       await deleteUserFirestore(user.uid);
-//       await deleteUser(user);
-
-//       localStorage.removeItem("isSignedIn");
-//       localStorage.removeItem("name");
-//       localStorage.removeItem("photoUrl");
-//       localStorage.removeItem("uid");
-
-//       window.location.reload();
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   } else {
-//     console.log("no user exist");
-//   }
-// };
-
-
-export { db, auth, storage, signUpWithGoogle, checkIfLoggedIn, getUserData, handleLogOut, updateUserSettings };
+export {
+  db,
+  auth,
+  storage,
+  signUpWithGoogle,
+  checkIfLoggedIn,
+  getUserData,
+  handleLogOut,
+  updateUserSettings,
+};
