@@ -1,85 +1,209 @@
-# React Vitest Template
+# CS394 Green - StayFresh
 
-A starter template for building React apps with Vite. Includes Vitest for unit testing and
-a hefty .gitignore file.
+# About The Project
 
-## Usage
+![PROJECT_LOGO](./src/assets/logo/logo.jpg)
 
-```
-mkdir your-app-name
-cd your-app-name
-npx degit criesbeck/react-vitest
-npm install
-```
+github repo name: 394-w24 / GroceryHelper
+The project is created by team Green in CS394 course taught by Professor Riesbeck in winter 2024, in collaboration with Northwestern Master of Product Design and Development Management MPD program. The webapp "StayFresh" aims to reduce food waste by optimizing how we track and manage our grocery items and promote sustainable practices.
 
-## Test
+## Built With:
 
-Verify that the initial app works. Run
+- [![React][React.js]][React-url]
 
-```
-npm start
-```
+## Features:
 
-and open the URL displayed.
+User can manage their grocery inventory through image capture (of their grocery item) or manual input, with options to edit expiry dates when necessary.
+The app sends customizable reminders with tailored recipe suggestions via email for items nearing their expiry.
 
-Verify that the unit tests work with
+# Getting Started
+
+## Prerequisites
 
 ```
-npm test
+    node version >= 16
+    cargo version >= 1.76.0
 ```
 
-Two tests should run and pass. 
+## Installation
 
-## Scripts
-
-**package.json** defines the following scripts:
-
-| Script         | Description                                         |
-| -------------- | --------------------------------------------------- |
-| npm start      | Runs the app in the development mode.               |
-| npm run dev    | Runs the app in the development mode.               |
-| npm run build  | Builds the app for production to the `dist` folder. |
-| npm run serve  | Serves the production build from the `dist` folder. |
-| npm test       | Starts a Jest-like test loop                        |
-
-
-## Git
-
-If everything is working, set up [your local and remote repositories](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git).
-
-## Folder Structure
-
-```
-your-app-name
-├── node_modules
-├── public
-│   ├── favicon.svg
-│   └── robots.txt
-└── src
-    ├── App.css
-    ├── App.jsx
-    ├── index.css
-    ├── index.jsx
-    └── logo.svg
-├── .gitignore
-├── index.html
-├── package.json
-├── README.md
-├── vite.config.js
+```shell
+    git clone https://github.com/394-w24/GroceryHelper.git
+    cd GroceryHelper
+    npm install
 ```
 
-## Credits
+Data Source: https://www.foodsafety.gov/
+Raw Json File: https://www.foodsafety.gov/sites/default/files/foodkeeper_data_url_en.json
 
-React-Vitest built and maintained by [Chris Riesbeck](https://github.com/criesbeck).
+- Also located in src/assets/category.json, src/assets/data.json
+  Our expiry products data is sourced from: https://www.foodsafety.gov/https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
+  Technical Dependencies:
+- To ensure full functionality of the StayFresh app's image recognition feature, it's important to note that access to the Clarifai API requires a unique key.
+  Obtain Your Clarifai API Key by visiting: https://clarifai.com/clarifai/main/models/food-item-recognitionFirebase:
 
-Inspired by [SafdarJamal/vite-template-react](https://github.com/SafdarJamal/vite-template-react).
-Expanded to include Vitest and some sample tests.
+1. visit https://console.firebase.google.com/u/3/
+2. Setup Firestore, Authentication, and Hosting
 
-Thanks to Rich Harris for [degit](https://www.npmjs.com/package/degit).
+- https://firebase.google.com/docs/firestore
+- https://firebase.google.com/docs/auth
+- https://firebase.google.com/docs/hosting
 
-Gitignore file created with [the Toptal tool](https://www.toptal.com/developers/gitignore/api/react,firebase,visualstudiocode,macos,windows).
+3. Update your firebase config in Firebase.js (Should be able the find this in the firebase `project settings` page in `general` tab)
 
+```javaScript
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_API_ID",
+        measurementId: "YOUR_MEASUREMENT_ID",
+    };
+```
+
+Backend:
+To enable the email notification feature, you need a server with cargo installed. You also need to enable the SMTP of your mailbox, and enter the SMTP server address, your Email, and password into `email_sender.rs`.
+
+```shell
+    cd ./backend
+    cargo build
+```
+
+# Usage
+
+Start local server:
+
+```
+    npm start
+```
+
+Access local server:
+
+```
+    localhost:5173
+```
+
+Deploy:
+
+```
+    npm run build
+    firebase deploy
+```
+
+Test:
+
+- Coverage
+
+```
+    npm run coverage
+```
+
+- UI
+
+```
+    npm run test
+```
+
+- Cypress
+
+```
+    npm run cy:open
+```
+
+- Backend
+
+```
+    cargo run
+```
+
+# Roadmap
+
+# Project Structure
+
+```
+.
+├── App.css
+├── App.jsx
+├── App.test.jsx
+├── Components
+│   ├── ConfirmModal.jsx
+│   ├── DeleteConfimationModal.jsx
+│   ├── EditModal.jsx
+│   ├── Food.Julia.test.jsx
+│   ├── Food.jsx
+│   ├── FoodList.jsx
+│   ├── FoodRecognition.jsx
+│   ├── Footer.jsx
+│   ├── GroceryAutocomplete.jsx
+│   ├── GroceryForm.jsx
+│   ├── ImageDropBox.jsx
+│   ├── Kitchen.jsx
+│   ├── LoadingContainer.jsx
+│   ├── OnboardingPopup.jsx
+│   ├── OnboardingPopup.test.jsx
+│   └── SwipeOptions.jsx
+├── Firebase.js
+├── Pages
+│   ├── HomePage.jsx
+│   ├── LoginPage.jsx
+│   ├── LoginPage.test.jsx
+│   ├── LogoutButton.test.jsx
+│   ├── Product.jsx
+│   └── Profile.jsx
+├── Theme.jsx
+├── assets
+│   ├── category.json
+│   ├── data.json
+│   ├── imagePlaceholder.webp
+│   ├── logo
+│   │   └── logo.jpg
+│   └── onBoard
+│       ├── 1.png
+│       ├── 2.png
+│       ├── 3.png
+│       ├── 4.png
+│       ├── 5.png
+│       ├── 6.png
+│       └── 7.png
+├── helper.js
+├── index.css
+├── index.jsx
+└── logo.svg
+```
+
+# Contributing
 
 ## License
 
-This project is licensed under the terms of the [MIT license](./LICENSE).
+MT License
+Copyright (c) 2022 Christopher
+
+## Contact
+
+Professor Christopher Riesbeck: c-riesbeck@northwestern.edu <br/>
+CS394 Team Roster:
+
+- Julia Chu
+- Annabel Grace Edwards
+- Neel Sinan Keswani
+- Doohwan Kim
+- Xukun Liu
+- Chen Si
+- Hunter Xia
+- Wenxin Zhang
+
+  MPD Team Roster:
+
+- Otto Wei
+- Ragni
+- Karuna Parthasarathy
+- Akshaya Lyengar
+
+# Acknowledgements
+
+W24 CS 394 Team Green
+
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
