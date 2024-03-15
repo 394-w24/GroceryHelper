@@ -18,20 +18,73 @@ const mockFoodItems = [
     userId: "mockedUserId",
     id: "mockedId",
   },
+  {
+    productId: "mockedProductId",
+    quantity: 6,
+    storageType: "Pantry",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 8,
+    storageType: "Fridge",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 11,
+    storageType: "Freezer",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 3,
+    storageType: "Pantry",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 2,
+    storageType: "Fridge",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 7,
+    storageType: "Freezer",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
+  {
+    productId: "mockedProductId",
+    quantity: 9,
+    storageType: "Pantry",
+    userId: "mockedUserId",
+    id: "mockedId",
+  },
 ];
 
 describe("FoodList Component", () => {
-  it("displays only items from the fridge", () => {
-    const fridgeItems = mockFoodItems.filter(item => item.storageType === "Fridge");
+  it("displays only items from the selected category", () => {
+    const categories = ["Fridge"];
 
-    render(<FoodList foodItems={fridgeItems} />);
+    for (const category of categories) {
+      const filteredItems = mockFoodItems.filter(
+        (item) => item.storageType === category
+      );
 
-    fridgeItems.forEach(item => {
-      const quantityText = item.quantity === 1 ? `1pc` : `${item.quantity}pcs`;
-      expect(screen.getByText(quantityText)).toBeDefined();
-    });
+      render(<FoodList foodItems={filteredItems} />);
 
+      for (const item of filteredItems) {
+        const quantityText =
+          item.quantity === 1 ? `1pc` : `${item.quantity}pcs`;
+        expect(screen.getByText(quantityText)).toBeDefined();
+      }
+    }
   });
-
-  afterEach(cleanup);
 });
